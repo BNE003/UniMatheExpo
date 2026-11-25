@@ -107,6 +107,7 @@ export const icons = {
   feedback: { ios: 'bubble.left.and.bubble.right.fill', android: 'forum' },
   legal: { ios: 'doc.text.fill', android: 'description' },
   closeCircle: { ios: 'xmark.circle.fill', android: 'cancel' },
+  restart: { ios: 'arrow.counterclockwise', android: 'restart_alt' },
 } as const satisfies Record<string, IconName>;
 
 export const knownSfSymbols = (): string[] => Object.keys(SF_TO_MATERIAL);

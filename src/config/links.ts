@@ -12,6 +12,9 @@ export const links = {
 } as const;
 
 /** Impressum (ImpressumView in SettingsView.swift). */
+/** Name der App, wie im App Store und in den Einstellungen angezeigt. */
+export const appName = 'UniMathe';
+
 export const imprint = {
   name: 'Benedikt Held',
   street: 'Rotkehlchenweg 12',

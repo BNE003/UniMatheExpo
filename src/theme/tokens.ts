@@ -126,6 +126,14 @@ export const fontFamilies = {
   display: 'InterDisplay-Bold',
 } as const;
 
+/** Manrope für das Onboarding (OnboardingTypography.swift). */
+export const onboardingFonts = {
+  regular: 'Manrope-Regular',
+  medium: 'Manrope-Medium',
+  semibold: 'Manrope-SemiBold',
+  bold: 'Manrope-Bold',
+} as const;
+
 /** Entspricht `Font.app(size, weight:)` in AppTypography.swift. */
 export function appFont(size: number, weight: FontWeight = 'regular'): TextStyle {
   return { fontFamily: fontFamilies[weight], fontSize: size };

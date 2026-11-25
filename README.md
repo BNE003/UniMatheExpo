@@ -11,6 +11,7 @@ Meilensteine M0/M1 (Start) und Teile von M2/M3 sind umgesetzt:
 - Design-Tokens und Inter-Schrift wie iOS (`src/theme`)
 - Offline-Formelrenderer mit MathJax 3.2.2 (`assets/math/renderer.html`, siehe [ADR 0001](docs/adr/0001-math-rendering.md))
 - Alle 121 erklärenden Grafiken der iOS-App als Animationen (`src/visuals`, Bildunterschriften DE/EN)
+- Onboarding beim ersten Öffnen wie in iOS (`src/features/onboarding`); statt Gratis-Test und Kaufseite ein Schritt „100 % kostenlos, keine Werbung“
 - Screens: Kursliste → Themenraster → Themenseite → Lektion (Schritt für Schritt, Kapitelübersicht) und Zusammenfassung
 - Probeklausuren (18, DE/EN): Einführung mit Notenschlüssel, Timer, schrittweise Lösungen, ohne Kauf (`src/app/exam`, `src/domain/exam.ts`)
 - Matrixrechner: Gauß/Gauß-Jordan mit Schritten und LGS-Lösung, Multiplikation, Determinante, unbegrenzt nutzbar (`src/app/(tabs)/tools.tsx`, `src/domain/matrix.ts`)

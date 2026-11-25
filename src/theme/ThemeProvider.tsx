@@ -39,3 +39,10 @@ export function useTheme(): ThemeValue {
   if (!value) throw new Error('useTheme außerhalb von ThemeProvider');
   return value;
 }
+
+/** Erzwingt ein Farbschema für einen Teilbaum (das Onboarding ist wie in iOS immer hell). */
+export function ForcedScheme({ scheme, children }: { scheme: ColorSchemeName; children: ReactNode }) {
+  const parent = useTheme();
+  const value = useMemo<ThemeValue>(() => ({ ...parent, scheme, colors: palettes[scheme], web: webColors[scheme] }), [parent, scheme]);
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+}

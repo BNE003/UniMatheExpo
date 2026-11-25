@@ -46,7 +46,11 @@
             "./assets/fonts/Inter-Medium.ttf",
             "./assets/fonts/Inter-SemiBold.ttf",
             "./assets/fonts/Inter-Bold.ttf",
-            "./assets/fonts/InterDisplay-Bold.ttf"
+            "./assets/fonts/InterDisplay-Bold.ttf",
+            "./assets/fonts/Manrope-Regular.ttf",
+            "./assets/fonts/Manrope-Medium.ttf",
+            "./assets/fonts/Manrope-SemiBold.ttf",
+            "./assets/fonts/Manrope-Bold.ttf"
           ]
         }
       ],

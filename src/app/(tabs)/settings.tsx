@@ -9,7 +9,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Circle, Rect } from 'react-native-svg';
 
 import { Icon } from '@/components/ui';
-import { imprint, links } from '@/config/links';
+import { appName, imprint, links } from '@/config/links';
+import { useRestartOnboarding } from '@/features/onboarding/control';
 import { icons, type IconName } from '@/content/icons';
 import { manifest } from '@/content/load';
 import type { Lang } from '@/content/types';
@@ -133,6 +134,7 @@ function ImprintModal({ visible, onClose }: { visible: boolean; onClose: () => v
         </View>
         <Text style={[appFont(28, 'bold'), { color: colors.text }]}>{t('settings.imprint')}</Text>
         <View style={[styles.imprintCard, { backgroundColor: colors.surface, shadowColor: '#000' }]}>
+          <Text style={[appFont(15), { color: colors.textSecondary }]}>{t('settings.imprintApp', { app: appName })}</Text>
           <Text style={[appFont(17, 'semibold'), { color: colors.text }]}>{imprint.name}</Text>
           <Text style={[appFont(17), { color: colors.text }]}>{imprint.street}</Text>
           <Text style={[appFont(17), { color: colors.text }]}>{imprint.city}</Text>
@@ -148,6 +150,7 @@ export default function SettingsScreen() {
   const setLang = useSetLang();
   const t = useT();
   const insets = useSafeAreaInsets();
+  const restartOnboarding = useRestartOnboarding();
   const [legalOpen, setLegalOpen] = useState(false);
   const [imprintOpen, setImprintOpen] = useState(false);
 
@@ -194,7 +197,20 @@ export default function SettingsScreen() {
           <ActionRow icon={icons.legal} color="#AF52DE" title={t('settings.legal')} onPress={() => setLegalOpen(true)} />
         </Section>
 
+        {/* Nur in der Entwicklung (Expo Go / Dev-Build) sichtbar, nicht in der veröffentlichten App */}
+        {__DEV__ && (
+          <Section>
+            <ActionRow icon={icons.restart} color="#8E8E93" title={t('settings.restartOnboarding')} onPress={restartOnboarding} />
+          </Section>
+        )}
+
         <View style={styles.footer}>
+          <Text accessibilityRole="header" style={[appFont(22, 'bold'), { color: colors.accent }]}>
+            {appName}
+          </Text>
+          <Text style={[appFont(12), { color: colors.textSecondary }]}>
+            {t('settings.copyright', { year: String(new Date().getFullYear()), owner: imprint.name })}
+          </Text>
           <Text style={[appFont(13), { color: colors.textSecondary }]}>{t('settings.free')}</Text>
           <Text style={[appFont(12), { color: colors.textSecondary }]}>{t('settings.version', { version, content })}</Text>
         </View>

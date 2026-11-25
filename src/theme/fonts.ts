@@ -4,7 +4,7 @@
  */
 import { useFonts } from 'expo-font';
 
-import { fontFamilies } from './tokens';
+import { fontFamilies, onboardingFonts } from './tokens';
 
 export function useAppFonts(): boolean {
   const [loaded, error] = useFonts({
@@ -13,6 +13,11 @@ export function useAppFonts(): boolean {
     [fontFamilies.semibold]: require('@/assets/fonts/Inter-SemiBold.ttf'),
     [fontFamilies.bold]: require('@/assets/fonts/Inter-Bold.ttf'),
     [fontFamilies.display]: require('@/assets/fonts/InterDisplay-Bold.ttf'),
+    // Manrope für das Onboarding (Views/OnboardingTypography.swift)
+    [onboardingFonts.regular]: require('@/assets/fonts/Manrope-Regular.ttf'),
+    [onboardingFonts.medium]: require('@/assets/fonts/Manrope-Medium.ttf'),
+    [onboardingFonts.semibold]: require('@/assets/fonts/Manrope-SemiBold.ttf'),
+    [onboardingFonts.bold]: require('@/assets/fonts/Manrope-Bold.ttf'),
   });
   // Bei einem Ladefehler mit der Systemschrift weitermachen statt hängen zu bleiben.
   return loaded || error != null;

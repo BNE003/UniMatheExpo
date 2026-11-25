@@ -1,12 +1,15 @@
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { OnboardingRestartContext } from '@/features/onboarding/control';
+import { OnboardingFlow } from '@/features/onboarding/OnboardingFlow';
 import { maybeAskForReviewOnLaunch } from '@/features/settings/actions';
 import { LanguageProvider } from '@/i18n';
+import { isOnboardingComplete, resetOnboarding } from '@/storage/onboarding';
 import { useAppFonts } from '@/theme/fonts';
 import { ThemeProvider, useTheme } from '@/theme/ThemeProvider';
 import { fontFamilies } from '@/theme/tokens';
@@ -23,9 +26,16 @@ function RootStack() {
   useEffect(() => {
     maybeAskForReviewOnLaunch();
   }, []);
+  // Onboarding nur beim ersten Öffnen (bis es abgeschlossen ist), danach direkt die App.
+  const [onboardingDone, setOnboardingDone] = useState(isOnboardingComplete);
+  const restartOnboarding = useCallback(() => {
+    resetOnboarding();
+    setOnboardingDone(false);
+  }, []);
   if (!fontsReady) return null;
+  if (!onboardingDone) return <OnboardingFlow onDone={() => setOnboardingDone(true)} />;
   return (
-    <>
+    <OnboardingRestartContext.Provider value={restartOnboarding}>
       <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
       <Stack
         screenOptions={{
@@ -48,7 +58,7 @@ function RootStack() {
         {/* Lektion als Vollbild ohne Kopf- und Tab-Leiste (InteractiveLearningView) */}
         <Stack.Screen name="lesson/[topicId]" options={{ headerShown: false, animation: 'fade_from_bottom' }} />
       </Stack>
-    </>
+    </OnboardingRestartContext.Provider>
   );
 }
 

@@ -102,6 +102,7 @@ const de = {
   'settings.feedback': 'Feedback',
   'settings.rate': 'Bewerten',
   'settings.legal': 'Rechtliches',
+  'settings.restartOnboarding': 'Onboarding neu starten (Test)',
   'settings.legalTitle': 'Rechtliche Informationen',
   'settings.legalMessage': 'Wähle eine Option aus',
   'settings.imprint': 'Impressum',
@@ -110,6 +111,8 @@ const de = {
   'settings.cancel': 'Abbrechen',
   'settings.close': 'Schließen',
   'settings.free': 'Alle Inhalte sind kostenlos.',
+  'settings.copyright': '© {year} {owner}. Alle Rechte vorbehalten.',
+  'settings.imprintApp': 'Anbieter der App „{app}“',
   'settings.version': 'Version {version} · Inhaltsstand {content}',
   'settings.mailSubject': 'UniMathe App Support',
 } as const;
@@ -212,6 +215,7 @@ const en: Record<UiKey, string> = {
   'settings.feedback': 'Feedback',
   'settings.rate': 'Rate',
   'settings.legal': 'Legal',
+  'settings.restartOnboarding': 'Restart onboarding (test)',
   'settings.legalTitle': 'Legal Information',
   'settings.legalMessage': 'Choose an option',
   'settings.imprint': 'Imprint',
@@ -220,6 +224,8 @@ const en: Record<UiKey, string> = {
   'settings.cancel': 'Cancel',
   'settings.close': 'Close',
   'settings.free': 'All content is free.',
+  'settings.copyright': '© {year} {owner}. All rights reserved.',
+  'settings.imprintApp': 'Provider of the app “{app}”',
   'settings.version': 'Version {version} · Content {content}',
   'settings.mailSubject': 'UniMathe App Support',
 };
