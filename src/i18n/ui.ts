@@ -23,7 +23,6 @@ const de = {
   'topic.exercises.title': 'Übungen',
   'topic.exercises.subtitle': 'Nach Schwierigkeit, mit Lösungen',
   'topic.steps': '{n} Schritte',
-  'summary.stepByStep': 'Schritt für Schritt Erklärung', // TopicDetailView
   'lesson.step': 'SCHRITT {n}', // ExplanationContent
   'lesson.continue': 'Weiter', // ContinueButton
   'lesson.finish': 'Zurück zur Übersicht',
@@ -142,7 +141,6 @@ const en: Record<UiKey, string> = {
   'topic.exercises.title': 'Exercises',
   'topic.exercises.subtitle': 'By difficulty, with solutions',
   'topic.steps': '{n} steps',
-  'summary.stepByStep': 'Step by Step Explanation',
   'lesson.step': 'STEP {n}',
   'lesson.continue': 'Continue',
   'lesson.finish': 'Back to Overview',

@@ -84,7 +84,6 @@ export const icons = {
   chevronRight: { ios: 'chevron.right', android: 'chevron_right' },
   summary: { ios: 'doc.text', android: 'description' },
   exercises: { ios: 'pencil.line', android: 'edit_note' },
-  stepByStep: { ios: 'brain.head.profile', android: 'psychology' },
   chevronLeft: { ios: 'chevron.left', android: 'chevron_left' },
   clock: { ios: 'clock.fill', android: 'schedule' },
   question: { ios: 'questionmark.circle.fill', android: 'help' },
