@@ -10,7 +10,7 @@ Meilensteine M0/M1 (Start) und Teile von M2/M3 sind umgesetzt:
 - Inhaltsimport aus dem SwiftUI-Projekt mit stabilen Themen-IDs (`tools/import-content.ts`, Bericht in [docs/content-import-report.md](docs/content-import-report.md))
 - Design-Tokens und Inter-Schrift wie iOS (`src/theme`)
 - Offline-Formelrenderer mit MathJax 3.2.2 (`assets/math/renderer.html`, siehe [ADR 0001](docs/adr/0001-math-rendering.md))
-- Grafik-Engine mit den 8 Grafiken zu linearen Abbildungen (`src/visuals`)
+- Alle 121 erklärenden Grafiken der iOS-App als Animationen (`src/visuals`, Bildunterschriften DE/EN)
 - Screens: Kursliste → Themenraster → Themenseite → Lektion (Schritt für Schritt, Kapitelübersicht) und Zusammenfassung
 - Probeklausuren (18, DE/EN): Einführung mit Notenschlüssel, Timer, schrittweise Lösungen, ohne Kauf (`src/app/exam`, `src/domain/exam.ts`)
 - Matrixrechner: Gauß/Gauß-Jordan mit Schritten und LGS-Lösung, Multiplikation, Determinante, unbegrenzt nutzbar (`src/app/(tabs)/tools.tsx`, `src/domain/matrix.ts`)
@@ -31,8 +31,10 @@ npm install
 | Befehl | Zweck |
 |---|---|
 | `npm run import-content` | Inhalte aus dem Swift-Repo übernehmen (Pfad in `tools/content.config.json` oder `--swift-repo`) |
+| `npm run import-captions` | Bildunterschriften der Grafiken aus `LessonVectorVisuals.swift` übernehmen; englische Texte für rein deutsche Swift-Grafiken stehen in `tools/visual-captions-en.json` |
 | `npm run build-math` | `assets/math/renderer.html` neu bauen (nach Änderungen in `tools/math-renderer/`) |
 | `npm run preview-math -- 3.3 de` | Formel-Vorschau im Browser erzeugen (`.preview/math-preview.html`, über einen lokalen HTTP-Server öffnen) |
+| `npm run preview-visuals -- de` | Alle Grafiken in jeder Phase als SVG-Galerie (`.preview/visuals.html`, über einen lokalen HTTP-Server öffnen) |
 | `npm test` | Unit-Tests (Lektionslogik, Grafik-Konsistenz) |
 | `npm run typecheck` / `npm run lint` | TypeScript und ESLint |
 

@@ -1,0 +1,356 @@
+{
+  "basisChange": [
+    "Basis B with b₁ = (1, 1) and b₂ = (1, −1). The vector v = (3, 1) = 2 · b₁ + 1 · b₂ has the B-coordinates (2, 1).",
+    "f(x, y) = (2x + y, x + 2y). We have f(b₁) = (3, 3) = 3 · b₁: b₁ is only stretched.",
+    "f(b₂) = (1, −1) = 1 · b₂: b₂ stays unchanged.",
+    "So f(v) = 2 · 3 · b₁ + 1 · 1 · b₂ = (6, 6) + (1, −1) = (7, 5). In B-coordinates: (2, 1) ↦ (6, 1) – simply multiplied componentwise by 3 and 1."
+  ],
+  "basisCoordinates": [
+    "Standard basis: w = 4 · e₁ + 5 · e₂. Coordinates with respect to (e₁, e₂): (4, 5).",
+    "Now we change the “grid”: the basis B = (v₁, v₂) creates a skewed coordinate system.",
+    "In this grid we reach w with 1 step in the v₁ direction and 2 steps in the v₂ direction.",
+    "The same vector w has the coordinates (1, 2) with respect to B. The basis determines how we translate vectors into numbers."
+  ],
+  "binomialDifference": [
+    "A square a × a (here a = 3) has area a².",
+    "We cut away a square b × b at the top right (here b = 1). What remains is an L-shape with area a² − b².",
+    "We split the L-shape: at the bottom a rectangle a × (a − b), at the top a strip (a − b) × b.",
+    "Rotate the strip and attach it on the right: a rectangle (a + b) × (a − b) appears. So a² − b² = (a + b)(a − b). Here: 9 − 1 = 4 · 2."
+  ],
+  "binomialSquare": [
+    "A square with side length a + b (here a = 3, b = 1). Its area is (a + b)².",
+    "At the bottom left fits a square a × a: area a².",
+    "Two rectangles a × b: together 2ab. Exactly this “mixed” part is forgotten in the mistake (a + b)² = a² + b².",
+    "At the top right a small square b × b remains. Together: (a + b)² = a² + 2ab + b². Here: 16 = 9 + 6 + 1."
+  ],
+  "cartesianProduct": [
+    "A = {1, 2, 3} on the x-axis, B = {1, 2} on the y-axis.",
+    "A × B: every a ∈ A combined with every b ∈ B – 3 · 2 = 6 pairs, i.e. 6 points.",
+    "(1, 2) and (2, 1) are different points: for pairs the order matters.",
+    "The map f: A → B with f(1) = 2, f(2) = 1, f(3) = 2 as a set of points: each column contains EXACTLY ONE point. That is the graph of f – a subset of A × B."
+  ],
+  "charPolyCollapse": [
+    "λ = 0: A − 0 · I = (2 1; 1 2). The columns (2, 1) and (1, 2) span a parallelogram with area det = 4 − 1 = 3.",
+    "λ = 1: A − I = (1 1; 1 1). Both columns are (1, 1) – the parallelogram collapses, det = 0. So 1 is an eigenvalue!",
+    "λ = 2: A − 2I = (0 1; 1 0). Columns (0, 1) and (1, 0): a genuine area again, det = 0 − 1 = −1.",
+    "λ = 3: A − 3I = (−1 1; 1 −1). The columns (−1, 1) and (1, −1) are opposite – area 0. So 3 is an eigenvalue!"
+  ],
+  "clockF5": [
+    "ℤ/5 = {0, 1, 2, 3, 4}. Are there zero divisors here too?",
+    "Multiples of 2: 0, 2, 4, 1, 3 – ALL numbers are reached, including 1. With 2 · 3 = 6 = 1 you land on 1: so 3 is the inverse of 2.",
+    "Because 5 is a prime, this works for every non-zero number: 1 · 1 = 1, 2 · 3 = 1, 4 · 4 = 1. ℤ/5 is a field."
+  ],
+  "clockZ12": [
+    "ℤ/12: arithmetic on a clock. There are only the numbers 0 to 11; after 11 comes 0 again.",
+    "9 + 5: 5 steps on from 9 you land at 2. So 9 + 5 = 2 in ℤ/12 (since 14 = 12 + 2).",
+    "The neutral element is 0: “0 steps on” changes nothing.",
+    "The inverse of 5 is 7: from 5, 7 steps lead back to 0. So 5 + 7 = 0 and −5 = 7.",
+    "With steps of length 4 you only reach 0, 4, 8 – then you are back at 0. {0, 4, 8} is a subgroup, and 4 has order 3."
+  ],
+  "clockZ6": [
+    "ℤ/6 = {0, 1, 2, 3, 4, 5}. Multiplying means repeated adding: 2 · 3 = 3 + 3.",
+    "2 · 3 = 3 + 3 = 6 = 0. Two non-zero elements have the product 0: 2 and 3 are zero divisors.",
+    "The multiples of 2 are only 0, 2, 4. The 1 is never reached – there is no x with 2 · x = 1. 2 is not invertible.",
+    "5 is different: 5 · 5 = 25 = 4 · 6 + 1, so 5 · 5 = 1. 5 is invertible, since gcd(5, 6) = 1."
+  ],
+  "complexMultiplication": [
+    "z = 1 + i has absolute value √2 and angle 45°.",
+    "w = 1 + √3·i has absolute value 2 and angle 60°.",
+    "The product z · w has angle 45° + 60° = 105° and absolute value √2 · 2 = 2√2 ≈ 2.83. Angles add, absolute values multiply.",
+    "Algebraic check: (1 + i)(1 + √3 i) = (1 − √3) + (1 + √3) i ≈ −0.73 + 2.73 i – exactly the green point."
+  ],
+  "complexOperations": [
+    "In the complex plane z = 2 + i is the point (2, 1) and w = 1 + 2i is the point (1, 2). Horizontal: real part, vertical: imaginary part.",
+    "Addition works like for vectors: z + w = 3 + 3i. Attach w to the tip of z.",
+    "Conjugation: z̄ = 2 − i is the mirror image of z in the real axis.",
+    "Multiplication by i: i · z = 2i + i² = −1 + 2i. That is z rotated by 90° counterclockwise!"
+  ],
+  "composition": [
+    "First f: A → B (blue): 1 ↦ a, 2 ↦ c, 3 ↦ b.",
+    "Then g: B → C (orange): a ↦ y, b ↦ x, c ↦ y. The targets of f are the starting points of g.",
+    "Path for 1: first to f(1) = a, then to g(a) = y. So (g ∘ f)(1) = g(f(1)) = y.",
+    "g ∘ f: A → C combines both steps: 1 ↦ y, 2 ↦ y, 3 ↦ x. Read it as “g after f” – f is applied first."
+  ],
+  "continuityTypes": [
+    "Continuous: x² can be drawn without lifting the pen. At every point the limit agrees with the function value.",
+    "Jump: the sign function jumps at 0 from −1 to 1. The left and right limits are different.",
+    "Pole: 1/x grows beyond all bounds at 0 – to −∞ on the left, to +∞ on the right.",
+    "Oscillation: sin(1/x) swings infinitely often between −1 and 1 near 0. There are not even one-sided limits."
+  ],
+  "contourGradient": [
+    "f(x, y) = x² + 2y² as a map: each contour line connects points with the same function value (0.5; 1; 2; 3; 4). Low inside, high outside.",
+    "At a few points the gradient ∇f = (2x, 4y). It is PERPENDICULAR to the contour line through the point.",
+    "The gradient points uphill, in the direction of steepest ascent. Its length tells how steep it is there.",
+    "At the origin ∇f = (0, 0): the lowest point. At extrema the gradient is the zero vector."
+  ],
+  "criticalPoints": [
+    "f = x² + y²: contour lines are circles, the values grow outwards. At the origin there is a minimum (valley floor).",
+    "f = −(x² + y²): the same circles, but the values fall outwards. At the origin there is a maximum (summit).",
+    "f = x² − y²: contour lines are hyperbolas. In the x-direction f rises (orange), in the y-direction f falls (blue). At the origin ∇f = 0, but it is neither a minimum nor a maximum – a saddle point."
+  ],
+  "deMorgan": [
+    "Left side, step 1: colour A ∪ B.",
+    "Left side, step 2: (A ∪ B)ᶜ is everything OUTSIDE it (green).",
+    "Right side, step 1: Aᶜ – everything outside A (blue).",
+    "Right side, step 2: add Bᶜ – everything outside B (orange). Where both colours overlap lies Aᶜ ∩ Bᶜ.",
+    "Aᶜ ∩ Bᶜ (green) is exactly the same region as (A ∪ B)ᶜ: “not in A or B” means “not in A and not in B”."
+  ],
+  "detArea": [
+    "The unit square has area 1. We apply f(x) = A x with A = (3 1; 1 2), together with e₁ = (1, 0), e₂ = (0, 1) and x = (1, 1).",
+    "f(e₁) = A e₁ = (3, 1): the first column of A.",
+    "f(e₂) = A e₂ = (1, 2): the second column of A.",
+    "The square becomes a parallelogram with area |3 · 2 − 1 · 1| = 5. The determinant says: areas are multiplied by 5.",
+    "The corner x = (1, 1) lands at f(x) = (3 + 1, 1 + 2) = (4, 3) – the opposite corner of the parallelogram."
+  ],
+  "detRules": [
+    "The columns a = (1, 0) and b = (1, 2) span a parallelogram. Its area: det(a, b) = 1 · 2 − 1 · 0 = 2.",
+    "If we double a to (2, 0), the area doubles: det = 2 · 2 − 1 · 0 = 4. The determinant is linear in each column.",
+    "If we slide b along a to b + a = (3, 2), base and height stay the same: the area stays 4.",
+    "If we tip b onto the line through a, say to (3, 0), the parallelogram collapses into a segment: area 0, because the columns are linearly dependent."
+  ],
+  "eigenMap": [
+    "A = (2 1; 1 2). Blue: v₁ = (1, 1), orange: v₂ = (−1, 1), red: an ordinary vector x = (1, 0).",
+    "Dashed: the lines through v₁, v₂ and x. The lines through v₁ and v₂ are the eigenspaces.",
+    "Now A acts on the whole plane: A v₁ = 3 v₁ and A v₂ = 1 · v₂ stay on their lines. A x = (2, 1), however, leaves its line.",
+    "So A stretches in the direction (1, 1) by the factor 3 and leaves the direction (−1, 1) unchanged. That is all A does – the whole secret of this matrix."
+  ],
+  "eigenSearch": [
+    "A = (2 1; 1 2). Test vector u = (1, 0) with its line (dashed). A · u = (2, 1) does NOT lie on this line: the direction changes.",
+    "u = (0, 1): A · u = (1, 2). Again the vector tips out of its line.",
+    "u = (1, 1): A · u = (3, 3) = 3·u. The vector stays on its line and is only tripled – an eigenvector for the eigenvalue 3!",
+    "u = (−1, 1): A · u = (−2 + 1, −1 + 2) = (−1, 1) = 1·u. Also an eigenvector, this time for the eigenvalue 1."
+  ],
+  "eigenvalueScaling": [
+    "An eigenvector v = (2, 1) and its line. If A v = λ v, everything depends only on the factor λ. For λ = 1, v stays unchanged.",
+    "λ = 2: A v = 2 v – twice as long, same direction.",
+    "λ = ½: A v = ½ v – half as long, same direction.",
+    "λ = −1: A v = −v – same line, but flipped into the opposite direction.",
+    "λ = 0: A v = 0 – v is squashed onto the origin. Then v is a vector in the kernel of A."
+  ],
+  "euclidRectangle": [
+    "A 12 × 9 rectangle. We look for the largest square that tiles it without gaps. Its side length is gcd(12, 9).",
+    "Cut off the largest square that fits: 9 × 9. That is the step 12 = 1 · 9 + 3. A 3 × 9 strip remains.",
+    "Exactly three 3 × 3 squares fit into the strip: 9 = 3 · 3 + 0. The remainder is 0 – the algorithm stops.",
+    "3 × 3 squares tile the whole rectangle, no larger square does. So gcd(12, 9) = 3 – the last non-zero remainder."
+  ],
+  "fieldInverses": [
+    "In 𝔽₇: every a ≠ 0 has exactly one inverse. 2 · 4 = 8 = 1, 3 · 5 = 15 = 1, 6 · 6 = 36 = 1. The assignment a ↦ a⁻¹ is even bijective.",
+    "In ℤ/6, on the other hand, only 1 and 5 have an inverse. 2, 3 and 4 share a common divisor with 6 – there is none for them."
+  ],
+  "geometricSeries": [
+    "The unit square has area 1. Half of it: ½.",
+    "Plus half of the rest: ½ + ¼ = ¾.",
+    "On and on: ½ + ¼ + ⅛ + 1/16 = 15/16. There is always exactly as much missing as was added last.",
+    "After infinitely many steps the square is filled: ½ + ¼ + ⅛ + … = 1. Infinitely many summands, but a finite sum!"
+  ],
+  "implicationSets": [
+    "A ⇒ B with A: “is a square”, B: “is a rectangle”. Every square is a rectangle – the set of squares lies INSIDE the set of rectangles.",
+    "A square (point in A) automatically lies in B as well. That is the implication itself.",
+    "A triangle lies outside B – and therefore outside A too. That is the contrapositive: ¬B ⇒ ¬A. It is equivalent to A ⇒ B.",
+    "A 2×3 rectangle lies in B but not in A. So B does NOT imply A (the converse is false), and ¬A does NOT imply ¬B."
+  ],
+  "improperIntegral": [
+    "Area under 1/x² from 1 to b = 2: it is 1 − 1/2 = 0.5.",
+    "b = 5: 1 − 1/5 = 0.8.",
+    "b = 10: 0.9. For b → ∞, 1 − 1/b tends to 1. The infinitely long region has the finite area 1!",
+    "For comparison 1/x (dashed): the area from 1 to b is ln b → ∞. The graph lies only slightly higher, yet the area is infinite."
+  ],
+  "injSurj": [
+    "Injective, not surjective: no element of B is hit twice – but c is not hit at all.",
+    "Surjective, not injective: every element of B is hit – but c twice (by 3 and 4).",
+    "Bijective: every element of B is hit EXACTLY ONCE. The elements of A and B are perfectly paired.",
+    "Neither: a is hit twice (not injective), b not at all (not surjective). It is still a map!"
+  ],
+  "inverseMap": [
+    "f is bijective: 1 ↦ b, 2 ↦ c, 3 ↦ a. Every element of B is hit exactly once.",
+    "Reversing all arrows (green) gives a map again: f⁻¹: B → A with f⁻¹(a) = 3, f⁻¹(b) = 1, f⁻¹(c) = 2.",
+    "Now a non-bijective h: 1 ↦ a, 2 ↦ a, 3 ↦ b.",
+    "Reversed, a would have two arrows and c none – that is not a map. An inverse map exists only for bijective maps."
+  ],
+  "kernelImage": [
+    "f(x, y) = (x + y, x + y). The vectors p = (2, −2) and q = (−1, 1) lie on the line y = −x.",
+    "f(p) = (0, 0) and f(q) = (0, 0): both are squashed onto the zero vector. This line is the kernel.",
+    "Now r = (3, 0) and s = (0, 3). They lie on a line parallel to the kernel (x + y = 3).",
+    "f(r) = f(s) = (3, 3): the whole line lands in a single point. All images lie on y = x – that is the image. dim ker + dim im = 1 + 1 = 2 = dim ℝ²."
+  ],
+  "lagrange": [
+    "Goal: the largest value of f(x, y) = x + y on the unit circle x² + y² = 1 (the constraint).",
+    "Contour lines of f are lines x + y = c. For c = −1, 0, 1 they cut the circle – larger values are still possible there.",
+    "The largest contour line that still meets the circle only TOUCHES it: c = √2 at the point (1/√2, 1/√2).",
+    "At the point of contact ∇f = (1, 1) and ∇g = (2x, 2y) are parallel: ∇f = λ∇g. That is the Lagrange condition."
+  ],
+  "linearCombination": [
+    "Goal: w = (4, 5). Our building blocks: v₁ = (2, 1) and v₂ = (1, 2).",
+    "Scale first: we double v₂ and get 2 · v₂ = (2, 4).",
+    "Then add: 2 · v₂ is attached to the tip of 1 · v₁.",
+    "Hit! 1 · v₁ + 2 · v₂ = (4, 5) = w. The numbers 1 and 2 are the “recipe” for w."
+  ],
+  "linearDependence": [
+    "v₁ = (2, 1), v₂ = (1, 2) and additionally v₃ = (3, 3).",
+    "We attach v₂ to the tip of v₁ …",
+    "… and land exactly on the tip of v₃. So v₃ = v₁ + v₂.",
+    "v₃ brings no new direction: everything v₃ reaches, v₁ and v₂ already reach on their own. span(v₁, v₂, v₃) = span(v₁, v₂)."
+  ],
+  "linearityCheck": [
+    "f(x, y) = (2x + y, y). We take u = (1, 0) and v = (0, 2).",
+    "Path A, step 1: add first. u + v = (1, 2).",
+    "Path A, step 2: then map. f(u + v) = (2 · 1 + 2, 2) = (4, 2).",
+    "Path B: map first, f(u) = (2, 0) and f(v) = (2, 2), then add: (4, 2). Same destination – f is additive."
+  ],
+  "mapCheck": [
+    "Every element of A has EXACTLY ONE arrow: a map. That c receives nothing is allowed.",
+    "3 has no arrow: NOT a map. Every element of A must be assigned something.",
+    "1 has two arrows: NOT a map. The value f(1) must be unique.",
+    "All three arrows hit b: this IS a map (a constant one). Any number of arrows may arrive in B – even none."
+  ],
+  "matrixOrder": [
+    "Start: the unit square. D doubles the x-direction, R rotates by 90°.",
+    "First D: the square becomes a rectangle of width 2.",
+    "Then R: the rectangle is rotated – the result of R · D is a tall rectangle.",
+    "Now the other way round, from the start: first R rotates the square – it stays a square.",
+    "Then D: the result of D · R is a wide rectangle. Dashed: R · D for comparison. So R · D ≠ D · R."
+  ],
+  "matrixTimesVector": [
+    "A has the columns a₁ = (2, 1) and a₂ = (1, 2). We compute A · x for x = (1, 2).",
+    "The 2nd entry of x is 2: column a₂ is doubled → 2 · a₂ = (2, 4).",
+    "The 1st entry of x is 1: a₁ once. We attach 2 · a₂ to the tip of a₁.",
+    "A · x = 1 · a₁ + 2 · a₂ = (4, 5). Matrix times vector is a linear combination of the columns!"
+  ],
+  "matrixTransform": [
+    "Before: e₁ = (1, 0), e₂ = (0, 1), the unit square and the vector x = (1, 2).",
+    "A = (2 1; 0 1) sends e₁ to A · e₁ = (2, 0) – exactly the 1st column of A.",
+    "e₂ lands on A · e₂ = (1, 1) – exactly the 2nd column of A.",
+    "The whole grid follows: grid lines stay straight, parallel and evenly spaced. The square becomes a parallelogram.",
+    "x = (1, 2) lands at A · x = 1 · (2, 0) + 2 · (1, 1) = (4, 2) – the same coordinates in the new grid."
+  ],
+  "meanValue": [
+    "f(x) = x² on the interval [0, 2].",
+    "The secant from (0, 0) to (2, 4) has slope (4 − 0)/(2 − 0) = 2: the average slope.",
+    "Mean value theorem: somewhere in between the tangent has EXACTLY this slope. Here at ξ = 1, since f′(1) = 2. Tangent and secant are parallel."
+  ],
+  "modClasses": [
+    "The numbers 0 to 8. Relation: a ∼ b if a and b leave the same remainder when divided by 3.",
+    "We colour by remainder: remainder 0 blue, remainder 1 orange, remainder 2 green. Same colour means equivalent.",
+    "Each colour forms an equivalence class: [0] = {0, 3, 6}, [1] = {1, 4, 7}, [2] = {2, 5, 8}.",
+    "Every number lies in exactly one class, and no class is empty: the classes partition the set, without overlap and without gaps."
+  ],
+  "polarArea": [
+    "Polar coordinates: circles r = constant and rays φ = constant cut the plane into small cells.",
+    "A cell near the centre: radial side Δr, arc side r · Δφ. Its area is roughly r · Δr · Δφ.",
+    "A cell further out with the same Δr and Δφ is larger – by exactly the factor r. That is why integrating in polar coordinates uses dA = r dr dφ."
+  ],
+  "powerSet": [
+    "A = {1, 2, 3}. The smallest subset is ∅ – you simply choose no element.",
+    "Subsets with exactly one element: {1}, {2}, {3}. Lines mean “⊆”.",
+    "Subsets with two elements: again three of them.",
+    "And A itself. Together 1 + 3 + 3 + 1 = 8 = 2³ subsets. These 8 sets are the elements of 𝒫(A)."
+  ],
+  "preimage": [
+    "f: A → B with f(1) = a, f(2) = b, f(3) = a, f(4) = c.",
+    "Image: f({1, 2}) = {a, b}. Start on the LEFT and follow the arrows.",
+    "Preimage: f⁻¹({a}) = {1, 3}. Start on the RIGHT and look for all arrows arriving there.",
+    "f⁻¹({d}) = ∅, because no arrow arrives at d. The preimage ALWAYS exists – even if f is not invertible at all."
+  ],
+  "quantifierOrder": [
+    "Three locks 1, 2, 3 and three keys a, b, c. An arrow means: the key fits.",
+    "∀ lock ∃ key: “For every lock there is a fitting key.” True – but every lock has a DIFFERENT one.",
+    "∃ key ∀ lock: “There is ONE key that fits all locks” – a master key. That is a much stronger statement.",
+    "In the earlier situation ∀∃ holds, but not ∃∀: no key fits everywhere. The order of the quantifiers changes the meaning!"
+  ],
+  "reflectionMap": [
+    "Before: the unit square, e₁, e₂ and x = (1, 2). The map is f(x, y) = (y, x): it swaps the coordinates.",
+    "f(e₁) = (0, 1): e₁ jumps up.",
+    "f(e₂) = (1, 0): e₂ jumps to the right. The two basis vectors swap places.",
+    "The grid is reflected in the line y = x. The square lands on itself, but its orientation is reversed.",
+    "f(x) = 1 · f(e₁) + 2 · f(e₂) = (0, 1) + (2, 0) = (2, 1): the mirror image of x in the line y = x."
+  ],
+  "removableHole": [
+    "f(x) = (x² − 1)/(x − 1) is undefined at x = 1 (0/0). For x ≠ 1, f(x) = x + 1 – the graph is a line with a hole.",
+    "From the left: x = 0.2; 0.6; 0.85; 0.95 gives f(x) = 1.2; 1.6; 1.85; 1.95.",
+    "From the right: x = 1.8; 1.4; 1.15; 1.05 gives 2.8; 2.4; 2.15; 2.05.",
+    "From both sides the values approach 2. So lim f(x) = 2 for x → 1 – although f(1) does not even exist."
+  ],
+  "rootsOfUnity": [
+    "Goal: all solutions of z⁶ = 1. The unit circle contains all numbers with absolute value 1.",
+    "ζ = cos 60° + i sin 60° = ½ + (√3/2) i. Six times 60° gives 360°, so ζ⁶ = 1.",
+    "The powers ζ, ζ², …, ζ⁶ = 1 run around the circle in 60° steps. Each one is a solution.",
+    "The six solutions form a regular hexagon. In general zⁿ = 1 has exactly n solutions – the corners of a regular n-gon."
+  ],
+  "sequenceConvergence": [
+    "The sequence aₙ = 1 + (−1)ⁿ/n: 0; 1.5; 0.67; 1.25; 0.8; … The points jump around 1 – with ever smaller swings.",
+    "An ε-tube around the limit 1 with ε = 0.25. From n = 5 on ALL further terms lie inside, because 1/n < 0.25 for n > 4.",
+    "A narrower tube, ε = 0.1: now you have to wait longer – only from n = 11 on do all terms stay inside.",
+    "That is convergence: for EVERY ε, however small, there is an N from which on all terms stay in the tube. Smaller ε, larger N."
+  ],
+  "seriesComparison": [
+    "Partial sums of Σ 1/k² (orange): 1; 1.25; 1.36; … They grow, but approach a fixed height.",
+    "Limit π²/6 ≈ 1.645 (dashed). The series converges.",
+    "Partial sums of Σ 1/k (blue): 1; 1.5; 1.83; 2.08; … They grow more and more slowly …",
+    "… but without bound: after 40 terms you are only at 4.28, and yet every bound is eventually exceeded. The harmonic series diverges, although 1/k → 0."
+  ],
+  "shearEigen": [
+    "Shear A = (1 1; 0 1). Blue: v = (1, 0), red: x = (0, 1).",
+    "The x-axis (dashed) is the only eigenline. The red line through x is drawn for comparison.",
+    "A acts: A v = v stays put (eigenvalue 1). A x = (1, 1) tips out of its line – like every vector off the x-axis.",
+    "There is only ONE eigendirection: double eigenvalue 1, but an eigenspace of dimension 1. Too few eigenvectors for a basis!"
+  ],
+  "shearMap": [
+    "Before: the unit square, e₁ = (1, 0), e₂ = (0, 1) and the vector x = (1, 2). The map is f(x, y) = (x + y, y).",
+    "f(e₁) = (1 + 0, 0) = (1, 0): e₁ stays where it is.",
+    "f(e₂) = (0 + 1, 1) = (1, 1): e₂ tilts to the right.",
+    "The grid follows: the square becomes a slanted parallelogram. Base and height stay the same – and so does the area.",
+    "f(x) = 1 · f(e₁) + 2 · f(e₂) = (1, 0) + (2, 2) = (3, 2). This is a shear."
+  ],
+  "signedArea": [
+    "sin x from 0 to 2π.",
+    "From 0 to π the graph lies above the axis: this area counts positively, ∫₀^π sin x dx = 2.",
+    "From π to 2π it lies below: this area counts negatively, −2.",
+    "Together: ∫₀^{2π} sin x dx = 2 − 2 = 0. The integral measures areas WITH sign. The actual area is ∫|sin x| dx = 4."
+  ],
+  "singularMatrix": [
+    "A = (1 2; 2 4). The columns (1, 2) and (2, 4) point in the same direction – the second is twice the first.",
+    "A squashes the whole plane onto a line: the grid collapses, the square becomes a segment.",
+    "Take two different vectors p = (2, 0) and q = (0, 1) …",
+    "… both land at A · p = A · q = (2, 4). From (2, 4) you can no longer tell where you came from: A is not invertible."
+  ],
+  "spanGrowth": [
+    "A single vector v₁ = (2, 1).",
+    "All multiples λ · v₁ (including negatives and fractions) form a line through 0: span(v₁).",
+    "A second vector v₂ = (1, 2) that does NOT lie on this line brings a new direction.",
+    "Now we may form λ · v₁ + μ · v₂. Even the integer combinations give a skewed grid …",
+    "… and with all real λ, μ we reach every point of the plane: span(v₁, v₂) = ℝ²."
+  ],
+  "squeeze": [
+    "f(x) = x · sin(1/x) oscillates infinitely often as x → 0. Does f have a limit there?",
+    "Since −1 ≤ sin(1/x) ≤ 1, the graph lies between −|x| and |x| (dashed).",
+    "Both bounds tend to 0 as x → 0. f is squeezed in between – so lim x · sin(1/x) = 0 as well. That is the squeeze theorem."
+  ],
+  "subspaceClosure": [
+    "U is a line through the origin. The vectors u and v lie on U.",
+    "u + v: we attach v to the tip of u. The result lies on U again.",
+    "(−1) · u points in the opposite direction – but it also lies on U. U is closed.",
+    "G is a parallel line that does NOT pass through the origin. p and q lie on G.",
+    "p + q lands next to G (red dot). Addition alone already leads out of G – G is not a subspace."
+  ],
+  "taylorSine": [
+    "sin x (blue) and its tangent at 0: T₁(x) = x. Near 0 it fits well, further away it does not.",
+    "T₃(x) = x − x³/6 has the same slope AND the same curvature as sin at 0. It fits on a larger range.",
+    "T₅(x) = x − x³/6 + x⁵/120: even further.",
+    "T₉: with every further term the polynomial hugs sin x over a larger range. In the limit, sin x = x − x³/3! + x⁵/5! − …"
+  ],
+  "triangleSymmetries": [
+    "An equilateral triangle with corners 1, 2, 3. A symmetry maps the triangle onto itself – only the corners swap places.",
+    "r: rotation by 120° counterclockwise.",
+    "Then s: reflection in the vertical axis. Result of “first r, then s”, i.e. s ∘ r: top 3, left 2, right 1.",
+    "Now the other order, from the start: first s …",
+    "… then r. Result r ∘ s: top 2, left 1, right 3. Grey: the result of s ∘ r. Different – the group is not commutative!"
+  ],
+  "vennOperations": [
+    "Universal set U = {1, …, 8}, inside it A = {1, 2, 3, 4} (left) and B = {3, 4, 5, 6} (right).",
+    "A ∩ B = {3, 4}: everything in A AND in B – the overlap.",
+    "A ∪ B = {1, 2, 3, 4, 5, 6}: everything in A OR in B. “Or” includes “both”.",
+    "A \\ B = {1, 2}: in A but not in B. Take A and cut away the overlap.",
+    "B \\ A = {5, 6} – something different from A \\ B! The difference depends on the order.",
+    "Complement Aᶜ = U \\ A = {5, 6, 7, 8}: everything in the universal set outside A."
+  ]
+}

@@ -2,6 +2,7 @@
  * Grafiken zu linearen Abbildungen (Thema 3.3 und verwandte Themen).
  * Quelle: Views/LessonVectorVisuals.swift – Struktur, Koordinaten und Phasen sind 1:1 übernommen.
  */
+import { dot } from '../dsl';
 import { ORIGIN, parallelogram, show, type FigureSpec, type PlaneWindow, type Pt, type Scene } from '../scene';
 
 /** GridMapVisual (LessonVectorVisuals.swift:1160): e₁, e₂, Gitter und ein Beispielvektor unter f. */
@@ -27,7 +28,7 @@ function gridMap(opts: { window?: PlaneWindow; image1: Pt; image2: Pt; sample: P
           ? [{ key: 'mirror', kind: 'line', through: ORIGIN, dir: mirror, color: 'extra', width: 2, dash: [5, 4], opacity: show(phase >= 3) } as const]
           : []),
         { key: 'grid', kind: 'grid', a: gridA, b: gridB, color: 'first', alpha: 0.35, width: 1 },
-        { key: 'cell', kind: 'poly', points: parallelogram(gridA, gridB), fill: { color: 'first', alpha: 0.18 } },
+        { key: 'cell', kind: 'path', closed: true, subpaths: [parallelogram(gridA, gridB)], fill: { color: 'first', alpha: 0.18 } },
         { key: 'x', kind: 'arrow', from: ORIGIN, to: x, color: 'result' },
         { key: 'xLabel', kind: 'label', text: phase >= 4 ? 'f(x)' : 'x', at: x, color: 'result', offset: [18, -10] },
         { key: 'c1', kind: 'arrow', from: ORIGIN, to: col1, color: 'first', width: 4 },
@@ -96,7 +97,7 @@ const kernelImage = (labels: { kernel: string; image: string }): FigureSpec => (
       opacity: show(phase >= 2),
     },
     { key: 'sL', kind: 'label', text: 's', at: [0, 3], color: 'second', offset: [-12, -4], opacity: show(phase === 2) },
-    { key: 'dot', kind: 'dot', at: [3, 3], color: 'result', opacity: show(phase >= 3) },
+    dot('dot', [3, 3], 'result', { opacity: show(phase >= 3) }),
   ],
 });
 
@@ -111,7 +112,7 @@ const matrixTransform: FigureSpec = {
     const x: Pt = phase >= 4 ? [4, 2] : [1, 2];
     return [
       { key: 'grid', kind: 'grid', a: gridA, b: gridB, color: 'first', alpha: 0.35, width: 1 },
-      { key: 'cell', kind: 'poly', points: parallelogram(gridA, gridB), fill: { color: 'first', alpha: 0.18 } },
+      { key: 'cell', kind: 'path', closed: true, subpaths: [parallelogram(gridA, gridB)], fill: { color: 'first', alpha: 0.18 } },
       { key: 'x', kind: 'arrow', from: ORIGIN, to: x, color: 'result' },
       { key: 'xL', kind: 'label', text: phase >= 4 ? 'A·x' : 'x', at: x, color: 'result', offset: [14, -10] },
       { key: 'c1', kind: 'arrow', from: ORIGIN, to: col1, color: 'first', width: 4 },
@@ -139,16 +140,18 @@ const matrixOrder: FigureSpec = {
     return [
       {
         key: 'rdOutline',
-        kind: 'poly',
-        points: parallelogram([0, 2], [-1, 0]),
+        kind: 'path',
+        closed: true,
+        subpaths: [parallelogram([0, 2], [-1, 0])],
         stroke: { color: 'extra', width: 2, dash: [5, 4] },
         opacity: show(phase === 4),
       },
       { key: 'rdL', kind: 'label', text: 'R·D', at: [-0.5, 2], color: 'extra', offset: [0, -12], opacity: show(phase === 2 || phase === 4) },
       {
         key: 'shape',
-        kind: 'poly',
-        points: parallelogram(columns[0], columns[1]),
+        kind: 'path',
+        closed: true,
+        subpaths: [parallelogram(columns[0], columns[1])],
         fill: { color: 'first', alpha: 0.25 },
         stroke: { color: 'first', width: 2 },
       },

@@ -1,9 +1,159 @@
 {
+  "absDistance": [
+    "|x − 2| ist der Abstand von x zur Zahl 2.",
+    "|x − 2| < 3: Gesucht sind alle x, die weniger als 3 von der 2 entfernt sind – nach links und nach rechts.",
+    "Das ist das Intervall (−1, 5). Die Randpunkte gehören nicht dazu (leere Kreise).",
+    "Das Gegenteil |x − 2| > 3 liegt außerhalb: x < −1 oder x > 5 – zwei Bereiche."
+  ],
+  "backSubstitution": [
+    "Ein oberes Dreieckssystem: Unter der Diagonale stehen nur Nullen.",
+    "Letzte Zeile: 2·x₃ = 2, also x₃ = 1. Hier steht nur eine Unbekannte.",
+    "Mittlere Zeile: x₂ + x₃ = 2. x₃ = 1 einsetzen: x₂ = 1.",
+    "Erste Zeile: 2·x₁ + x₂ + x₃ = 4. Bekanntes einsetzen: 2·x₁ = 2, also x₁ = 1. Fertig!"
+  ],
+  "balanceScale": [
+    "3x + 2 = 14 als Waage: Beide Seiten wiegen gleich viel.",
+    "Nimmt man nur LINKS 2 weg, kippt die Waage. Das ist keine erlaubte Umformung.",
+    "Richtig: auf BEIDEN Seiten 2 wegnehmen (| −2). 3x = 12 – wieder im Gleichgewicht.",
+    "Beide Seiten durch 3 teilen (| :3): x = 4. Probe: 3 · 4 + 2 = 14 ✓"
+  ],
   "basisChange": [
     "Basis B mit b₁ = (1, 1) und b₂ = (1, −1). Der Vektor v = (3, 1) = 2 · b₁ + 1 · b₂ hat die B-Koordinaten (2, 1).",
     "f(x, y) = (2x + y, x + 2y). Es ist f(b₁) = (3, 3) = 3 · b₁: b₁ wird nur gestreckt.",
     "f(b₂) = (1, −1) = 1 · b₂: b₂ bleibt unverändert.",
     "Also f(v) = 2 · 3 · b₁ + 1 · 1 · b₂ = (6, 6) + (1, −1) = (7, 5). In B-Koordinaten: (2, 1) ↦ (6, 1) – einfach komponentenweise mit 3 und 1 multipliziert."
+  ],
+  "basisCoordinates": [
+    "Standardbasis: w = 4 · e₁ + 5 · e₂. Koordinaten bezüglich (e₁, e₂): (4, 5).",
+    "Jetzt wechseln wir das „Gitter“: Die Basis B = (v₁, v₂) erzeugt ein schiefes Koordinatensystem.",
+    "In diesem Gitter erreichen wir w mit 1 Schritt in v₁-Richtung und 2 Schritten in v₂-Richtung.",
+    "Derselbe Vektor w hat bezüglich B die Koordinaten (1, 2). Die Basis legt fest, wie wir Vektoren in Zahlen übersetzen."
+  ],
+  "binomialDifference": [
+    "Ein Quadrat a × a (hier a = 3) hat die Fläche a².",
+    "Wir schneiden oben rechts ein Quadrat b × b weg (hier b = 1). Übrig bleibt eine L-Form mit der Fläche a² − b².",
+    "Die L-Form zerlegen wir: unten ein Rechteck a × (a − b), oben ein Streifen (a − b) × b.",
+    "Den Streifen drehen und rechts anlegen: Es entsteht ein Rechteck (a + b) × (a − b). Also a² − b² = (a + b)(a − b). Hier: 9 − 1 = 4 · 2."
+  ],
+  "binomialSquare": [
+    "Ein Quadrat mit der Seitenlänge a + b (hier a = 3, b = 1). Seine Fläche ist (a + b)².",
+    "Unten links passt ein Quadrat a × a: Fläche a².",
+    "Zwei Rechtecke a × b: zusammen 2ab. Genau dieser „gemischte“ Teil wird beim Fehler (a + b)² = a² + b² vergessen.",
+    "Oben rechts bleibt ein kleines Quadrat b × b. Zusammen: (a + b)² = a² + 2ab + b². Hier: 16 = 9 + 6 + 1."
+  ],
+  "bisectionInterval": [
+    "f(x) = x³ − x − 2 auf [1, 2]: f(1) = −2 < 0 und f(2) = 4 > 0. Ein Vorzeichenwechsel – also liegt eine Nullstelle im Intervall.",
+    "Mitte 1,5: f(1,5) = −0,125 < 0. Das Vorzeichen wechselt nun zwischen 1,5 und 2 – wir behalten [1,5; 2].",
+    "Mitte 1,75: f(1,75) = 1,609 > 0. Die Nullstelle liegt in [1,5; 1,75].",
+    "Mitte 1,625: f = 0,666 > 0. Neues Intervall [1,5; 1,625]. Jeder Schritt halbiert die Länge: 1, 0,5, 0,25, 0,125 …"
+  ],
+  "cancellationDigits": [
+    "Zwei Messwerte mit je 6 gültigen Ziffern: 1,23457 und 1,23451. Beide sind auf etwa 4·10⁻⁶ (relativ) genau.",
+    "Die führenden Ziffern 1,2345 sind in beiden Zahlen gleich. Genau sie heben sich bei der Subtraktion auf.",
+    "Ergebnis 0,00006: Nur die letzte Ziffer ist übrig geblieben – von 6 gültigen Ziffern bleibt 1.",
+    "Diese letzte Ziffer ist nur auf ±1 genau: 6 ± 1, also etwa 17 % relative Unsicherheit statt 4·10⁻⁶. Auslöschung verstärkt den alten Fehler."
+  ],
+  "cartesianProduct": [
+    "A = {1, 2, 3} auf der x-Achse, B = {1, 2} auf der y-Achse.",
+    "A × B: jedes a ∈ A mit jedem b ∈ B kombiniert – 3 · 2 = 6 Paare, also 6 Punkte.",
+    "(1, 2) und (2, 1) sind verschiedene Punkte: Bei Paaren zählt die Reihenfolge.",
+    "Die Abbildung f: A → B mit f(1) = 2, f(2) = 1, f(3) = 2 als Punktmenge: In jeder Spalte liegt GENAU EIN Punkt. Das ist der Graph von f – eine Teilmenge von A × B."
+  ],
+  "charPolyCollapse": [
+    "λ = 0: A − 0 · I = (2 1; 1 2). Die Spalten (2, 1) und (1, 2) spannen ein Parallelogramm mit Fläche det = 4 − 1 = 3 auf.",
+    "λ = 1: A − I = (1 1; 1 1). Beide Spalten sind (1, 1) – das Parallelogramm klappt zusammen, det = 0. Also ist 1 ein Eigenwert!",
+    "λ = 2: A − 2I = (0 1; 1 0). Spalten (0, 1) und (1, 0): wieder eine echte Fläche, det = 0 − 1 = −1.",
+    "λ = 3: A − 3I = (−1 1; 1 −1). Die Spalten (−1, 1) und (1, −1) sind entgegengesetzt – Fläche 0. Also ist 3 ein Eigenwert!"
+  ],
+  "clockF5": [
+    "ℤ/5 = {0, 1, 2, 3, 4}. Gibt es auch hier Nullteiler?",
+    "Vielfache von 2: 0, 2, 4, 1, 3 – ALLE Zahlen werden erreicht, auch die 1. Bei 2 · 3 = 6 = 1 landet man auf der 1: Also ist 3 das Inverse von 2.",
+    "Weil 5 eine Primzahl ist, klappt das mit jeder Zahl ungleich 0: 1 · 1 = 1, 2 · 3 = 1, 4 · 4 = 1. ℤ/5 ist ein Körper."
+  ],
+  "clockZ12": [
+    "ℤ/12: Rechnen auf der Uhr. Es gibt nur die Zahlen 0 bis 11; nach 11 kommt wieder 0.",
+    "9 + 5: Von 9 aus 5 Schritte weiter landet man bei 2. Also 9 + 5 = 2 in ℤ/12 (denn 14 = 12 + 2).",
+    "Das neutrale Element ist 0: „0 Schritte weiter“ ändert nichts.",
+    "Das Inverse von 5 ist 7: Von 5 aus 7 Schritte führen zurück zur 0. Also 5 + 7 = 0 und −5 = 7.",
+    "Mit Schritten der Länge 4 erreicht man nur 0, 4, 8 – dann ist man wieder bei 0. {0, 4, 8} ist eine Untergruppe, und 4 hat die Ordnung 3."
+  ],
+  "clockZ6": [
+    "ℤ/6 = {0, 1, 2, 3, 4, 5}. Multiplizieren heißt wiederholtes Addieren: 2 · 3 = 3 + 3.",
+    "2 · 3 = 3 + 3 = 6 = 0. Zwei Elemente ungleich 0 haben das Produkt 0: 2 und 3 sind Nullteiler.",
+    "Die Vielfachen von 2 sind nur 0, 2, 4. Die 1 wird nie erreicht – es gibt kein x mit 2 · x = 1. Die 2 ist nicht invertierbar.",
+    "Anders bei 5: 5 · 5 = 25 = 4 · 6 + 1, also 5 · 5 = 1. Die 5 ist invertierbar, denn ggT(5, 6) = 1."
+  ],
+  "cobwebFixedPoint": [
+    "Gesucht ist ein Fixpunkt von φ(x) = cos x: der Schnittpunkt der Kurve y = cos x mit der Winkelhalbierenden y = x.",
+    "Start x₀ = 1. Senkrecht hoch zur Kurve (φ(1) = 0,540), dann waagerecht zur Winkelhalbierenden: Das ist x₁ = 0,540.",
+    "Zwei weitere Schritte: x₂ = 0,858, x₃ = 0,654, x₄ = 0,794 … Die Folge springt abwechselnd links und rechts vom Fixpunkt.",
+    "Eine Spirale, die sich zum Fixpunkt x* = 0,739 zusammenzieht. Weil |φ′(x*)| = 0,67 < 1 ist, konvergiert die Iteration."
+  ],
+  "completingSquare": [
+    "x² + 6x: ein Quadrat x² und ein Rechteck 6x (Breite 6).",
+    "Das Rechteck halbieren: zwei Streifen 3x. Einer bleibt rechts, der andere wandert nach oben.",
+    "Zum großen Quadrat (x + 3)² fehlt nur die Ecke: ein Quadrat 3 · 3 = 9.",
+    "Also x² + 6x = (x + 3)² − 9. Mit +5: x² + 6x + 5 = (x + 3)² − 4."
+  ],
+  "complexMultiplication": [
+    "z = 1 + i hat den Betrag √2 und den Winkel 45°.",
+    "w = 1 + √3·i hat den Betrag 2 und den Winkel 60°.",
+    "Das Produkt z · w hat den Winkel 45° + 60° = 105° und den Betrag √2 · 2 = 2√2 ≈ 2,83. Winkel addieren sich, Beträge multiplizieren sich.",
+    "Zur Kontrolle algebraisch: (1 + i)(1 + √3 i) = (1 − √3) + (1 + √3) i ≈ −0,73 + 2,73 i – genau der grüne Punkt."
+  ],
+  "complexOperations": [
+    "In der Gaußschen Zahlenebene ist z = 2 + i der Punkt (2, 1) und w = 1 + 2i der Punkt (1, 2). Waagerecht: Realteil, senkrecht: Imaginärteil.",
+    "Addition wie bei Vektoren: z + w = 3 + 3i. Man hängt w an die Spitze von z.",
+    "Konjugieren: z̄ = 2 − i ist das Spiegelbild von z an der reellen Achse.",
+    "Multiplikation mit i: i · z = 2i + i² = −1 + 2i. Das ist z, um 90° gegen den Uhrzeigersinn gedreht!"
+  ],
+  "composition": [
+    "Erst f: A → B (blau): 1 ↦ a, 2 ↦ c, 3 ↦ b.",
+    "Dann g: B → C (orange): a ↦ y, b ↦ x, c ↦ y. Die Ziele von f sind die Startpunkte von g.",
+    "Pfad für 1: erst zu f(1) = a, dann zu g(a) = y. Also (g ∘ f)(1) = g(f(1)) = y.",
+    "g ∘ f: A → C fasst beide Schritte zusammen: 1 ↦ y, 2 ↦ y, 3 ↦ x. Man liest „g nach f“ – f wird zuerst angewendet."
+  ],
+  "conditionAmplifier": [
+    "Log-Log-Bild: waagerecht ln x, senkrecht ln f(x). Die Breite des blauen Bandes ist der relative Eingabefehler (hier ±25 %).",
+    "f(x) = √x ist im Log-Log-Bild eine Gerade mit Steigung ½. Das Ausgabeband ist nur halb so breit: κ = ½, der Fehler wird gedämpft.",
+    "f(x) = x³: Steigung 3. Das Ausgabeband ist dreimal so breit: κ = 3, der relative Fehler wird verdreifacht.",
+    "Merke: Die Konditionszahl κ(x) = |x f′(x)/f(x)| ist die Steigung von f im Log-Log-Bild. Steil = schlecht konditioniert."
+  ],
+  "continuityTypes": [
+    "Stetig: x² lässt sich ohne Absetzen zeichnen. An jeder Stelle stimmt der Grenzwert mit dem Funktionswert überein.",
+    "Sprungstelle: Die Vorzeichenfunktion springt bei 0 von −1 auf 1. Links- und rechtsseitiger Grenzwert sind verschieden.",
+    "Polstelle: 1/x wächst bei 0 über alle Grenzen – nach links gegen −∞, nach rechts gegen +∞.",
+    "Oszillation: sin(1/x) schwankt bei 0 unendlich oft zwischen −1 und 1. Es gibt nicht einmal einseitige Grenzwerte."
+  ],
+  "contourGradient": [
+    "f(x, y) = x² + 2y² als Landkarte: Jede Höhenlinie verbindet Punkte mit gleichem Funktionswert (0,5; 1; 2; 3; 4). Innen ist es tief, außen hoch.",
+    "An einigen Punkten der Gradient ∇f = (2x, 4y). Er steht SENKRECHT auf der Höhenlinie durch den Punkt.",
+    "Der Gradient zeigt bergauf, in Richtung des steilsten Anstiegs. Seine Länge gibt an, wie steil es dort ist.",
+    "Im Ursprung ist ∇f = (0, 0): Der tiefste Punkt. An Extremstellen ist der Gradient der Nullvektor."
+  ],
+  "criticalPoints": [
+    "f = x² + y²: Höhenlinien sind Kreise, die Werte wachsen nach außen. Im Ursprung liegt ein Minimum (Talboden).",
+    "f = −(x² + y²): dieselben Kreise, aber die Werte fallen nach außen. Im Ursprung liegt ein Maximum (Bergspitze).",
+    "f = x² − y²: Höhenlinien sind Hyperbeln. In x-Richtung steigt f (orange), in y-Richtung fällt f (blau). Im Ursprung ist ∇f = 0, aber es ist weder Minimum noch Maximum – ein Sattelpunkt."
+  ],
+  "curveSketching": [
+    "f(x) = x³ − 3x mit f′(x) = 3x² − 3 und f″(x) = 6x.",
+    "Hochpunkt bei x = −1: f′ = 0 (waagerechte Tangente), f″ = −6 < 0 – der Graph ist rechtsgekrümmt.",
+    "Wendepunkt bei x = 0: f″ = 0 und die Krümmung wechselt. Die Steigung ist dort mit f′(0) = −3 am kleinsten.",
+    "Tiefpunkt bei x = 1: f′ = 0, f″ = 6 > 0 – linksgekrümmt. Hochpunkt, Wendepunkt, Tiefpunkt: waagerecht, am steilsten, waagerecht."
+  ],
+  "deMorgan": [
+    "Linke Seite, Schritt 1: A ∪ B einfärben.",
+    "Linke Seite, Schritt 2: (A ∪ B)ᶜ ist alles AUSSERHALB davon (grün).",
+    "Rechte Seite, Schritt 1: Aᶜ – alles außerhalb von A (blau schraffiert gedacht).",
+    "Rechte Seite, Schritt 2: dazu Bᶜ – alles außerhalb von B (orange). Wo sich beide Farben überlagern, liegt Aᶜ ∩ Bᶜ.",
+    "Aᶜ ∩ Bᶜ (grün) ist genau dieselbe Fläche wie (A ∪ B)ᶜ: „nicht in A oder B“ heißt „nicht in A und nicht in B“."
+  ],
+  "derivativeGraph": [
+    "f(x) = x³ − 3x. Wo steigt der Graph, wo fällt er, wo ist er waagerecht?",
+    "Tangenten an einigen Stellen: Bei x = −1 und x = 1 sind sie waagerecht – Steigung 0. Dazwischen fällt f, außen steigt f.",
+    "Trägt man die Steigungen als neue Funktion auf, entsteht f′(x) = 3x² − 3 (orange). Sie ist positiv, wo f steigt, und negativ, wo f fällt.",
+    "Die Nullstellen von f′ (x = ±1) markieren die Hoch- und Tiefpunkte von f: Hochpunkt (−1, 2), Tiefpunkt (1, −2)."
   ],
   "detArea": [
     "Das Einheitsquadrat hat die Fläche 1. Wir wenden f(x) = A x mit A = (3 1; 1 2) an. Dazu e₁ = (1, 0), e₂ = (0, 1) und x = (1, 1).",
@@ -12,17 +162,268 @@
     "Das Quadrat wird zum Parallelogramm mit der Fläche |3 · 2 − 1 · 1| = 5. Die Determinante sagt: Flächen werden mit 5 multipliziert.",
     "Die Ecke x = (1, 1) landet bei f(x) = (3 + 1, 1 + 2) = (4, 3) – der gegenüberliegenden Ecke des Parallelogramms."
   ],
+  "detRules": [
+    "Die Spalten a = (1, 0) und b = (1, 2) spannen ein Parallelogramm auf. Seine Fläche: det(a, b) = 1 · 2 − 1 · 0 = 2.",
+    "Verdoppeln wir a zu (2, 0), verdoppelt sich die Fläche: det = 2 · 2 − 1 · 0 = 4. Die Determinante ist linear in jeder Spalte.",
+    "Schieben wir b längs a nach b + a = (3, 2), bleiben Grundseite und Höhe gleich: Die Fläche bleibt 4.",
+    "Kippen wir b auf die Gerade durch a, etwa nach (3, 0), klappt das Parallelogramm zu einer Strecke zusammen: Fläche 0, denn die Spalten sind linear abhängig."
+  ],
+  "differenceQuotientError": [
+    "Doppelt-logarithmisch: h = 10ᵗ nach rechts, Fehler nach oben. Verfahrensfehler ≈ (h/2)·f″: eine Gerade mit Steigung +1 – kleineres h hilft.",
+    "Rundungsfehler ≈ u·|f|/h: eine Gerade mit Steigung −1 – bei kleinem h dominiert die Auslöschung im Zähler.",
+    "Beide Anteile addieren sich zu einer V-förmigen Kurve. Das Minimum liegt bei h ≈ 10⁻⁸ ≈ √eps mit Fehler ≈ 10⁻⁸.",
+    "Zu großes h: Verfahrensfehler. Zu kleines h: Rundungsfehler. „So klein wie möglich“ ist falsch!"
+  ],
+  "distributiveArea": [
+    "Ein Rechteck mit den Seiten a + b und c + d. Seine Fläche ist (a + b)(c + d).",
+    "Teil 1: a · c.",
+    "Teil 2: a · d.",
+    "Teil 3: b · c.",
+    "Teil 4: b · d. Zusammen: (a + b)(c + d) = ac + ad + bc + bd – jeder mit jedem."
+  ],
+  "dominoes": [
+    "Unendlich viele Dominosteine stehen in einer Reihe. Stein n steht für die Aussage A(n).",
+    "Induktionsanfang: Der erste Stein fällt um. Das heißt: A(1) ist wahr.",
+    "Induktionsschritt: Die Steine stehen so, dass JEDER Stein k beim Umfallen den Stein k + 1 mitreißt. Das heißt: Aus A(k) folgt A(k + 1).",
+    "Beides zusammen: Alle Steine fallen, einer nach dem anderen. A(n) gilt für alle n.",
+    "Ohne Induktionsanfang fällt gar nichts – obwohl jeder Stein den nächsten umwerfen WÜRDE.",
+    "Ohne gültigen Schritt reißt die Kette ab: Hier ist die Lücke nach Stein 5 zu groß. Ab Stein 6 bleibt alles stehen."
+  ],
+  "dotProduct": [
+    "Zwei Vektoren: a = (4, 0) und b = (3, 2). Wie viel von b zeigt in Richtung a?",
+    "Man fällt das Lot von der Spitze von b auf die Gerade durch a. Der Fußpunkt ist (3, 0).",
+    "Der Pfeil vom Ursprung zum Fußpunkt ist die Projektion von b auf a: (3, 0) = (12/16) · a.",
+    "Skalarprodukt: a · b = 4 · 3 + 0 · 2 = 12 = |a| · |b| · cos φ. Der Winkel ist φ ≈ 33,7°."
+  ],
+  "eigenMap": [
+    "A = (2 1; 1 2). Blau: v₁ = (1, 1), orange: v₂ = (−1, 1), rot: ein gewöhnlicher Vektor x = (1, 0).",
+    "Gestrichelt: die Geraden durch v₁, v₂ und x. Die Geraden durch v₁ und v₂ sind die Eigenräume.",
+    "Jetzt wirkt A auf die ganze Ebene: A v₁ = 3 v₁ und A v₂ = 1 · v₂ bleiben auf ihren Geraden. A x = (2, 1) verlässt dagegen seine Gerade.",
+    "A streckt also in Richtung (1, 1) um den Faktor 3 und lässt die Richtung (−1, 1) unverändert. Mehr macht A nicht – das ist das ganze Geheimnis dieser Matrix."
+  ],
+  "eigenSearch": [
+    "A = (2 1; 1 2). Testvektor u = (1, 0) mit seiner Geraden (gestrichelt). A · u = (2, 1) liegt NICHT auf dieser Geraden: Die Richtung ändert sich.",
+    "u = (0, 1): A · u = (1, 2). Wieder kippt der Vektor aus seiner Geraden heraus.",
+    "u = (1, 1): A · u = (3, 3) = 3·u. Der Vektor bleibt auf seiner Geraden und wird nur verdreifacht – ein Eigenvektor zum Eigenwert 3!",
+    "u = (−1, 1): A · u = (−2 + 1, −1 + 2) = (−1, 1) = 1·u. Auch ein Eigenvektor, diesmal zum Eigenwert 1."
+  ],
+  "eigenvalueScaling": [
+    "Ein Eigenvektor v = (2, 1) und seine Gerade. Ist A v = λ v, so hängt alles nur vom Faktor λ ab. Bei λ = 1 bleibt v unverändert.",
+    "λ = 2: A v = 2 v – doppelt so lang, gleiche Richtung.",
+    "λ = ½: A v = ½ v – halb so lang, gleiche Richtung.",
+    "λ = −1: A v = −v – gleiche Gerade, aber umgeklappt in die Gegenrichtung.",
+    "λ = 0: A v = 0 – v wird auf den Nullpunkt gequetscht. Dann ist v ein Vektor im Kern von A."
+  ],
+  "eliminationSweep": [
+    "Wir zerlegen A = L·R. Links steht A, rechts entsteht L (zunächst nur die Einsen auf der Diagonale).",
+    "Schritt 1: Faktoren l₂₁ = 4/2 = 2 und l₃₁ = 8/2 = 4. Zeile 2 − 2·Zeile 1, Zeile 3 − 4·Zeile 1: Die erste Spalte unter dem Pivot wird 0. Die Faktoren wandern in L.",
+    "Schritt 2: Faktor l₃₂ = 3/1 = 3. Zeile 3 − 3·Zeile 2 macht den letzten Eintrag unter der Diagonale zu 0. Links steht nun R.",
+    "Fertig: A = L·R. L (links unten) enthält die Faktoren, R (oben rechts) die Zeilen nach der Elimination."
+  ],
+  "euclidRectangle": [
+    "Ein Rechteck 12 × 9. Gesucht ist das größte Quadrat, mit dem man es lückenlos auslegen kann. Seine Seitenlänge ist ggT(12, 9).",
+    "Schneide das größte Quadrat ab, das hineinpasst: 9 × 9. Das ist der Schritt 12 = 1 · 9 + 3. Übrig bleibt ein Streifen 3 × 9.",
+    "Im Streifen passen genau drei Quadrate 3 × 3: 9 = 3 · 3 + 0. Der Rest ist 0 – der Algorithmus endet.",
+    "Mit 3 × 3-Quadraten lässt sich das ganze Rechteck auslegen, mit keinem größeren Quadrat. Also ggT(12, 9) = 3 – der letzte Rest ungleich 0."
+  ],
+  "eulerSteps": [
+    "y′ = y, y(0) = 1: Die exakte Lösung eᵗ (blau). Wir wollen y(1) = e = 2,718 mit dem Euler-Verfahren annähern.",
+    "Schrittweite h = 0,5: zwei Tangentenschritte (Steigung = aktueller y-Wert). Ergebnis y(1) ≈ 2,25 – deutlich zu klein.",
+    "h = 0,25: vier Schritte, y(1) ≈ 1,25⁴ = 2,441. Der Polygonzug liegt näher an der Kurve.",
+    "h = 0,1: zehn Schritte, y(1) ≈ 1,1¹⁰ = 2,594. Der Fehler ist etwa proportional zu h – halbe Schrittweite, halber Fehler (Ordnung 1)."
+  ],
+  "eulerTangent": [
+    "2ˣ geht durch (0, 1). Die Tangente dort hat die Steigung ln 2 ≈ 0,69 – flacher als 45°.",
+    "eˣ: Die Tangente bei x = 0 hat genau die Steigung 1. Das ist die Besonderheit der Zahl e ≈ 2,718.",
+    "3ˣ: Die Steigung ln 3 ≈ 1,10 ist schon größer als 1 – steiler als 45°.",
+    "Zwischen 2 und 3 liegt die Basis e, bei der die Steigung bei 0 genau 1 ist – deshalb (eˣ)′ = eˣ."
+  ],
+  "evenOddSymmetry": [
+    "f(x) = x²: Die rechte Hälfte des Graphen (x ≥ 0).",
+    "Spiegelt man sie an der y-Achse, entsteht die linke Hälfte: f(−x) = f(x). Die Funktion ist gerade.",
+    "g(x) = x³: Wieder die rechte Hälfte (x ≥ 0).",
+    "Hier wird die Hälfte um den Ursprung gedreht (Punktspiegelung): g(−x) = −g(x). Die Funktion ist ungerade."
+  ],
+  "fieldInverses": [
+    "In 𝔽₇: Jedes a ≠ 0 hat genau ein Inverses. 2 · 4 = 8 = 1, 3 · 5 = 15 = 1, 6 · 6 = 36 = 1. Die Zuordnung a ↦ a⁻¹ ist sogar bijektiv.",
+    "In ℤ/6 dagegen haben nur 1 und 5 ein Inverses. 2, 3 und 4 haben einen gemeinsamen Teiler mit 6 – für sie gibt es keins."
+  ],
+  "floatNumberLine": [
+    "Spielzeugsystem b = 2, t = 3. Im Bereich [1, 2) liegen die Maschinenzahlen 1; 1,25; 1,5; 1,75 – Abstand 0,25.",
+    "In [2, 4) gibt es wieder vier Zahlen, aber der Abstand hat sich verdoppelt: 0,5.",
+    "In [4, 8): wieder vier Zahlen, Abstand 1. Mit jeder Zweierpotenz verdoppelt sich der Abstand.",
+    "Absolut wächst der Abstand, relativ nicht: Abstand / Zahl liegt immer zwischen etwa 14 % und 25 %. Das ist die Idee der Gleitkommazahlen."
+  ],
+  "fractionAddition": [
+    "½ und ⅓ sind verschieden große Stücke. Man kann sie nicht einfach zählen.",
+    "Beide Streifen in Sechstel zerlegen (Hauptnenner 6): ½ = 3⁄6 und ⅓ = 2⁄6.",
+    "Jetzt passen die Stücke zusammen: 3⁄6 + 2⁄6 = 5⁄6.",
+    "Der typische Fehler ½ + ⅓ = 2⁄5 (rot) wäre kleiner als ½ allein – das kann nicht stimmen."
+  ],
+  "functionTransform": [
+    "Ausgangspunkt: die Normalparabel f(x) = x² mit dem Scheitel (0, 0).",
+    "f(x − 2): Der Graph wandert 2 nach RECHTS. Der Scheitel liegt jetzt bei (2, 0).",
+    "2 · f(x − 2): Streckung in y-Richtung mit Faktor 2 – die Parabel wird schlanker, der Scheitel bleibt.",
+    "2 · f(x − 2) + 1: Verschiebung um 1 nach oben. Scheitel (2, 1) – das ist die Scheitelform 2(x − 2)² + 1."
+  ],
+  "fundamentalTheorem": [
+    "f(t) = 1 + t/2. Die Flächenfunktion A(x) misst die Fläche unter f von 0 bis x. Für x = 1: A(1) = 1,25.",
+    "x = 2: A(2) = 3. Die Fläche wächst mit x.",
+    "x = 3: A(3) = 5,25. Wie schnell wächst sie?",
+    "Schiebt man x ein kleines Stück h weiter, kommt ein schmaler Streifen dazu: ungefähr ein Rechteck der Höhe f(x). Also A′(x) = f(x) – die Flächenfunktion ist eine Stammfunktion von f!"
+  ],
+  "gaussSum": [
+    "1 + 2 + 3 + 4 als Treppe: Spalte k hat k Kästchen.",
+    "Eine zweite Treppe, auf den Kopf gestellt, passt genau in die Lücke darüber.",
+    "Zusammen ergeben beide ein Rechteck aus 4 · 5 = 20 Kästchen. Eine Treppe hat also 20 / 2 = 10. Allgemein: 1 + 2 + … + n = n(n + 1)/2.",
+    "So sieht der Induktionsschritt aus: Von n = 4 zu n = 5 kommt genau eine neue Spalte mit 5 Kästchen dazu. Also S(5) = S(4) + 5 = 15."
+  ],
+  "geometricSeries": [
+    "Das Einheitsquadrat hat die Fläche 1. Die Hälfte davon: ½.",
+    "Dazu die Hälfte vom Rest: ½ + ¼ = ¾.",
+    "Immer weiter: ½ + ¼ + ⅛ + 1/16 = 15/16. Es fehlt immer genau so viel, wie zuletzt dazukam.",
+    "Nach unendlich vielen Schritten ist das Quadrat gefüllt: ½ + ¼ + ⅛ + … = 1. Unendlich viele Summanden, aber eine endliche Summe!"
+  ],
+  "gershgorinDiscs": [
+    "Die komplexe Ebene (waagerecht Realteil, senkrecht Imaginärteil). Gesucht: Wo liegen die Eigenwerte von A = (2 1 0; −1 2 1; 0 −1 4)?",
+    "Zeile 1: Mittelpunkt a₁₁ = 2, Radius |1| + |0| = 1.",
+    "Zeile 2: Mittelpunkt a₂₂ = 2, Radius |−1| + |1| = 2. Dieser Kreis enthält den ersten.",
+    "Zeile 3: Mittelpunkt a₃₃ = 4, Radius |0| + |−1| = 1.",
+    "Die tatsächlichen Eigenwerte 3,54 und 2,23 ± 1,12i (grün) liegen alle in der Vereinigung der Kreise – ohne eine einzige Gleichung gelöst zu haben."
+  ],
+  "householderReflection": [
+    "Gegeben x = (3, 4), ‖x‖ = 5. Ziel: eine Spiegelung H, die x auf die e₁-Achse abbildet – dann steht in der zweiten Komponente eine 0.",
+    "Wir wählen v = x + ‖x‖·e₁ = (8, 4) (halb gezeichnet). Die Spiegelachse ist die Gerade durch den Ursprung senkrecht zu v.",
+    "Spiegelt man x an dieser Achse, landet es bei Hx = (−5, 0): gleiche Länge 5, zweite Komponente 0.",
+    "Warum +‖x‖? Bei x₁ > 0 vermeidet v = x + ‖x‖e₁ Auslöschung in der ersten Komponente. Mit H = I − 2vvᵀ/vᵀv wird so Spalte für Spalte die QR-Zerlegung aufgebaut."
+  ],
+  "ieeeLayout": [
+    "Eine double-Zahl belegt 64 Bit – 64 Nullen und Einsen.",
+    "Bit 1 ist das Vorzeichen s: 0 heißt plus, 1 heißt minus.",
+    "Die nächsten 11 Bit speichern den Exponenten E (mit Verschiebung 1023).",
+    "Die restlichen 52 Bit speichern die Mantisse f – die Ziffern nach der versteckten führenden 1.",
+    "Beispiel −6,5 = −(1,101)₂ · 2²: s = 1, E = 2 + 1023 = 1025, f = 101000…0."
+  ],
+  "illConditionedLines": [
+    "Zwei fast parallele Geraden: x + y = 2 und x + 1,1 y = 2,1. Sie schneiden sich in (1, 1) – das ist die Lösung des Systems.",
+    "Die rechte Seite der zweiten Gleichung ändert sich nur um 0,1 (rund 5 %): x + 1,1 y = 2,2. Die Gerade verschiebt sich minimal.",
+    "Der Schnittpunkt wandert von (1, 1) nach (0, 2) – um eine ganze Einheit! Winzige Änderung der Daten, riesige Änderung der Lösung.",
+    "Je kleiner der Winkel zwischen den Geraden, desto größer dieser Effekt. Die Konditionszahl misst genau das (hier ≈ 44; mit 1,0001 statt 1,1 sogar 40 004)."
+  ],
+  "implicationSets": [
+    "A ⇒ B mit A: „ist ein Quadrat“, B: „ist ein Rechteck“. Jedes Quadrat ist ein Rechteck – die Menge der Quadrate liegt IN der Menge der Rechtecke.",
+    "Ein Quadrat (Punkt in A) liegt automatisch auch in B. Das ist die Implikation selbst.",
+    "Ein Dreieck liegt außerhalb von B – und damit auch außerhalb von A. Das ist die Kontraposition: ¬B ⇒ ¬A. Sie ist gleichwertig zu A ⇒ B.",
+    "Ein 2×3-Rechteck liegt in B, aber nicht in A. Also folgt aus B NICHT A (Umkehrschluss falsch) und aus ¬A NICHT ¬B."
+  ],
+  "implicationTable": [
+    "A: „Es regnet.“ B: „Die Straße ist nass.“ A ⇒ B ist ein Versprechen: „Wenn es regnet, ist die Straße nass.“",
+    "Es regnet und die Straße ist nass: Das Versprechen wurde gehalten – A ⇒ B ist wahr.",
+    "Es regnet, aber die Straße ist trocken: Das Versprechen ist gebrochen – A ⇒ B ist falsch. Das ist der EINZIGE falsche Fall.",
+    "Es regnet nicht: Dann hat das Versprechen gar nichts behauptet. Ob die Straße nass ist (Rasensprenger) oder nicht – gebrochen wurde es nicht. Also wahr.",
+    "Ergebnis: A ⇒ B ist nur falsch, wenn A wahr und B falsch ist."
+  ],
+  "improperIntegral": [
+    "Fläche unter 1/x² von 1 bis b = 2: Sie beträgt 1 − 1/2 = 0,5.",
+    "b = 5: 1 − 1/5 = 0,8.",
+    "b = 10: 0,9. Für b → ∞ geht 1 − 1/b gegen 1. Die unendlich lange Fläche hat den endlichen Inhalt 1!",
+    "Zum Vergleich 1/x (gestrichelt): Fläche von 1 bis b ist ln b → ∞. Der Graph liegt nur wenig höher, doch die Fläche ist unendlich groß."
+  ],
+  "inequalityFlip": [
+    "Auf der Zahlengeraden liegt a = −2 links von b = 3: −2 < 3.",
+    "Multipliziert man beide mit −1, spiegeln sich die Punkte am Nullpunkt: a wandert nach 2, b nach −3.",
+    "Jetzt liegt −a = 2 rechts von −b = −3: 2 > −3. Die Reihenfolge hat sich umgekehrt – das Zeichen dreht sich."
+  ],
+  "injSurj": [
+    "Injektiv, nicht surjektiv: Kein Element von B wird doppelt getroffen – aber c wird gar nicht getroffen.",
+    "Surjektiv, nicht injektiv: Jedes Element von B wird getroffen – aber c doppelt (von 3 und 4).",
+    "Bijektiv: Jedes Element von B wird GENAU EINMAL getroffen. Die Elemente von A und B sind perfekt gepaart.",
+    "Weder noch: a wird doppelt getroffen (nicht injektiv), b gar nicht (nicht surjektiv). Es ist trotzdem eine Abbildung!"
+  ],
+  "intervalLine": [
+    "[−1, 3]: abgeschlossen. Beide Randpunkte gehören dazu – gefüllte Punkte, eckige Klammern.",
+    "(−1, 3): offen. Die Randpunkte gehören NICHT dazu – leere Kreise, runde Klammern.",
+    "[−1, 3): halboffen. −1 gehört dazu, 3 nicht.",
+    "[1, ∞): alle x ≥ 1. Bei ∞ steht immer eine runde Klammer – unendlich ist keine Zahl."
+  ],
+  "inverseMap": [
+    "f ist bijektiv: 1 ↦ b, 2 ↦ c, 3 ↦ a. Jedes Element von B wird genau einmal getroffen.",
+    "Alle Pfeile umdrehen (grün) ergibt wieder eine Abbildung: f⁻¹: B → A mit f⁻¹(a) = 3, f⁻¹(b) = 1, f⁻¹(c) = 2.",
+    "Jetzt ein nicht bijektives h: 1 ↦ a, 2 ↦ a, 3 ↦ b.",
+    "Umgedreht hätte a zwei Pfeile und c keinen – das ist keine Abbildung. Eine Umkehrabbildung gibt es nur für bijektive Abbildungen."
+  ],
+  "inverseReflection": [
+    "Der Graph von f(x) = x² für x ≥ 0. Der Punkt (2, 4) liegt darauf.",
+    "Die Winkelhalbierende y = x ist die Spiegelachse.",
+    "Spiegeln vertauscht x und y: Aus (2, 4) wird (4, 2). So entsteht der Graph der Umkehrfunktion √x.",
+    "Eingabe und Ausgabe haben die Rollen getauscht: f(2) = 4 und f⁻¹(4) = 2."
+  ],
+  "jacobiZigzag": [
+    "Jede Gleichung ist eine Gerade: 4x₁ + x₂ = 1 (steil) und 2x₁ + 5x₂ = 2 (flach). Die Lösung (1/6, 1/3) ist der Schnittpunkt.",
+    "Jacobi, Start (0, 0): Die Iterierten springen kreuz und quer, nähern sich dem Schnittpunkt aber an: (0,25; 0,4) → (0,15; 0,3) → (0,175; 0,34).",
+    "Gauß-Seidel: erst x₁ aus der ersten Geraden (waagerecht), dann x₂ aus der zweiten (senkrecht) – eine Treppe, die direkt in den Schnittpunkt läuft.",
+    "Nach drei Schritten: Fehler bei Jacobi 8·10⁻³, bei Gauß-Seidel 8·10⁻⁴. Der Konvergenzfaktor ist ρ = 0,316 (Jacobi) bzw. ρ = 0,1 = 0,316² (Gauß-Seidel)."
+  ],
   "kernelImage": [
     "f(x, y) = (x + y, x + y). Die Vektoren p = (2, −2) und q = (−1, 1) liegen auf der Geraden y = −x.",
     "f(p) = (0, 0) und f(q) = (0, 0): Beide werden auf den Nullvektor gequetscht. Diese Gerade ist der Kern.",
     "Nun r = (3, 0) und s = (0, 3). Sie liegen auf einer zum Kern parallelen Geraden (x + y = 3).",
     "f(r) = f(s) = (3, 3): Die ganze Gerade landet in einem Punkt. Alle Bilder liegen auf y = x – das ist das Bild. Dim Kern + Dim Bild = 1 + 1 = 2 = dim ℝ²."
   ],
+  "lagrange": [
+    "Gesucht: der größte Wert von f(x, y) = x + y auf dem Einheitskreis x² + y² = 1 (die Nebenbedingung).",
+    "Höhenlinien von f sind Geraden x + y = c. Für c = −1, 0, 1 schneiden sie den Kreis – dort sind noch größere Werte möglich.",
+    "Die größte Höhenlinie, die den Kreis noch trifft, BERÜHRT ihn nur: c = √2 im Punkt (1/√2, 1/√2).",
+    "Im Berührpunkt sind ∇f = (1, 1) und ∇g = (2x, 2y) parallel: ∇f = λ∇g. Das ist die Lagrange-Bedingung."
+  ],
+  "lagrangeBasis": [
+    "Drei Punkte (0, 1), (1, 3), (2, 2). Gesucht ist das Polynom vom Grad ≤ 2 durch alle drei.",
+    "Basispolynom L₀: gleich 1 im Knoten 0 und gleich 0 in den Knoten 1 und 2. Gewichtet mit y₀ = 1: die blaue Kurve 1·L₀.",
+    "L₁ ist 1 im Knoten 1 und 0 sonst. Mit y₁ = 3 gewichtet: die orange Kurve 3·L₁.",
+    "L₂ ist 1 im Knoten 2 und 0 sonst. Mit y₂ = 2 gewichtet: die violette Kurve 2·L₂.",
+    "Die Summe der drei gewichteten Kurven ist p(x) = 1 + 3,5x − 1,5x². Sie läuft durch alle drei Punkte."
+  ],
+  "leastSquaresFit": [
+    "Vier Messpunkte (0, 1), (1, 2), (2, 2), (3, 4). Keine Gerade geht durch alle – gesucht ist die, die „am besten“ passt.",
+    "Erster Versuch: y = 2. Die senkrechten Abstände (Residuen) sind −1, 0, 0, 2. Summe der Quadrate: 5.",
+    "Zweiter Versuch: y = 1 + 0,5·t. Residuen 0; 0,5; 0; 1,5. Quadratsumme 2,5 – schon besser.",
+    "Die Ausgleichsgerade y = 0,9 + 0,9·t: Residuen 0,1; 0,2; −0,7; 0,4, Quadratsumme 0,7 – kleiner geht es nicht. Die Residuen stehen senkrecht auf den Spalten von A."
+  ],
+  "linearCombination": [
+    "Ziel: w = (4, 5). Unsere Bausteine: v₁ = (2, 1) und v₂ = (1, 2).",
+    "Erst skalieren: Wir verdoppeln v₂ und erhalten 2 · v₂ = (2, 4).",
+    "Dann addieren: 2 · v₂ wird an die Spitze von 1 · v₁ gehängt.",
+    "Treffer! 1 · v₁ + 2 · v₂ = (4, 5) = w. Die Zahlen 1 und 2 sind die „Bauanleitung“ für w."
+  ],
+  "linearDependence": [
+    "v₁ = (2, 1), v₂ = (1, 2) und zusätzlich v₃ = (3, 3).",
+    "Wir hängen v₂ an die Spitze von v₁ …",
+    "… und landen exakt auf der Spitze von v₃. Also gilt v₃ = v₁ + v₂.",
+    "v₃ bringt keine neue Richtung: Alles, was v₃ erreicht, erreichen v₁ und v₂ schon allein. span(v₁, v₂, v₃) = span(v₁, v₂)."
+  ],
   "linearityCheck": [
     "f(x, y) = (2x + y, y). Wir nehmen u = (1, 0) und v = (0, 2).",
     "Weg A, Schritt 1: erst addieren. u + v = (1, 2).",
     "Weg A, Schritt 2: dann abbilden. f(u + v) = (2 · 1 + 2, 2) = (4, 2).",
     "Weg B: erst abbilden, f(u) = (2, 0) und f(v) = (2, 2), dann addieren: (4, 2). Dasselbe Ziel – f ist additiv."
+  ],
+  "linearSystemLines": [
+    "Die Gleichung x + y = 3 beschreibt eine Gerade: alle Punkte (x, y) mit x + y = 3.",
+    "Eine zweite Gleichung x − y = 1 ergibt eine zweite Gerade. Sie schneiden sich in genau einem Punkt: (2, 1) – die Lösung des Systems.",
+    "Parallele Geraden (x + y = 3 und x + y = 5) haben keinen gemeinsamen Punkt: keine Lösung.",
+    "Fallen beide Geraden zusammen (x + y = 3 und 2x + 2y = 6), ist jeder Punkt der Geraden eine Lösung: unendlich viele Lösungen."
+  ],
+  "logInverse": [
+    "Der Graph von y = 2ˣ. Der Punkt (3, 8) liegt darauf, denn 2³ = 8.",
+    "Die Gerade y = x ist die Spiegelachse.",
+    "Spiegeln vertauscht x und y: Aus (3, 8) wird (8, 3). So entsteht der Graph von y = log₂ x.",
+    "log₂ 8 = 3: Der Logarithmus liefert den Exponenten zurück. 2ˣ und log₂ x heben sich gegenseitig auf."
+  ],
+  "mapCheck": [
+    "Jedes Element von A hat GENAU EINEN Pfeil: eine Abbildung. Dass c nichts abbekommt, ist erlaubt.",
+    "3 hat keinen Pfeil: KEINE Abbildung. Jedem Element von A muss etwas zugeordnet werden.",
+    "1 hat zwei Pfeile: KEINE Abbildung. Der Wert f(1) muss eindeutig sein.",
+    "Alle drei Pfeile treffen b: Das IST eine Abbildung (eine konstante). Bei B dürfen beliebig viele Pfeile ankommen – auch keiner."
   ],
   "matrixOrder": [
     "Start: das Einheitsquadrat. D verdoppelt die x-Richtung, R dreht um 90°.",
@@ -31,12 +432,117 @@
     "Jetzt umgekehrt, von vorn: Erst R dreht das Quadrat – es bleibt ein Quadrat.",
     "Dann D: Ergebnis von D · R ist ein breites Rechteck. Gestrichelt: R · D zum Vergleich. Also R · D ≠ D · R."
   ],
+  "matrixTimesVector": [
+    "A hat die Spalten a₁ = (2, 1) und a₂ = (1, 2). Wir berechnen A · x für x = (1, 2).",
+    "Der 2. Eintrag von x ist 2: Spalte a₂ wird verdoppelt → 2 · a₂ = (2, 4).",
+    "Der 1. Eintrag von x ist 1: a₁ einmal. Wir hängen 2 · a₂ an die Spitze von a₁.",
+    "A · x = 1 · a₁ + 2 · a₂ = (4, 5). Matrix mal Vektor ist eine Linearkombination der Spalten!"
+  ],
   "matrixTransform": [
     "Vorher: e₁ = (1, 0), e₂ = (0, 1), das Einheitsquadrat und der Vektor x = (1, 2).",
     "A = (2 1; 0 1) schickt e₁ auf A · e₁ = (2, 0) – genau die 1. Spalte von A.",
     "e₂ landet auf A · e₂ = (1, 1) – genau die 2. Spalte von A.",
     "Das ganze Gitter folgt: Gitterlinien bleiben gerade, parallel und gleichmäßig verteilt. Das Quadrat wird zum Parallelogramm.",
     "x = (1, 2) landet bei A · x = 1 · (2, 0) + 2 · (1, 1) = (4, 2) – dieselben Koordinaten im neuen Gitter."
+  ],
+  "meanValue": [
+    "f(x) = x² auf dem Intervall [0, 2].",
+    "Die Sekante von (0, 0) nach (2, 4) hat die Steigung (4 − 0)/(2 − 0) = 2: die mittlere Steigung.",
+    "Mittelwertsatz: Irgendwo dazwischen hat die Tangente GENAU diese Steigung. Hier bei ξ = 1, denn f′(1) = 2. Tangente und Sekante sind parallel."
+  ],
+  "modClasses": [
+    "Die Zahlen 0 bis 8. Relation: a ∼ b, wenn a und b beim Teilen durch 3 denselben Rest lassen.",
+    "Wir färben nach dem Rest: Rest 0 blau, Rest 1 orange, Rest 2 grün. Gleiche Farbe heißt äquivalent.",
+    "Jede Farbe bildet eine Äquivalenzklasse: [0] = {0, 3, 6}, [1] = {1, 4, 7}, [2] = {2, 5, 8}.",
+    "Jede Zahl liegt in genau einer Klasse, und keine Klasse ist leer: Die Klassen zerlegen die Menge, ohne Überlappung und ohne Lücke."
+  ],
+  "newton": [
+    "Gesucht: die Nullstelle von f(x) = x² − 2, also √2. Start bei x₀ = 2.",
+    "Tangente in (2, 2) mit Steigung f′(2) = 4. Sie schneidet die x-Achse bei x₁ = 2 − 2/4 = 1,5.",
+    "Tangente in x₁ = 1,5: Schnitt bei x₂ = 1,5 − 0,25/3 ≈ 1,41667.",
+    "Schon x₂ stimmt auf drei Nachkommastellen mit √2 ≈ 1,41421 überein. Jeder Schritt verdoppelt etwa die Zahl der richtigen Stellen."
+  ],
+  "newton2D": [
+    "Gesucht: die Schnittpunkte von Kreis x² + y² = 4 und Hyperbel xy = 1 (hier die beiden im 1. Quadranten).",
+    "Start x₀ = (3; 0,2). Newton ersetzt beide Kurven durch ihre Tangenten in x₀ – die Linearisierung F(x₀) + DF(x₀)·Δ = 0.",
+    "Der Schnittpunkt der beiden Tangenten ist der nächste Iterierte x₁ = (2,147; 0,390). Das ist genau die Lösung des linearen Systems DF·Δ = −F.",
+    "Wiederholt man das: x₂ = (1,949; 0,502), x₃ = (1,9320; 0,5174), x₄ ≈ (1,93185; 0,51764). Nach wenigen Schritten sitzt man auf dem Schnittpunkt."
+  ],
+  "normUnitBalls": [
+    "Die Einheitskugel der 1-Norm: alle (x, y) mit |x| + |y| ≤ 1 – eine Raute mit den Ecken (±1, 0), (0, ±1).",
+    "Die 2-Norm (euklidisch): x² + y² ≤ 1 – der gewohnte Kreis.",
+    "Die ∞-Norm: max(|x|, |y|) ≤ 1 – ein Quadrat mit den Ecken (±1, ±1).",
+    "Alle drei ineinander: Raute ⊂ Kreis ⊂ Quadrat. Der Punkt (0,6; 0,8) hat die Normen 1,4 (1-Norm), 1 (2-Norm) und 0,8 (∞-Norm)."
+  ],
+  "numberSets": [
+    "ℕ: die natürlichen Zahlen 1, 2, 3, … Addieren geht immer – aber 3 − 5 hat hier keine Lösung.",
+    "ℤ erweitert ℕ um 0 und die negativen Zahlen. Jetzt geht Subtraktion – aber 1 : 3 ist keine ganze Zahl.",
+    "ℚ enthält alle Brüche. Jede Division außer durch 0 ist möglich.",
+    "ℝ füllt die letzten Lücken der Zahlengeraden: irrationale Zahlen wie √2, π und e. Jeder Bereich liegt im nächsten: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ."
+  ],
+  "pivotSwap": [
+    "Erste Spalte der Matrix: 1, 4, 7. Ohne Pivotsuche wäre das Pivot 1, die Faktoren 4/1 = 4 und 7/1 = 7 – groß.",
+    "Spaltenpivotsuche: Das betragsgrößte Element der Spalte ist 7 in der dritten Zeile.",
+    "Zeilentausch: Zeile 3 und Zeile 1 wechseln die Plätze (das ist die Permutation P). Das Pivot ist nun 7.",
+    "Die Faktoren sind jetzt 1/7 und 4/7 – beide ≤ 1. Kleine Faktoren verstärken Rundungsfehler nicht."
+  ],
+  "polarArea": [
+    "Polarkoordinaten: Kreise r = konstant und Strahlen φ = konstant zerlegen die Ebene in kleine Zellen.",
+    "Eine Zelle nahe der Mitte: Radialseite Δr, Bogenseite r · Δφ. Ihre Fläche ist ungefähr r · Δr · Δφ.",
+    "Eine Zelle weiter außen mit gleichem Δr und Δφ ist größer – genau um den Faktor r. Deshalb steht beim Integrieren in Polarkoordinaten dA = r dr dφ."
+  ],
+  "polynomialRoots": [
+    "p(x) = (x − 1)(x − 2)(x − 3): ein Polynom dritten Grades. Sein Graph schneidet die x-Achse höchstens dreimal.",
+    "Der Faktor (x − 1) wird null bei x = 1: erste Nullstelle.",
+    "Der Faktor (x − 2) liefert die Nullstelle x = 2.",
+    "Der Faktor (x − 3) liefert x = 3. Jeder Linearfaktor ist eine Nullstelle – und umgekehrt."
+  ],
+  "powerIteration": [
+    "Start: x = (1, 0). Gestrichelt: die Eigengerade zu λ = 3. Alle Pfeile sind auf gleiche Länge gebracht – es geht nur um die Richtung.",
+    "A x = (2, 1): Die Richtung dreht sich zur Eigengeraden hin.",
+    "A² x = (5, 4): noch näher dran.",
+    "A³ x = (14, 13): fast genau auf der Geraden. Der Anteil in Richtung (1, 1) wächst mit 3ᵏ, der Anteil in Richtung (1, −1) bleibt bei 1ᵏ = 1."
+  ],
+  "powerRules": [
+    "2³ = 2 · 2 · 2: drei Faktoren 2.",
+    "2² = 2 · 2: zwei Faktoren 2.",
+    "Multiplizieren heißt: alle Faktoren in eine Reihe. 3 + 2 = 5 Faktoren, also 2³ · 2² = 2⁵ = 32.",
+    "Umgekehrt beim Teilen: 2⁵ : 2² – zwei Faktoren kürzen sich weg, 2³ bleibt. Exponenten werden subtrahiert."
+  ],
+  "powerSet": [
+    "A = {1, 2, 3}. Die kleinste Teilmenge ist ∅ – man wählt einfach kein Element aus.",
+    "Teilmengen mit genau einem Element: {1}, {2}, {3}. Linien bedeuten „⊆“.",
+    "Teilmengen mit zwei Elementen: wieder drei Stück.",
+    "Und A selbst. Zusammen 1 + 3 + 3 + 1 = 8 = 2³ Teilmengen. Diese 8 Mengen sind die Elemente von 𝒫(A)."
+  ],
+  "preimage": [
+    "f: A → B mit f(1) = a, f(2) = b, f(3) = a, f(4) = c.",
+    "Bild: f({1, 2}) = {a, b}. Man startet LINKS und folgt den Pfeilen.",
+    "Urbild: f⁻¹({a}) = {1, 3}. Man startet RECHTS und sucht alle Pfeile, die dort ankommen.",
+    "f⁻¹({d}) = ∅, denn kein Pfeil kommt bei d an. Das Urbild existiert IMMER – auch wenn f gar nicht umkehrbar ist."
+  ],
+  "quadraticRoots": [
+    "y = x² − 2: Die Parabel schneidet die x-Achse zweimal. D > 0 – zwei Lösungen (x = ±√2).",
+    "Nach oben verschoben: y = x². Sie berührt die Achse nur im Scheitel. D = 0 – eine Lösung (x = 0).",
+    "Noch weiter oben: y = x² + 1,5. Kein Schnittpunkt mehr. D < 0 – keine reelle Lösung."
+  ],
+  "quantifierOrder": [
+    "Drei Schlösser 1, 2, 3 und drei Schlüssel a, b, c. Ein Pfeil heißt: Der Schlüssel passt.",
+    "∀ Schloss ∃ Schlüssel: „Zu jedem Schloss gibt es einen passenden Schlüssel.“ Wahr – aber jedes Schloss hat einen ANDEREN.",
+    "∃ Schlüssel ∀ Schloss: „Es gibt EINEN Schlüssel, der zu allen Schlössern passt“ – ein Generalschlüssel. Das ist eine viel stärkere Aussage.",
+    "In der Situation von vorhin gilt ∀∃, aber nicht ∃∀: Kein Schlüssel passt überall. Die Reihenfolge der Quantoren ändert die Bedeutung!"
+  ],
+  "rationalAsymptotes": [
+    "f(x) = 2x/(x − 1): eine rationale Funktion. Bei x = 1 ist der Nenner null – dort ist f nicht definiert.",
+    "Bei x → 1 wächst |f| über alle Grenzen: eine Polstelle mit senkrechter Asymptote x = 1. Links geht f gegen −∞, rechts gegen +∞.",
+    "Für große |x| gilt f(x) = 2 + 2/(x − 1) → 2: waagerechte Asymptote y = 2 (Quotient der führenden Koeffizienten).",
+    "Der Graph nähert sich beiden Asymptoten beliebig nahe, erreicht y = 2 aber nie."
+  ],
+  "recursionBlowup": [
+    "Blau: die exakten Werte I₀, I₁, …, I₂₀. Sie sind positiv und werden langsam kleiner.",
+    "Rot: die Vorwärtsrekursion Iₙ = 1 − n·Iₙ₋₁ am Computer. Bis n = 14 liegt sie genau auf den blauen Punkten.",
+    "Ab n = 15 weicht sie ab, bei n = 18 wird sie sogar negativ – unmöglich für ein Integral über eine positive Funktion.",
+    "n = 19 und n = 20 liegen weit außerhalb des Bildes: 1,56 und −30,2. Der Fehler wächst wie n!."
   ],
   "reflectionMap": [
     "Vorher: das Einheitsquadrat, e₁, e₂ und x = (1, 2). Die Abbildung ist f(x, y) = (y, x): Sie vertauscht die Koordinaten.",
@@ -45,11 +551,197 @@
     "Das Gitter wird an der Geraden y = x gespiegelt. Das Quadrat landet auf sich selbst, aber sein Umlaufsinn kehrt sich um.",
     "f(x) = 1 · f(e₁) + 2 · f(e₂) = (0, 1) + (2, 0) = (2, 1): das Spiegelbild von x an der Geraden y = x."
   ],
+  "removableHole": [
+    "f(x) = (x² − 1)/(x − 1) ist bei x = 1 nicht definiert (0/0). Für x ≠ 1 ist f(x) = x + 1 – der Graph ist eine Gerade mit einem Loch.",
+    "Von links: x = 0,2; 0,6; 0,85; 0,95 liefert f(x) = 1,2; 1,6; 1,85; 1,95.",
+    "Von rechts: x = 1,8; 1,4; 1,15; 1,05 liefert 2,8; 2,4; 2,15; 2,05.",
+    "Von beiden Seiten nähern sich die Werte der 2. Also lim f(x) = 2 für x → 1 – obwohl f(1) gar nicht existiert."
+  ],
+  "riemannSums": [
+    "Fläche unter f(x) = x² von 0 bis 2, angenähert durch 4 Rechtecke (Höhe = Funktionswert am linken Rand): 1,75.",
+    "8 Rechtecke: 2,19. Die Lücken zur Kurve werden kleiner.",
+    "16 Rechtecke: 2,42.",
+    "64 Rechtecke: 2,60. Im Grenzwert n → ∞ erhält man die exakte Fläche 8/3 ≈ 2,667 – das Integral."
+  ],
+  "rootsOfUnity": [
+    "Gesucht: alle Lösungen von z⁶ = 1. Der Einheitskreis enthält alle Zahlen mit Betrag 1.",
+    "ζ = cos 60° + i sin 60° = ½ + (√3/2) i. Sechsmal 60° ergibt 360°, also ζ⁶ = 1.",
+    "Die Potenzen ζ, ζ², …, ζ⁶ = 1 laufen in 60°-Schritten um den Kreis. Jede ist eine Lösung.",
+    "Die sechs Lösungen bilden ein regelmäßiges Sechseck. Allgemein hat zⁿ = 1 genau n Lösungen – die Ecken eines regelmäßigen n-Ecks."
+  ],
+  "rungeKuttaStages": [
+    "Ein einzelner Schritt der Länge h = 0,5 für y′ = y von (0, 1) aus. Die exakte Lösung eᵗ ist blau (exakt y(0,5) = 1,6487).",
+    "k₁ = f(0, 1) = 1: die Steigung am Anfang (wie beim Euler-Verfahren).",
+    "k₂: Mit k₁ bis zur Mitte (t = 0,25, y = 1,25) gehen, dort die Steigung messen: k₂ = 1,25.",
+    "k₃: Noch einmal zur Mitte, diesmal mit k₂ (y = 1,3125). Die Steigung dort: k₃ = 1,3125.",
+    "k₄: Mit k₃ ganz bis ans Ende (t = 0,5, y = 1,65625) gehen. Die Steigung dort: k₄ = 1,65625.",
+    "Gewichtetes Mittel (k₁ + 2k₂ + 2k₃ + k₄)/6 = 1,2969. Damit y₁ = 1 + 0,5·1,2969 = 1,64844 – fast exakt (1,64872), obwohl der Schritt groß ist."
+  ],
+  "rungePhenomenon": [
+    "Die Funktion f(x) = 1/(1 + 25x²) und das Interpolationspolynom vom Grad 4 durch 5 äquidistante Punkte: Es weicht schon deutlich ab (Fehler 0,44).",
+    "Grad 8: In der Mitte besser, aber am Rand schwingt das Polynom stärker (Fehler 1,05).",
+    "Grad 14: Das Polynom schießt am Rand weit über die Kurve hinaus (Fehler 7,2) – mehr Punkte machen es schlechter!",
+    "Tschebyscheff-Knoten (dichter am Rand) mit Grad 14: Das Polynom schmiegt sich an die Kurve (Fehler 0,047)."
+  ],
+  "secantToTangent": [
+    "f(x) = x² und der Punkt P = (1, 1). Die Sekante durch P und Q = (3, 9) hat die Steigung (9 − 1)/2 = 4.",
+    "Q rückt näher: h = 1, Q = (2, 4). Steigung (4 − 1)/1 = 3.",
+    "h = 0,5: Steigung (2,25 − 1)/0,5 = 2,5.",
+    "h = 0,1: Steigung (1,21 − 1)/0,1 = 2,1. Die Sekante kippt in eine Grenzlage …",
+    "… die Tangente mit Steigung 2. Allgemein: (1 + h)² − 1 = 2h + h², geteilt durch h ergibt 2 + h → 2. Also f′(1) = 2."
+  ],
+  "sequenceConvergence": [
+    "Die Folge aₙ = 1 + (−1)ⁿ/n: 0; 1,5; 0,67; 1,25; 0,8; … Die Punkte springen um 1 herum – mit immer kleinerem Ausschlag.",
+    "Ein ε-Schlauch um den Grenzwert 1 mit ε = 0,25. Ab n = 5 liegen ALLE weiteren Glieder darin, denn 1/n < 0,25 für n > 4.",
+    "Engerer Schlauch, ε = 0,1: Jetzt muss man länger warten – erst ab n = 11 bleiben alle Glieder drin.",
+    "Das ist Konvergenz: Für JEDES noch so kleine ε gibt es ein N, ab dem alle Glieder im Schlauch bleiben. Kleineres ε, größeres N."
+  ],
+  "seriesComparison": [
+    "Partialsummen von Σ 1/k² (orange): 1; 1,25; 1,36; … Sie wachsen, aber nähern sich einer festen Höhe.",
+    "Grenzwert π²/6 ≈ 1,645 (gestrichelt). Die Reihe konvergiert.",
+    "Partialsummen von Σ 1/k (blau): 1; 1,5; 1,83; 2,08; … Sie wachsen immer langsamer …",
+    "… aber ohne Grenze: Nach 40 Gliedern ist man erst bei 4,28, und doch wird jede Schranke irgendwann überschritten. Die harmonische Reihe divergiert, obwohl 1/k → 0."
+  ],
+  "shearEigen": [
+    "Scherung A = (1 1; 0 1). Blau: v = (1, 0), rot: x = (0, 1).",
+    "Die x-Achse (gestrichelt) ist die einzige Eigengerade. Die rote Gerade durch x ist zum Vergleich eingezeichnet.",
+    "A wirkt: A v = v bleibt liegen (Eigenwert 1). A x = (1, 1) kippt aus seiner Geraden heraus – wie jeder Vektor außerhalb der x-Achse.",
+    "Es gibt nur EINE Eigenrichtung: Doppelter Eigenwert 1, aber Eigenraum der Dimension 1. Zu wenige Eigenvektoren für eine Basis!"
+  ],
   "shearMap": [
     "Vorher: das Einheitsquadrat, e₁ = (1, 0), e₂ = (0, 1) und der Vektor x = (1, 2). Die Abbildung ist f(x, y) = (x + y, y).",
     "f(e₁) = (1 + 0, 0) = (1, 0): e₁ bleibt, wo es ist.",
     "f(e₂) = (0 + 1, 1) = (1, 1): e₂ kippt nach rechts.",
     "Das Gitter folgt: Das Quadrat wird zu einem schiefen Parallelogramm. Grundseite und Höhe bleiben gleich – die Fläche auch.",
     "f(x) = 1 · f(e₁) + 2 · f(e₂) = (1, 0) + (2, 2) = (3, 2). Das ist eine Scherung."
+  ],
+  "sigmaUnroll": [
+    "Σ k² für k von 1 bis 5: Setze nacheinander k = 1, 2, 3, 4, 5 in k² ein und addiere.",
+    "k = 1: Der erste Summand ist 1² = 1.",
+    "k = 2: 2² = 4.",
+    "k = 3: 3² = 9.",
+    "k = 4 und k = 5: 16 und 25. Der Endwert 5 ist erreicht.",
+    "Alle Summanden addieren: 1 + 4 + 9 + 16 + 25 = 55."
+  ],
+  "signedArea": [
+    "sin x von 0 bis 2π.",
+    "Von 0 bis π liegt der Graph oberhalb der Achse: Diese Fläche zählt positiv, ∫₀^π sin x dx = 2.",
+    "Von π bis 2π liegt er unterhalb: Diese Fläche zählt negativ, −2.",
+    "Zusammen: ∫₀^{2π} sin x dx = 2 − 2 = 0. Das Integral misst Flächen MIT Vorzeichen. Die tatsächliche Fläche ist ∫|sin x| dx = 4."
+  ],
+  "sineUnwrap": [
+    "Links der Einheitskreis, rechts ein Koordinatensystem. Der Punkt startet bei Winkel 0, Höhe sin 0 = 0.",
+    "Bei 90° (π/2) hat der Punkt die Höhe 1. Diese Höhe wird als Funktionswert über dem Winkel π/2 eingetragen.",
+    "Bei 180° (π) ist die Höhe wieder 0: der erste Nulldurchgang der Sinuskurve.",
+    "Bei 270° (3π/2) liegt der Punkt ganz unten: sin = −1.",
+    "Nach einem Umlauf (2π) beginnt alles von vorn: Der Sinus ist 2π-periodisch."
+  ],
+  "singularMatrix": [
+    "A = (1 2; 2 4). Die Spalten (1, 2) und (2, 4) zeigen in dieselbe Richtung – die zweite ist das Doppelte der ersten.",
+    "A quetscht die ganze Ebene auf eine Gerade: Das Gitter fällt zusammen, das Quadrat wird zu einer Strecke.",
+    "Nimm zwei verschiedene Vektoren p = (2, 0) und q = (0, 1) …",
+    "… beide landen bei A · p = A · q = (2, 4). Aus (2, 4) kann man nicht mehr ablesen, woher man kam: A ist nicht umkehrbar."
+  ],
+  "spanGrowth": [
+    "Ein einzelner Vektor v₁ = (2, 1).",
+    "Alle Vielfachen λ · v₁ (auch negative und Brüche) bilden eine Gerade durch 0: span(v₁).",
+    "Ein zweiter Vektor v₂ = (1, 2), der NICHT auf dieser Geraden liegt, bringt eine neue Richtung.",
+    "Jetzt dürfen wir λ · v₁ + μ · v₂ bilden. Schon die ganzzahligen Kombinationen ergeben ein schiefes Gitter …",
+    "… und mit allen reellen λ, μ erreichen wir jeden Punkt der Ebene: span(v₁, v₂) = ℝ²."
+  ],
+  "splinePieces": [
+    "Vier Datenpunkte (0, 0), (1, 1), (2, 0), (3, 1). Statt eines Polynoms 3. Grades legen wir drei kubische Stücke durch je zwei Nachbarpunkte.",
+    "Stück 1 auf [0, 1]: s₀ = 1,667·x − 0,667·x³. Am linken Rand ist die Krümmung 0 (natürliche Randbedingung).",
+    "Stück 2 auf [1, 2] (orange): Wert, Steigung und Krümmung stimmen am Knoten x = 1 mit Stück 1 überein – die Naht ist unsichtbar.",
+    "Stück 3 auf [2, 3] (violett) schließt ebenso glatt an; am Ende ist die Krümmung wieder 0. Die Momente sind M = (0, −4, 4, 0).",
+    "Zum Vergleich das Interpolationspolynom 3. Grades (gestrichelt grau): Bei x = 0,5 hat es den Wert 1,0, der Spline nur 0,75 – er schwingt weniger."
+  ],
+  "squeeze": [
+    "f(x) = x · sin(1/x) schwingt bei x → 0 unendlich oft hin und her. Hat f dort einen Grenzwert?",
+    "Weil −1 ≤ sin(1/x) ≤ 1 ist, liegt der Graph zwischen −|x| und |x| (gestrichelt).",
+    "Beide Schranken gehen für x → 0 gegen 0. f ist dazwischen eingeklemmt – also gilt auch lim x · sin(1/x) = 0. Das ist der Sandwich-Satz."
+  ],
+  "stabilityRegions": [
+    "Stabilitätsgebiet des expliziten Euler-Verfahrens in der komplexen z-Ebene (z = h·λ): die Kreisscheibe |1 + z| ≤ 1 um −1. Nur dort klingt die Näherung ab.",
+    "Für y′ = −50y ist z = −50h. Bei h = 0,01 ist z = −0,5: innerhalb der Scheibe – stabil.",
+    "Bei h = 0,05 ist z = −2,5: außerhalb (|1 + z| = 1,5 > 1) – die Näherung explodiert. Grenze: z = −2, also h = 0,04.",
+    "Implizites Euler: stabil ist alles außerhalb der Scheibe |1 − z| ≤ 1 um +1 – insbesondere die ganze linke Halbebene. Auch z = −2,5 ist stabil (A-stabil). Die Trapezregel hat genau die linke Halbebene als Gebiet."
+  ],
+  "stiffExplosion": [
+    "y′ = −50y, y(0) = 1. Die exakte Lösung e⁻⁵⁰ᵗ (blau) fällt in wenigen Hundertstel auf fast 0 ab.",
+    "Explizites Euler mit h = 0,05: Jeder Schritt multipliziert mit 1 − 2,5 = −1,5: 1; −1,5; 2,25; −3,4; 5,1 … Die Näherung schwingt mit wachsender Amplitude – sie explodiert!",
+    "Implizites Euler mit demselben h = 0,05: Faktor 1/(1 + 2,5) = 0,2857. Die Werte 1; 0,29; 0,08; 0,02 … klingen glatt ab – wie die exakte Lösung.",
+    "Explizit ist nur für h ≤ 2/50 = 0,04 stabil. Implizit ist für jede Schrittweite stabil – darum nimmt man es bei steifen Problemen."
+  ],
+  "subspaceClosure": [
+    "U ist eine Gerade durch den Ursprung. Die Vektoren u und v liegen auf U.",
+    "u + v: Wir hängen v an die Spitze von u. Das Ergebnis liegt wieder auf U.",
+    "(−1) · u zeigt in die Gegenrichtung – liegt aber ebenfalls auf U. U ist abgeschlossen.",
+    "G ist eine parallele Gerade, die NICHT durch den Ursprung geht. p und q liegen auf G.",
+    "p + q landet neben G (roter Punkt). Schon die Addition führt aus G heraus – G ist kein Untervektorraum."
+  ],
+  "subtractionZoom": [
+    "Oben: x = 1,01 (blau) und der gemessene Wert x̃ = 1,0201 (orange) auf dem Zahlenstrahl von 0 bis 1,1. Die Punkte liegen fast aufeinander.",
+    "Ihr Abstand 0,0101 ist winzig im Vergleich zur Zahl selbst: nur 1 %.",
+    "Unten nach dem Abziehen von 1: f(x) = 0,01 und f(x̃) = 0,0201, jetzt auf einer Achse von 0 bis 0,025. Der Abstand ist derselbe geblieben.",
+    "Aber das Ergebnis selbst ist winzig geworden: Der Abstand ist jetzt so groß wie das Ergebnis – 101 % relativer Fehler."
+  ],
+  "swallowedSummand": [
+    "Der Spielzeugrechner hat Platz für 3 Ziffern (blauer Kasten). Wir addieren 1,00 · 10³ und 4,00 · 10⁰.",
+    "Vor dem Addieren müssen die Exponenten gleich sein: 4,00 · 10⁰ = 0,004 · 10³. Die Ziffer 4 wandert drei Stellen nach rechts.",
+    "Exakte Summe: 1,004 · 10³. Die 4 steht aber außerhalb des Kastens.",
+    "Nach dem Runden auf 3 Ziffern bleibt 1,00 · 10³. Der kleine Summand wurde verschluckt: fl(1000 + 4) = 1000."
+  ],
+  "taylorSine": [
+    "sin x (blau) und seine Tangente bei 0: T₁(x) = x. Nahe 0 passt sie gut, weiter weg nicht.",
+    "T₃(x) = x − x³/6 hat bei 0 dieselbe Steigung UND dieselbe Krümmung wie sin. Sie passt auf einem größeren Bereich.",
+    "T₅(x) = x − x³/6 + x⁵/120: noch weiter.",
+    "T₉: Mit jedem weiteren Glied schmiegt sich das Polynom über einen größeren Bereich an sin x an. Im Grenzfall ist sin x = x − x³/3! + x⁵/5! − …"
+  ],
+  "telescopeSum": [
+    "Σ (1/k − 1/(k+1)) für k = 1 … 4, ausgeschrieben: vier Klammern.",
+    "Das −½ der ersten Klammer und das +½ der zweiten heben sich auf.",
+    "Genauso −⅓ mit +⅓ und −¼ mit +¼. Das Teleskop schiebt sich zusammen.",
+    "Übrig bleiben nur der erste und der letzte Term: 1 − ⅕ = ⅘. Allgemein: 1 − 1/(n+1)."
+  ],
+  "trapezoidVsSimpson": [
+    "Gesucht: die Fläche unter f(x) = eˣ auf [0, 1]. Exakter Wert e − 1 = 1,7183.",
+    "Trapezregel: Die Kurve wird durch die Sehne ersetzt. Fläche 1,8591 – die rote Sichel ist der Fehler (+0,141), die Sehne liegt über der konvexen Kurve.",
+    "Simpsonregel: Eine Parabel durch drei Punkte (Anfang, Mitte, Ende). Sie schmiegt sich fast perfekt an die Kurve.",
+    "Fläche unter der Parabel: 1,7189 – Fehler nur +0,0006, gut 240-mal kleiner als beim Trapez. Man sieht den Unterschied zur Kurve kaum noch."
+  ],
+  "triangleSymmetries": [
+    "Ein gleichseitiges Dreieck mit den Ecken 1, 2, 3. Eine Symmetrie bildet das Dreieck auf sich selbst ab – nur die Ecken tauschen die Plätze.",
+    "r: Drehung um 120° gegen den Uhrzeigersinn.",
+    "Danach s: Spiegelung an der senkrechten Achse. Ergebnis von „erst r, dann s“, also s ∘ r: oben 3, links 2, rechts 1.",
+    "Jetzt die andere Reihenfolge, von vorn: erst s …",
+    "… dann r. Ergebnis r ∘ s: oben 2, links 1, rechts 3. Grau: das Ergebnis von s ∘ r. Verschieden – die Gruppe ist nicht kommutativ!"
+  ],
+  "unitCircle": [
+    "Einheitskreis (Radius 1). Zum Winkel 30° gehört der Punkt (cos 30°, sin 30°) = (√3/2, 1/2).",
+    "45°: cos 45° = sin 45° = √2/2 ≈ 0,71. Der Punkt liegt auf der Winkelhalbierenden.",
+    "60°: cos 60° = 1/2 und sin 60° = √3/2. Kosinus und Sinus haben die Werte von 30° getauscht.",
+    "90°: Der Punkt ist (0, 1): cos 90° = 0, sin 90° = 1. Der Kosinus ist die x-, der Sinus die y-Koordinate."
+  ],
+  "unitCircleImage": [
+    "Blau: der Einheitskreis – alle Vektoren der Länge 1.",
+    "Grün: das Bild unter A = (2 1; 1 2). Jeder Vektor des Kreises wird abgebildet, der Kreis wird zur Ellipse.",
+    "Längste Halbachse 3 in Richtung (1, 1): ‖A‖₂ = 3. Kürzeste Halbachse 1 in Richtung (1, −1).",
+    "cond₂(A) = 3 / 1 = 3: Die Ellipse ist nur mäßig verzerrt – gut konditioniert.",
+    "Zum Vergleich A = (1 0,9; 0,9 1): Halbachsen 1,9 und 0,1, also cond₂ = 19. Je flacher die Ellipse, desto schlechter die Kondition."
+  ],
+  "vectorAddition": [
+    "v = (2, 1) und w = (1, 2) als Pfeile, die im Ursprung starten.",
+    "Addieren: Wir hängen w an die Spitze von v.",
+    "v + w = (3, 3) ist der Pfeil vom Ursprung zur neuen Spitze. Komponentenweise: 2 + 1 = 3 und 1 + 2 = 3.",
+    "Skalieren: 2 · v = (4, 2) zeigt in dieselbe Richtung, ist aber doppelt so lang."
+  ],
+  "vennOperations": [
+    "Grundmenge U = {1, …, 8}, darin A = {1, 2, 3, 4} (links) und B = {3, 4, 5, 6} (rechts).",
+    "A ∩ B = {3, 4}: alles, was in A UND in B liegt – die Überlappung.",
+    "A ∪ B = {1, 2, 3, 4, 5, 6}: alles, was in A ODER in B liegt. „Oder“ schließt „beides“ ein.",
+    "A \\ B = {1, 2}: in A, aber nicht in B. Man nimmt A und schneidet die Überlappung weg.",
+    "B \\ A = {5, 6} – etwas anderes als A \\ B! Die Differenz hängt von der Reihenfolge ab.",
+    "Komplement Aᶜ = U \\ A = {5, 6, 7, 8}: alles in der Grundmenge außerhalb von A."
   ]
 }

@@ -1,9 +1,159 @@
 {
+  "absDistance": [
+    "|x − 2| is the distance from x to the number 2.",
+    "|x − 2| < 3: we want all x less than 3 away from 2 – to the left and to the right.",
+    "That is the interval (−1, 5). The endpoints are not included (empty circles).",
+    "The opposite |x − 2| > 3 lies outside: x < −1 or x > 5 – two regions."
+  ],
+  "backSubstitution": [
+    "An upper triangular system: below the diagonal there are only zeros.",
+    "Last row: 2·x₃ = 2, so x₃ = 1. Only one unknown appears here.",
+    "Middle row: x₂ + x₃ = 2. Plug in x₃ = 1: x₂ = 1.",
+    "First row: 2·x₁ + x₂ + x₃ = 4. Plug in what is known: 2·x₁ = 2, so x₁ = 1. Done!"
+  ],
+  "balanceScale": [
+    "3x + 2 = 14 as a balance: both sides weigh the same.",
+    "Removing 2 only on the LEFT tips the balance. That is not a permitted transformation.",
+    "Correct: remove 2 on BOTH sides (| −2). 3x = 12 – balanced again.",
+    "Divide both sides by 3 (| :3): x = 4. Check: 3 · 4 + 2 = 14 ✓"
+  ],
   "basisChange": [
     "Basis B with b₁ = (1, 1) and b₂ = (1, −1). The vector v = (3, 1) = 2 · b₁ + 1 · b₂ has the B-coordinates (2, 1).",
     "f(x, y) = (2x + y, x + 2y). We have f(b₁) = (3, 3) = 3 · b₁: b₁ is only stretched.",
     "f(b₂) = (1, −1) = 1 · b₂: b₂ stays unchanged.",
     "So f(v) = 2 · 3 · b₁ + 1 · 1 · b₂ = (6, 6) + (1, −1) = (7, 5). In B-coordinates: (2, 1) ↦ (6, 1) – simply multiplied componentwise by 3 and 1."
+  ],
+  "basisCoordinates": [
+    "Standard basis: w = 4 · e₁ + 5 · e₂. Coordinates with respect to (e₁, e₂): (4, 5).",
+    "Now we change the “grid”: the basis B = (v₁, v₂) creates a skewed coordinate system.",
+    "In this grid we reach w with 1 step in the v₁ direction and 2 steps in the v₂ direction.",
+    "The same vector w has the coordinates (1, 2) with respect to B. The basis determines how we translate vectors into numbers."
+  ],
+  "binomialDifference": [
+    "A square a × a (here a = 3) has area a².",
+    "We cut away a square b × b at the top right (here b = 1). What remains is an L-shape with area a² − b².",
+    "We split the L-shape: at the bottom a rectangle a × (a − b), at the top a strip (a − b) × b.",
+    "Rotate the strip and attach it on the right: a rectangle (a + b) × (a − b) appears. So a² − b² = (a + b)(a − b). Here: 9 − 1 = 4 · 2."
+  ],
+  "binomialSquare": [
+    "A square with side length a + b (here a = 3, b = 1). Its area is (a + b)².",
+    "At the bottom left fits a square a × a: area a².",
+    "Two rectangles a × b: together 2ab. Exactly this “mixed” part is forgotten in the mistake (a + b)² = a² + b².",
+    "At the top right a small square b × b remains. Together: (a + b)² = a² + 2ab + b². Here: 16 = 9 + 6 + 1."
+  ],
+  "bisectionInterval": [
+    "f(x) = x³ − x − 2 on [1, 2]: f(1) = −2 < 0 and f(2) = 4 > 0. A sign change – so there is a root in the interval.",
+    "Midpoint 1.5: f(1.5) = −0.125 < 0. The sign now changes between 1.5 and 2 – we keep [1.5, 2].",
+    "Midpoint 1.75: f(1.75) = 1.609 > 0. The root lies in [1.5, 1.75].",
+    "Midpoint 1.625: f = 0.666 > 0. New interval [1.5, 1.625]. Each step halves the length: 1, 0.5, 0.25, 0.125 …"
+  ],
+  "cancellationDigits": [
+    "Two measurements with 6 valid digits each: 1.23457 and 1.23451. Both are accurate to about 4·10⁻⁶ (relative).",
+    "The leading digits 1.2345 are the same in both numbers. They are exactly the ones that cancel in the subtraction.",
+    "Result 0.00006: only the last digit is left – of 6 valid digits just 1 remains.",
+    "That last digit is only accurate to ±1: 6 ± 1, i.e. about 17 % relative uncertainty instead of 4·10⁻⁶. Cancellation amplifies the old error."
+  ],
+  "cartesianProduct": [
+    "A = {1, 2, 3} on the x-axis, B = {1, 2} on the y-axis.",
+    "A × B: every a ∈ A combined with every b ∈ B – 3 · 2 = 6 pairs, i.e. 6 points.",
+    "(1, 2) and (2, 1) are different points: for pairs the order matters.",
+    "The map f: A → B with f(1) = 2, f(2) = 1, f(3) = 2 as a set of points: each column contains EXACTLY ONE point. That is the graph of f – a subset of A × B."
+  ],
+  "charPolyCollapse": [
+    "λ = 0: A − 0 · I = (2 1; 1 2). The columns (2, 1) and (1, 2) span a parallelogram with area det = 4 − 1 = 3.",
+    "λ = 1: A − I = (1 1; 1 1). Both columns are (1, 1) – the parallelogram collapses, det = 0. So 1 is an eigenvalue!",
+    "λ = 2: A − 2I = (0 1; 1 0). Columns (0, 1) and (1, 0): a genuine area again, det = 0 − 1 = −1.",
+    "λ = 3: A − 3I = (−1 1; 1 −1). The columns (−1, 1) and (1, −1) are opposite – area 0. So 3 is an eigenvalue!"
+  ],
+  "clockF5": [
+    "ℤ/5 = {0, 1, 2, 3, 4}. Are there zero divisors here too?",
+    "Multiples of 2: 0, 2, 4, 1, 3 – ALL numbers are reached, including 1. With 2 · 3 = 6 = 1 you land on 1: so 3 is the inverse of 2.",
+    "Because 5 is a prime, this works for every non-zero number: 1 · 1 = 1, 2 · 3 = 1, 4 · 4 = 1. ℤ/5 is a field."
+  ],
+  "clockZ12": [
+    "ℤ/12: arithmetic on a clock. There are only the numbers 0 to 11; after 11 comes 0 again.",
+    "9 + 5: 5 steps on from 9 you land at 2. So 9 + 5 = 2 in ℤ/12 (since 14 = 12 + 2).",
+    "The neutral element is 0: “0 steps on” changes nothing.",
+    "The inverse of 5 is 7: from 5, 7 steps lead back to 0. So 5 + 7 = 0 and −5 = 7.",
+    "With steps of length 4 you only reach 0, 4, 8 – then you are back at 0. {0, 4, 8} is a subgroup, and 4 has order 3."
+  ],
+  "clockZ6": [
+    "ℤ/6 = {0, 1, 2, 3, 4, 5}. Multiplying means repeated adding: 2 · 3 = 3 + 3.",
+    "2 · 3 = 3 + 3 = 6 = 0. Two non-zero elements have the product 0: 2 and 3 are zero divisors.",
+    "The multiples of 2 are only 0, 2, 4. The 1 is never reached – there is no x with 2 · x = 1. 2 is not invertible.",
+    "5 is different: 5 · 5 = 25 = 4 · 6 + 1, so 5 · 5 = 1. 5 is invertible, since gcd(5, 6) = 1."
+  ],
+  "cobwebFixedPoint": [
+    "We look for a fixed point of φ(x) = cos x: the intersection of the curve y = cos x with the diagonal y = x.",
+    "Start x₀ = 1. Go vertically to the curve (φ(1) = 0.540), then horizontally to the diagonal: that is x₁ = 0.540.",
+    "Two more steps: x₂ = 0.858, x₃ = 0.654, x₄ = 0.794 … The sequence alternates between the left and the right of the fixed point.",
+    "A spiral winding in to the fixed point x* = 0.739. Because |φ′(x*)| = 0.67 < 1, the iteration converges."
+  ],
+  "completingSquare": [
+    "x² + 6x: a square x² and a rectangle 6x (width 6).",
+    "Halve the rectangle: two strips 3x. One stays on the right, the other moves to the top.",
+    "Only the corner is missing for the big square (x + 3)²: a square 3 · 3 = 9.",
+    "So x² + 6x = (x + 3)² − 9. Adding 5: x² + 6x + 5 = (x + 3)² − 4."
+  ],
+  "complexMultiplication": [
+    "z = 1 + i has absolute value √2 and angle 45°.",
+    "w = 1 + √3·i has absolute value 2 and angle 60°.",
+    "The product z · w has angle 45° + 60° = 105° and absolute value √2 · 2 = 2√2 ≈ 2.83. Angles add, absolute values multiply.",
+    "Algebraic check: (1 + i)(1 + √3 i) = (1 − √3) + (1 + √3) i ≈ −0.73 + 2.73 i – exactly the green point."
+  ],
+  "complexOperations": [
+    "In the complex plane z = 2 + i is the point (2, 1) and w = 1 + 2i is the point (1, 2). Horizontal: real part, vertical: imaginary part.",
+    "Addition works like for vectors: z + w = 3 + 3i. Attach w to the tip of z.",
+    "Conjugation: z̄ = 2 − i is the mirror image of z in the real axis.",
+    "Multiplication by i: i · z = 2i + i² = −1 + 2i. That is z rotated by 90° counterclockwise!"
+  ],
+  "composition": [
+    "First f: A → B (blue): 1 ↦ a, 2 ↦ c, 3 ↦ b.",
+    "Then g: B → C (orange): a ↦ y, b ↦ x, c ↦ y. The targets of f are the starting points of g.",
+    "Path for 1: first to f(1) = a, then to g(a) = y. So (g ∘ f)(1) = g(f(1)) = y.",
+    "g ∘ f: A → C combines both steps: 1 ↦ y, 2 ↦ y, 3 ↦ x. Read it as “g after f” – f is applied first."
+  ],
+  "conditionAmplifier": [
+    "Log-log picture: ln x horizontally, ln f(x) vertically. The width of the blue band is the relative input error (here ±25 %).",
+    "f(x) = √x is a straight line with slope ½ in the log-log picture. The output band is only half as wide: κ = ½, the error is damped.",
+    "f(x) = x³: slope 3. The output band is three times as wide: κ = 3, the relative error is tripled.",
+    "Remember: the condition number κ(x) = |x f′(x)/f(x)| is the slope of f in the log-log picture. Steep = ill-conditioned."
+  ],
+  "continuityTypes": [
+    "Continuous: x² can be drawn without lifting the pen. At every point the limit agrees with the function value.",
+    "Jump: the sign function jumps at 0 from −1 to 1. The left and right limits are different.",
+    "Pole: 1/x grows beyond all bounds at 0 – to −∞ on the left, to +∞ on the right.",
+    "Oscillation: sin(1/x) swings infinitely often between −1 and 1 near 0. There are not even one-sided limits."
+  ],
+  "contourGradient": [
+    "f(x, y) = x² + 2y² as a map: each contour line connects points with the same function value (0.5; 1; 2; 3; 4). Low inside, high outside.",
+    "At a few points the gradient ∇f = (2x, 4y). It is PERPENDICULAR to the contour line through the point.",
+    "The gradient points uphill, in the direction of steepest ascent. Its length tells how steep it is there.",
+    "At the origin ∇f = (0, 0): the lowest point. At extrema the gradient is the zero vector."
+  ],
+  "criticalPoints": [
+    "f = x² + y²: contour lines are circles, the values grow outwards. At the origin there is a minimum (valley floor).",
+    "f = −(x² + y²): the same circles, but the values fall outwards. At the origin there is a maximum (summit).",
+    "f = x² − y²: contour lines are hyperbolas. In the x-direction f rises (orange), in the y-direction f falls (blue). At the origin ∇f = 0, but it is neither a minimum nor a maximum – a saddle point."
+  ],
+  "curveSketching": [
+    "f(x) = x³ − 3x with f′(x) = 3x² − 3 and f″(x) = 6x.",
+    "Maximum at x = −1: f′ = 0 (horizontal tangent), f″ = −6 < 0 – the graph curves downwards.",
+    "Inflection point at x = 0: f″ = 0 and the curvature changes. The slope there is smallest: f′(0) = −3.",
+    "Minimum at x = 1: f′ = 0, f″ = 6 > 0 – curving upwards. Maximum, inflection point, minimum: horizontal, steepest, horizontal."
+  ],
+  "deMorgan": [
+    "Left side, step 1: colour A ∪ B.",
+    "Left side, step 2: (A ∪ B)ᶜ is everything OUTSIDE it (green).",
+    "Right side, step 1: Aᶜ – everything outside A (blue).",
+    "Right side, step 2: add Bᶜ – everything outside B (orange). Where both colours overlap lies Aᶜ ∩ Bᶜ.",
+    "Aᶜ ∩ Bᶜ (green) is exactly the same region as (A ∪ B)ᶜ: “not in A or B” means “not in A and not in B”."
+  ],
+  "derivativeGraph": [
+    "f(x) = x³ − 3x. Where does the graph rise, where does it fall, where is it horizontal?",
+    "Tangents at several points: at x = −1 and x = 1 they are horizontal – slope 0. In between f falls, outside f rises.",
+    "Plotting the slopes as a new function gives f′(x) = 3x² − 3 (orange). It is positive where f rises and negative where f falls.",
+    "The roots of f′ (x = ±1) mark the maximum and minimum of f: maximum (−1, 2), minimum (1, −2)."
   ],
   "detArea": [
     "The unit square has area 1. We apply f(x) = A x with A = (3 1; 1 2), together with e₁ = (1, 0), e₂ = (0, 1) and x = (1, 1).",
@@ -12,17 +162,268 @@
     "The square becomes a parallelogram with area |3 · 2 − 1 · 1| = 5. The determinant says: areas are multiplied by 5.",
     "The corner x = (1, 1) lands at f(x) = (3 + 1, 1 + 2) = (4, 3) – the opposite corner of the parallelogram."
   ],
+  "detRules": [
+    "The columns a = (1, 0) and b = (1, 2) span a parallelogram. Its area: det(a, b) = 1 · 2 − 1 · 0 = 2.",
+    "If we double a to (2, 0), the area doubles: det = 2 · 2 − 1 · 0 = 4. The determinant is linear in each column.",
+    "If we slide b along a to b + a = (3, 2), base and height stay the same: the area stays 4.",
+    "If we tip b onto the line through a, say to (3, 0), the parallelogram collapses into a segment: area 0, because the columns are linearly dependent."
+  ],
+  "differenceQuotientError": [
+    "Doubly logarithmic: h = 10ᵗ to the right, error upwards. Truncation error ≈ (h/2)·f″: a line of slope +1 – smaller h helps.",
+    "Rounding error ≈ u·|f|/h: a line of slope −1 – for small h the cancellation in the numerator dominates.",
+    "Both parts add up to a V-shaped curve. The minimum lies at h ≈ 10⁻⁸ ≈ √eps with error ≈ 10⁻⁸.",
+    "h too large: truncation error. h too small: rounding error. “As small as possible” is wrong!"
+  ],
+  "distributiveArea": [
+    "A rectangle with sides a + b and c + d. Its area is (a + b)(c + d).",
+    "Part 1: a · c.",
+    "Part 2: a · d.",
+    "Part 3: b · c.",
+    "Part 4: b · d. Together: (a + b)(c + d) = ac + ad + bc + bd – everyone with everyone."
+  ],
+  "dominoes": [
+    "Infinitely many dominoes stand in a row. Domino n stands for the statement A(n).",
+    "Base case: the first domino falls. That means: A(1) is true.",
+    "Inductive step: the dominoes are arranged so that EVERY domino k knocks over domino k + 1 when it falls. That means: A(k) implies A(k + 1).",
+    "Both together: all dominoes fall, one after another. A(n) holds for all n.",
+    "Without the base case nothing falls at all – although every domino WOULD knock over the next.",
+    "Without a valid step the chain breaks: here the gap after domino 5 is too large. From domino 6 on everything stays standing."
+  ],
+  "dotProduct": [
+    "Two vectors: a = (4, 0) and b = (3, 2). How much of b points in the direction of a?",
+    "Drop the perpendicular from the tip of b onto the line through a. The foot is (3, 0).",
+    "The arrow from the origin to the foot is the projection of b onto a: (3, 0) = (12/16) · a.",
+    "Dot product: a · b = 4 · 3 + 0 · 2 = 12 = |a| · |b| · cos φ. The angle is φ ≈ 33.7°."
+  ],
+  "eigenMap": [
+    "A = (2 1; 1 2). Blue: v₁ = (1, 1), orange: v₂ = (−1, 1), red: an ordinary vector x = (1, 0).",
+    "Dashed: the lines through v₁, v₂ and x. The lines through v₁ and v₂ are the eigenspaces.",
+    "Now A acts on the whole plane: A v₁ = 3 v₁ and A v₂ = 1 · v₂ stay on their lines. A x = (2, 1), however, leaves its line.",
+    "So A stretches in the direction (1, 1) by the factor 3 and leaves the direction (−1, 1) unchanged. That is all A does – the whole secret of this matrix."
+  ],
+  "eigenSearch": [
+    "A = (2 1; 1 2). Test vector u = (1, 0) with its line (dashed). A · u = (2, 1) does NOT lie on this line: the direction changes.",
+    "u = (0, 1): A · u = (1, 2). Again the vector tips out of its line.",
+    "u = (1, 1): A · u = (3, 3) = 3·u. The vector stays on its line and is only tripled – an eigenvector for the eigenvalue 3!",
+    "u = (−1, 1): A · u = (−2 + 1, −1 + 2) = (−1, 1) = 1·u. Also an eigenvector, this time for the eigenvalue 1."
+  ],
+  "eigenvalueScaling": [
+    "An eigenvector v = (2, 1) and its line. If A v = λ v, everything depends only on the factor λ. For λ = 1, v stays unchanged.",
+    "λ = 2: A v = 2 v – twice as long, same direction.",
+    "λ = ½: A v = ½ v – half as long, same direction.",
+    "λ = −1: A v = −v – same line, but flipped into the opposite direction.",
+    "λ = 0: A v = 0 – v is squashed onto the origin. Then v is a vector in the kernel of A."
+  ],
+  "eliminationSweep": [
+    "We decompose A = L·U. A is on the left, L (initially only the ones on the diagonal) is built on the right.",
+    "Step 1: factors l₂₁ = 4/2 = 2 and l₃₁ = 8/2 = 4. Row 2 − 2·row 1, row 3 − 4·row 1: the first column below the pivot becomes 0. The factors move into L.",
+    "Step 2: factor l₃₂ = 3/1 = 3. Row 3 − 3·row 2 turns the last entry below the diagonal into 0. U is now on the left.",
+    "Done: A = L·U. L (lower left) holds the factors, U (upper right) the rows after elimination."
+  ],
+  "euclidRectangle": [
+    "A 12 × 9 rectangle. We look for the largest square that tiles it without gaps. Its side length is gcd(12, 9).",
+    "Cut off the largest square that fits: 9 × 9. That is the step 12 = 1 · 9 + 3. A 3 × 9 strip remains.",
+    "Exactly three 3 × 3 squares fit into the strip: 9 = 3 · 3 + 0. The remainder is 0 – the algorithm stops.",
+    "3 × 3 squares tile the whole rectangle, no larger square does. So gcd(12, 9) = 3 – the last non-zero remainder."
+  ],
+  "eulerSteps": [
+    "y′ = y, y(0) = 1: the exact solution eᵗ (blue). We want to approximate y(1) = e = 2.718 with Euler's method.",
+    "Step size h = 0.5: two tangent steps (slope = current y value). Result y(1) ≈ 2.25 – clearly too small.",
+    "h = 0.25: four steps, y(1) ≈ 1.25⁴ = 2.441. The polygon lies closer to the curve.",
+    "h = 0.1: ten steps, y(1) ≈ 1.1¹⁰ = 2.594. The error is roughly proportional to h – half the step, half the error (order 1)."
+  ],
+  "eulerTangent": [
+    "2ˣ passes through (0, 1). The tangent there has slope ln 2 ≈ 0.69 – flatter than 45°.",
+    "eˣ: the tangent at x = 0 has exactly slope 1. That is the special property of the number e ≈ 2.718.",
+    "3ˣ: the slope ln 3 ≈ 1.10 is already larger than 1 – steeper than 45°.",
+    "Between 2 and 3 lies the base e whose slope at 0 is exactly 1 – hence (eˣ)′ = eˣ."
+  ],
+  "evenOddSymmetry": [
+    "f(x) = x²: the right half of the graph (x ≥ 0).",
+    "Mirror it in the y-axis and the left half appears: f(−x) = f(x). The function is even.",
+    "g(x) = x³: again the right half (x ≥ 0).",
+    "Here the half is rotated about the origin (point reflection): g(−x) = −g(x). The function is odd."
+  ],
+  "fieldInverses": [
+    "In 𝔽₇: every a ≠ 0 has exactly one inverse. 2 · 4 = 8 = 1, 3 · 5 = 15 = 1, 6 · 6 = 36 = 1. The assignment a ↦ a⁻¹ is even bijective.",
+    "In ℤ/6, on the other hand, only 1 and 5 have an inverse. 2, 3 and 4 share a common divisor with 6 – there is none for them."
+  ],
+  "floatNumberLine": [
+    "Toy system b = 2, t = 3. The interval [1, 2) holds the machine numbers 1, 1.25, 1.5, 1.75 – gap 0.25.",
+    "[2, 4) again holds four numbers, but the gap has doubled: 0.5.",
+    "[4, 8): four numbers again, gap 1. With every power of two the gap doubles.",
+    "The absolute gap grows, the relative one does not: gap / number always lies between about 14 % and 25 %. That is the idea of floating point."
+  ],
+  "fractionAddition": [
+    "½ and ⅓ are pieces of different sizes. You can't simply count them.",
+    "Cut both strips into sixths (common denominator 6): ½ = 3⁄6 and ⅓ = 2⁄6.",
+    "Now the pieces fit together: 3⁄6 + 2⁄6 = 5⁄6.",
+    "The typical mistake ½ + ⅓ = 2⁄5 (red) would be smaller than ½ alone – that can't be right."
+  ],
+  "functionTransform": [
+    "Starting point: the standard parabola f(x) = x² with vertex (0, 0).",
+    "f(x − 2): the graph shifts 2 to the RIGHT. The vertex is now at (2, 0).",
+    "2 · f(x − 2): stretch in y-direction by factor 2 – the parabola gets narrower, the vertex stays.",
+    "2 · f(x − 2) + 1: shift up by 1. Vertex (2, 1) – this is the vertex form 2(x − 2)² + 1."
+  ],
+  "fundamentalTheorem": [
+    "f(t) = 1 + t/2. The area function A(x) measures the area under f from 0 to x. For x = 1: A(1) = 1.25.",
+    "x = 2: A(2) = 3. The area grows with x.",
+    "x = 3: A(3) = 5.25. How fast does it grow?",
+    "If you move x on by a small step h, a narrow strip is added: roughly a rectangle of height f(x). So A′(x) = f(x) – the area function is an antiderivative of f!"
+  ],
+  "gaussSum": [
+    "1 + 2 + 3 + 4 as a staircase: column k has k boxes.",
+    "A second staircase, turned upside down, fits exactly into the gap above.",
+    "Together they form a rectangle of 4 · 5 = 20 boxes. So one staircase has 20 / 2 = 10. In general: 1 + 2 + … + n = n(n + 1)/2.",
+    "This is what the induction step looks like: from n = 4 to n = 5 exactly one new column with 5 boxes is added. So S(5) = S(4) + 5 = 15."
+  ],
+  "geometricSeries": [
+    "The unit square has area 1. Half of it: ½.",
+    "Plus half of the rest: ½ + ¼ = ¾.",
+    "On and on: ½ + ¼ + ⅛ + 1/16 = 15/16. There is always exactly as much missing as was added last.",
+    "After infinitely many steps the square is filled: ½ + ¼ + ⅛ + … = 1. Infinitely many summands, but a finite sum!"
+  ],
+  "gershgorinDiscs": [
+    "The complex plane (real part horizontal, imaginary part vertical). Where do the eigenvalues of A = (2 1 0; −1 2 1; 0 −1 4) lie?",
+    "Row 1: centre a₁₁ = 2, radius |1| + |0| = 1.",
+    "Row 2: centre a₂₂ = 2, radius |−1| + |1| = 2. This disc contains the first one.",
+    "Row 3: centre a₃₃ = 4, radius |0| + |−1| = 1.",
+    "The actual eigenvalues 3.54 and 2.23 ± 1.12i (green) all lie in the union of the discs – without solving a single equation."
+  ],
+  "householderReflection": [
+    "Given x = (3, 4), ‖x‖ = 5. Goal: a reflection H that maps x onto the e₁-axis – then the second component becomes 0.",
+    "We choose v = x + ‖x‖·e₁ = (8, 4) (drawn halved). The mirror axis is the line through the origin perpendicular to v.",
+    "Reflecting x across this axis gives Hx = (−5, 0): same length 5, second component 0.",
+    "Why +‖x‖? For x₁ > 0, v = x + ‖x‖e₁ avoids cancellation in the first component. With H = I − 2vvᵀ/vᵀv the QR decomposition is built column by column."
+  ],
+  "ieeeLayout": [
+    "A double occupies 64 bits – 64 zeros and ones.",
+    "Bit 1 is the sign s: 0 means plus, 1 means minus.",
+    "The next 11 bits store the exponent E (with a bias of 1023).",
+    "The remaining 52 bits store the mantissa f – the digits after the hidden leading 1.",
+    "Example −6.5 = −(1.101)₂ · 2²: s = 1, E = 2 + 1023 = 1025, f = 101000…0."
+  ],
+  "illConditionedLines": [
+    "Two almost parallel lines: x + y = 2 and x + 1.1 y = 2.1. They meet at (1, 1) – the solution of the system.",
+    "The right-hand side of the second equation changes only by 0.1 (about 5 %): x + 1.1 y = 2.2. The line moves only slightly.",
+    "The intersection moves from (1, 1) to (0, 2) – by a whole unit! Tiny change in the data, huge change in the solution.",
+    "The smaller the angle between the lines, the larger this effect. The condition number measures exactly that (here ≈ 44; with 1.0001 instead of 1.1 even 40 004)."
+  ],
+  "implicationSets": [
+    "A ⇒ B with A: “is a square”, B: “is a rectangle”. Every square is a rectangle – the set of squares lies INSIDE the set of rectangles.",
+    "A square (point in A) automatically lies in B as well. That is the implication itself.",
+    "A triangle lies outside B – and therefore outside A too. That is the contrapositive: ¬B ⇒ ¬A. It is equivalent to A ⇒ B.",
+    "A 2×3 rectangle lies in B but not in A. So B does NOT imply A (the converse is false), and ¬A does NOT imply ¬B."
+  ],
+  "implicationTable": [
+    "A: “It rains.” B: “The street is wet.” A ⇒ B is a promise: “If it rains, the street is wet.”",
+    "It rains and the street is wet: the promise was kept – A ⇒ B is true.",
+    "It rains but the street is dry: the promise is broken – A ⇒ B is false. This is the ONLY false case.",
+    "It doesn't rain: then the promise claimed nothing. Whether the street is wet (sprinkler) or not – it wasn't broken. So true.",
+    "Result: A ⇒ B is false only when A is true and B is false."
+  ],
+  "improperIntegral": [
+    "Area under 1/x² from 1 to b = 2: it is 1 − 1/2 = 0.5.",
+    "b = 5: 1 − 1/5 = 0.8.",
+    "b = 10: 0.9. For b → ∞, 1 − 1/b tends to 1. The infinitely long region has the finite area 1!",
+    "For comparison 1/x (dashed): the area from 1 to b is ln b → ∞. The graph lies only slightly higher, yet the area is infinite."
+  ],
+  "inequalityFlip": [
+    "On the number line a = −2 lies to the left of b = 3: −2 < 3.",
+    "Multiply both by −1 and the points mirror about zero: a moves to 2, b moves to −3.",
+    "Now −a = 2 lies to the right of −b = −3: 2 > −3. The order has reversed – the sign flips."
+  ],
+  "injSurj": [
+    "Injective, not surjective: no element of B is hit twice – but c is not hit at all.",
+    "Surjective, not injective: every element of B is hit – but c twice (by 3 and 4).",
+    "Bijective: every element of B is hit EXACTLY ONCE. The elements of A and B are perfectly paired.",
+    "Neither: a is hit twice (not injective), b not at all (not surjective). It is still a map!"
+  ],
+  "intervalLine": [
+    "[−1, 3]: closed. Both endpoints belong to it – filled dots, square brackets.",
+    "(−1, 3): open. The endpoints do NOT belong to it – empty circles, round brackets.",
+    "[−1, 3): half-open. −1 belongs to it, 3 does not.",
+    "[1, ∞): all x ≥ 1. Next to ∞ there is always a round bracket – infinity is not a number."
+  ],
+  "inverseMap": [
+    "f is bijective: 1 ↦ b, 2 ↦ c, 3 ↦ a. Every element of B is hit exactly once.",
+    "Reversing all arrows (green) gives a map again: f⁻¹: B → A with f⁻¹(a) = 3, f⁻¹(b) = 1, f⁻¹(c) = 2.",
+    "Now a non-bijective h: 1 ↦ a, 2 ↦ a, 3 ↦ b.",
+    "Reversed, a would have two arrows and c none – that is not a map. An inverse map exists only for bijective maps."
+  ],
+  "inverseReflection": [
+    "The graph of f(x) = x² for x ≥ 0. The point (2, 4) lies on it.",
+    "The line y = x is the mirror axis.",
+    "Mirroring swaps x and y: (2, 4) becomes (4, 2). That gives the graph of the inverse function √x.",
+    "Input and output have swapped roles: f(2) = 4 and f⁻¹(4) = 2."
+  ],
+  "jacobiZigzag": [
+    "Each equation is a line: 4x₁ + x₂ = 1 (steep) and 2x₁ + 5x₂ = 2 (flat). The solution (1/6, 1/3) is the intersection.",
+    "Jacobi, start (0, 0): the iterates jump back and forth but approach the intersection: (0.25, 0.4) → (0.15, 0.3) → (0.175, 0.34).",
+    "Gauss–Seidel: first x₁ from the first line (horizontal), then x₂ from the second (vertical) – a staircase running straight into the intersection.",
+    "After three steps: error 8·10⁻³ for Jacobi, 8·10⁻⁴ for Gauss–Seidel. The convergence factor is ρ = 0.316 (Jacobi) and ρ = 0.1 = 0.316² (Gauss–Seidel)."
+  ],
   "kernelImage": [
     "f(x, y) = (x + y, x + y). The vectors p = (2, −2) and q = (−1, 1) lie on the line y = −x.",
     "f(p) = (0, 0) and f(q) = (0, 0): both are squashed onto the zero vector. This line is the kernel.",
     "Now r = (3, 0) and s = (0, 3). They lie on a line parallel to the kernel (x + y = 3).",
     "f(r) = f(s) = (3, 3): the whole line lands in a single point. All images lie on y = x – that is the image. dim ker + dim im = 1 + 1 = 2 = dim ℝ²."
   ],
+  "lagrange": [
+    "Goal: the largest value of f(x, y) = x + y on the unit circle x² + y² = 1 (the constraint).",
+    "Contour lines of f are lines x + y = c. For c = −1, 0, 1 they cut the circle – larger values are still possible there.",
+    "The largest contour line that still meets the circle only TOUCHES it: c = √2 at the point (1/√2, 1/√2).",
+    "At the point of contact ∇f = (1, 1) and ∇g = (2x, 2y) are parallel: ∇f = λ∇g. That is the Lagrange condition."
+  ],
+  "lagrangeBasis": [
+    "Three points (0, 1), (1, 3), (2, 2). We look for the polynomial of degree ≤ 2 through all three.",
+    "Basis polynomial L₀: equal to 1 at node 0 and 0 at nodes 1 and 2. Weighted with y₀ = 1: the blue curve 1·L₀.",
+    "L₁ is 1 at node 1 and 0 elsewhere. Weighted with y₁ = 3: the orange curve 3·L₁.",
+    "L₂ is 1 at node 2 and 0 elsewhere. Weighted with y₂ = 2: the purple curve 2·L₂.",
+    "The sum of the three weighted curves is p(x) = 1 + 3.5x − 1.5x². It passes through all three points."
+  ],
+  "leastSquaresFit": [
+    "Four measurements (0, 1), (1, 2), (2, 2), (3, 4). No line passes through all of them – we look for the one that fits “best”.",
+    "First attempt: y = 2. The vertical distances (residuals) are −1, 0, 0, 2. Sum of squares: 5.",
+    "Second attempt: y = 1 + 0.5·t. Residuals 0; 0.5; 0; 1.5. Sum of squares 2.5 – already better.",
+    "The least-squares line y = 0.9 + 0.9·t: residuals 0.1; 0.2; −0.7; 0.4, sum of squares 0.7 – it cannot be smaller. The residuals are perpendicular to the columns of A."
+  ],
+  "linearCombination": [
+    "Goal: w = (4, 5). Our building blocks: v₁ = (2, 1) and v₂ = (1, 2).",
+    "Scale first: we double v₂ and get 2 · v₂ = (2, 4).",
+    "Then add: 2 · v₂ is attached to the tip of 1 · v₁.",
+    "Hit! 1 · v₁ + 2 · v₂ = (4, 5) = w. The numbers 1 and 2 are the “recipe” for w."
+  ],
+  "linearDependence": [
+    "v₁ = (2, 1), v₂ = (1, 2) and additionally v₃ = (3, 3).",
+    "We attach v₂ to the tip of v₁ …",
+    "… and land exactly on the tip of v₃. So v₃ = v₁ + v₂.",
+    "v₃ brings no new direction: everything v₃ reaches, v₁ and v₂ already reach on their own. span(v₁, v₂, v₃) = span(v₁, v₂)."
+  ],
   "linearityCheck": [
     "f(x, y) = (2x + y, y). We take u = (1, 0) and v = (0, 2).",
     "Path A, step 1: add first. u + v = (1, 2).",
     "Path A, step 2: then map. f(u + v) = (2 · 1 + 2, 2) = (4, 2).",
     "Path B: map first, f(u) = (2, 0) and f(v) = (2, 2), then add: (4, 2). Same destination – f is additive."
+  ],
+  "linearSystemLines": [
+    "The equation x + y = 3 describes a line: all points (x, y) with x + y = 3.",
+    "A second equation x − y = 1 gives a second line. They meet in exactly one point: (2, 1) – the solution of the system.",
+    "Parallel lines (x + y = 3 and x + y = 5) share no point: no solution.",
+    "If both lines coincide (x + y = 3 and 2x + 2y = 6), every point on the line is a solution: infinitely many solutions."
+  ],
+  "logInverse": [
+    "The graph of y = 2ˣ. The point (3, 8) lies on it, since 2³ = 8.",
+    "The line y = x is the mirror axis.",
+    "Mirroring swaps x and y: (3, 8) becomes (8, 3). This gives the graph of y = log₂ x.",
+    "log₂ 8 = 3: the logarithm returns the exponent. 2ˣ and log₂ x undo each other."
+  ],
+  "mapCheck": [
+    "Every element of A has EXACTLY ONE arrow: a map. That c receives nothing is allowed.",
+    "3 has no arrow: NOT a map. Every element of A must be assigned something.",
+    "1 has two arrows: NOT a map. The value f(1) must be unique.",
+    "All three arrows hit b: this IS a map (a constant one). Any number of arrows may arrive in B – even none."
   ],
   "matrixOrder": [
     "Start: the unit square. D doubles the x-direction, R rotates by 90°.",
@@ -31,12 +432,117 @@
     "Now the other way round, from the start: first R rotates the square – it stays a square.",
     "Then D: the result of D · R is a wide rectangle. Dashed: R · D for comparison. So R · D ≠ D · R."
   ],
+  "matrixTimesVector": [
+    "A has the columns a₁ = (2, 1) and a₂ = (1, 2). We compute A · x for x = (1, 2).",
+    "The 2nd entry of x is 2: column a₂ is doubled → 2 · a₂ = (2, 4).",
+    "The 1st entry of x is 1: a₁ once. We attach 2 · a₂ to the tip of a₁.",
+    "A · x = 1 · a₁ + 2 · a₂ = (4, 5). Matrix times vector is a linear combination of the columns!"
+  ],
   "matrixTransform": [
     "Before: e₁ = (1, 0), e₂ = (0, 1), the unit square and the vector x = (1, 2).",
     "A = (2 1; 0 1) sends e₁ to A · e₁ = (2, 0) – exactly the 1st column of A.",
     "e₂ lands on A · e₂ = (1, 1) – exactly the 2nd column of A.",
     "The whole grid follows: grid lines stay straight, parallel and evenly spaced. The square becomes a parallelogram.",
     "x = (1, 2) lands at A · x = 1 · (2, 0) + 2 · (1, 1) = (4, 2) – the same coordinates in the new grid."
+  ],
+  "meanValue": [
+    "f(x) = x² on the interval [0, 2].",
+    "The secant from (0, 0) to (2, 4) has slope (4 − 0)/(2 − 0) = 2: the average slope.",
+    "Mean value theorem: somewhere in between the tangent has EXACTLY this slope. Here at ξ = 1, since f′(1) = 2. Tangent and secant are parallel."
+  ],
+  "modClasses": [
+    "The numbers 0 to 8. Relation: a ∼ b if a and b leave the same remainder when divided by 3.",
+    "We colour by remainder: remainder 0 blue, remainder 1 orange, remainder 2 green. Same colour means equivalent.",
+    "Each colour forms an equivalence class: [0] = {0, 3, 6}, [1] = {1, 4, 7}, [2] = {2, 5, 8}.",
+    "Every number lies in exactly one class, and no class is empty: the classes partition the set, without overlap and without gaps."
+  ],
+  "newton": [
+    "Goal: the root of f(x) = x² − 2, i.e. √2. Start at x₀ = 2.",
+    "Tangent at (2, 2) with slope f′(2) = 4. It crosses the x-axis at x₁ = 2 − 2/4 = 1.5.",
+    "Tangent at x₁ = 1.5: it crosses at x₂ = 1.5 − 0.25/3 ≈ 1.41667.",
+    "Already x₂ agrees with √2 ≈ 1.41421 to three decimals. Each step roughly doubles the number of correct digits."
+  ],
+  "newton2D": [
+    "Goal: the intersections of the circle x² + y² = 4 and the hyperbola xy = 1 (here the two in the first quadrant).",
+    "Start x₀ = (3, 0.2). Newton replaces both curves by their tangents at x₀ – the linearisation F(x₀) + DF(x₀)·Δ = 0.",
+    "The intersection of the two tangents is the next iterate x₁ = (2.147, 0.390). That is exactly the solution of the linear system DF·Δ = −F.",
+    "Repeating this: x₂ = (1.949, 0.502), x₃ = (1.9320, 0.5174), x₄ ≈ (1.93185, 0.51764). After a few steps you sit on the intersection."
+  ],
+  "normUnitBalls": [
+    "The unit ball of the 1-norm: all (x, y) with |x| + |y| ≤ 1 – a rhombus with corners (±1, 0), (0, ±1).",
+    "The 2-norm (Euclidean): x² + y² ≤ 1 – the familiar circle.",
+    "The ∞-norm: max(|x|, |y|) ≤ 1 – a square with corners (±1, ±1).",
+    "All three nested: rhombus ⊂ circle ⊂ square. The point (0.6, 0.8) has norms 1.4 (1-norm), 1 (2-norm) and 0.8 (∞-norm)."
+  ],
+  "numberSets": [
+    "ℕ: the natural numbers 1, 2, 3, … Addition always works – but 3 − 5 has no answer here.",
+    "ℤ adds 0 and the negative numbers. Subtraction now works – but 1 : 3 is not an integer.",
+    "ℚ contains all fractions. Every division except by 0 is possible.",
+    "ℝ fills the last gaps of the number line: irrational numbers like √2, π and e. Each set lies inside the next: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ."
+  ],
+  "pivotSwap": [
+    "First column of the matrix: 1, 4, 7. Without pivoting the pivot would be 1 and the factors 4/1 = 4 and 7/1 = 7 – large.",
+    "Partial pivoting: the entry of largest magnitude in the column is 7 in the third row.",
+    "Row swap: rows 3 and 1 trade places (that is the permutation P). The pivot is now 7.",
+    "The factors are now 1/7 and 4/7 – both ≤ 1. Small factors do not amplify rounding errors."
+  ],
+  "polarArea": [
+    "Polar coordinates: circles r = constant and rays φ = constant cut the plane into small cells.",
+    "A cell near the centre: radial side Δr, arc side r · Δφ. Its area is roughly r · Δr · Δφ.",
+    "A cell further out with the same Δr and Δφ is larger – by exactly the factor r. That is why integrating in polar coordinates uses dA = r dr dφ."
+  ],
+  "polynomialRoots": [
+    "p(x) = (x − 1)(x − 2)(x − 3): a polynomial of degree three. Its graph meets the x-axis at most three times.",
+    "The factor (x − 1) is zero at x = 1: first root.",
+    "The factor (x − 2) gives the root x = 2.",
+    "The factor (x − 3) gives x = 3. Every linear factor is a root – and vice versa."
+  ],
+  "powerIteration": [
+    "Start: x = (1, 0). Dashed: the eigenline for λ = 3. All arrows are scaled to equal length – only the direction matters.",
+    "A x = (2, 1): the direction turns towards the eigenline.",
+    "A² x = (5, 4): even closer.",
+    "A³ x = (14, 13): almost exactly on the line. The component along (1, 1) grows like 3ᵏ, the component along (1, −1) stays at 1ᵏ = 1."
+  ],
+  "powerRules": [
+    "2³ = 2 · 2 · 2: three factors of 2.",
+    "2² = 2 · 2: two factors of 2.",
+    "Multiplying means putting all factors in one row. 3 + 2 = 5 factors, so 2³ · 2² = 2⁵ = 32.",
+    "Dividing works the other way: 2⁵ : 2² – two factors cancel, 2³ remains. Exponents are subtracted."
+  ],
+  "powerSet": [
+    "A = {1, 2, 3}. The smallest subset is ∅ – you simply choose no element.",
+    "Subsets with exactly one element: {1}, {2}, {3}. Lines mean “⊆”.",
+    "Subsets with two elements: again three of them.",
+    "And A itself. Together 1 + 3 + 3 + 1 = 8 = 2³ subsets. These 8 sets are the elements of 𝒫(A)."
+  ],
+  "preimage": [
+    "f: A → B with f(1) = a, f(2) = b, f(3) = a, f(4) = c.",
+    "Image: f({1, 2}) = {a, b}. Start on the LEFT and follow the arrows.",
+    "Preimage: f⁻¹({a}) = {1, 3}. Start on the RIGHT and look for all arrows arriving there.",
+    "f⁻¹({d}) = ∅, because no arrow arrives at d. The preimage ALWAYS exists – even if f is not invertible at all."
+  ],
+  "quadraticRoots": [
+    "y = x² − 2: the parabola crosses the x-axis twice. D > 0 – two solutions (x = ±√2).",
+    "Shifted up: y = x². It only touches the axis at the vertex. D = 0 – one solution (x = 0).",
+    "Even higher: y = x² + 1.5. No intersection any more. D < 0 – no real solution."
+  ],
+  "quantifierOrder": [
+    "Three locks 1, 2, 3 and three keys a, b, c. An arrow means: the key fits.",
+    "∀ lock ∃ key: “For every lock there is a fitting key.” True – but every lock has a DIFFERENT one.",
+    "∃ key ∀ lock: “There is ONE key that fits all locks” – a master key. That is a much stronger statement.",
+    "In the earlier situation ∀∃ holds, but not ∃∀: no key fits everywhere. The order of the quantifiers changes the meaning!"
+  ],
+  "rationalAsymptotes": [
+    "f(x) = 2x/(x − 1): a rational function. At x = 1 the denominator is zero – f is undefined there.",
+    "As x → 1, |f| grows beyond all bounds: a pole with vertical asymptote x = 1. On the left f tends to −∞, on the right to +∞.",
+    "For large |x|, f(x) = 2 + 2/(x − 1) → 2: horizontal asymptote y = 2 (quotient of the leading coefficients).",
+    "The graph approaches both asymptotes arbitrarily closely, but never reaches y = 2."
+  ],
+  "recursionBlowup": [
+    "Blue: the exact values I₀, I₁, …, I₂₀. They are positive and slowly decrease.",
+    "Red: the forward recursion Iₙ = 1 − n·Iₙ₋₁ on the computer. Up to n = 14 it lies exactly on the blue dots.",
+    "From n = 15 on it deviates, at n = 18 it even becomes negative – impossible for an integral of a positive function.",
+    "n = 19 and n = 20 lie far outside the picture: 1.56 and −30.2. The error grows like n!."
   ],
   "reflectionMap": [
     "Before: the unit square, e₁, e₂ and x = (1, 2). The map is f(x, y) = (y, x): it swaps the coordinates.",
@@ -45,11 +551,197 @@
     "The grid is reflected in the line y = x. The square lands on itself, but its orientation is reversed.",
     "f(x) = 1 · f(e₁) + 2 · f(e₂) = (0, 1) + (2, 0) = (2, 1): the mirror image of x in the line y = x."
   ],
+  "removableHole": [
+    "f(x) = (x² − 1)/(x − 1) is undefined at x = 1 (0/0). For x ≠ 1, f(x) = x + 1 – the graph is a line with a hole.",
+    "From the left: x = 0.2; 0.6; 0.85; 0.95 gives f(x) = 1.2; 1.6; 1.85; 1.95.",
+    "From the right: x = 1.8; 1.4; 1.15; 1.05 gives 2.8; 2.4; 2.15; 2.05.",
+    "From both sides the values approach 2. So lim f(x) = 2 for x → 1 – although f(1) does not even exist."
+  ],
+  "riemannSums": [
+    "Area under f(x) = x² from 0 to 2, approximated by 4 rectangles (height = function value at the left edge): 1.75.",
+    "8 rectangles: 2.19. The gaps to the curve get smaller.",
+    "16 rectangles: 2.42.",
+    "64 rectangles: 2.60. In the limit n → ∞ you get the exact area 8/3 ≈ 2.667 – the integral."
+  ],
+  "rootsOfUnity": [
+    "Goal: all solutions of z⁶ = 1. The unit circle contains all numbers with absolute value 1.",
+    "ζ = cos 60° + i sin 60° = ½ + (√3/2) i. Six times 60° gives 360°, so ζ⁶ = 1.",
+    "The powers ζ, ζ², …, ζ⁶ = 1 run around the circle in 60° steps. Each one is a solution.",
+    "The six solutions form a regular hexagon. In general zⁿ = 1 has exactly n solutions – the corners of a regular n-gon."
+  ],
+  "rungeKuttaStages": [
+    "A single step of length h = 0.5 for y′ = y from (0, 1). The exact solution eᵗ is blue (exact y(0.5) = 1.6487).",
+    "k₁ = f(0, 1) = 1: the slope at the start (as in Euler's method).",
+    "k₂: go with k₁ to the midpoint (t = 0.25, y = 1.25) and measure the slope there: k₂ = 1.25.",
+    "k₃: to the midpoint again, this time with k₂ (y = 1.3125). The slope there: k₃ = 1.3125.",
+    "k₄: go all the way to the end with k₃ (t = 0.5, y = 1.65625). The slope there: k₄ = 1.65625.",
+    "Weighted average (k₁ + 2k₂ + 2k₃ + k₄)/6 = 1.2969. With it y₁ = 1 + 0.5·1.2969 = 1.64844 – almost exact (1.64872), although the step is large."
+  ],
+  "rungePhenomenon": [
+    "The function f(x) = 1/(1 + 25x²) and the degree-4 interpolation polynomial through 5 equidistant points: it already deviates noticeably (error 0.44).",
+    "Degree 8: better in the middle, but at the edges the polynomial oscillates more (error 1.05).",
+    "Degree 14: the polynomial shoots far beyond the curve at the edges (error 7.2) – more points make it worse!",
+    "Chebyshev nodes (denser at the edges) with degree 14: the polynomial hugs the curve (error 0.047)."
+  ],
+  "secantToTangent": [
+    "f(x) = x² and the point P = (1, 1). The secant through P and Q = (3, 9) has slope (9 − 1)/2 = 4.",
+    "Q moves closer: h = 1, Q = (2, 4). Slope (4 − 1)/1 = 3.",
+    "h = 0.5: slope (2.25 − 1)/0.5 = 2.5.",
+    "h = 0.1: slope (1.21 − 1)/0.1 = 2.1. The secant tips into a limiting position …",
+    "… the tangent with slope 2. In general: (1 + h)² − 1 = 2h + h², divided by h gives 2 + h → 2. So f′(1) = 2."
+  ],
+  "sequenceConvergence": [
+    "The sequence aₙ = 1 + (−1)ⁿ/n: 0; 1.5; 0.67; 1.25; 0.8; … The points jump around 1 – with ever smaller swings.",
+    "An ε-tube around the limit 1 with ε = 0.25. From n = 5 on ALL further terms lie inside, because 1/n < 0.25 for n > 4.",
+    "A narrower tube, ε = 0.1: now you have to wait longer – only from n = 11 on do all terms stay inside.",
+    "That is convergence: for EVERY ε, however small, there is an N from which on all terms stay in the tube. Smaller ε, larger N."
+  ],
+  "seriesComparison": [
+    "Partial sums of Σ 1/k² (orange): 1; 1.25; 1.36; … They grow, but approach a fixed height.",
+    "Limit π²/6 ≈ 1.645 (dashed). The series converges.",
+    "Partial sums of Σ 1/k (blue): 1; 1.5; 1.83; 2.08; … They grow more and more slowly …",
+    "… but without bound: after 40 terms you are only at 4.28, and yet every bound is eventually exceeded. The harmonic series diverges, although 1/k → 0."
+  ],
+  "shearEigen": [
+    "Shear A = (1 1; 0 1). Blue: v = (1, 0), red: x = (0, 1).",
+    "The x-axis (dashed) is the only eigenline. The red line through x is drawn for comparison.",
+    "A acts: A v = v stays put (eigenvalue 1). A x = (1, 1) tips out of its line – like every vector off the x-axis.",
+    "There is only ONE eigendirection: double eigenvalue 1, but an eigenspace of dimension 1. Too few eigenvectors for a basis!"
+  ],
   "shearMap": [
     "Before: the unit square, e₁ = (1, 0), e₂ = (0, 1) and the vector x = (1, 2). The map is f(x, y) = (x + y, y).",
     "f(e₁) = (1 + 0, 0) = (1, 0): e₁ stays where it is.",
     "f(e₂) = (0 + 1, 1) = (1, 1): e₂ tilts to the right.",
     "The grid follows: the square becomes a slanted parallelogram. Base and height stay the same – and so does the area.",
     "f(x) = 1 · f(e₁) + 2 · f(e₂) = (1, 0) + (2, 2) = (3, 2). This is a shear."
+  ],
+  "sigmaUnroll": [
+    "Σ k² for k from 1 to 5: substitute k = 1, 2, 3, 4, 5 into k² one after another and add.",
+    "k = 1: the first summand is 1² = 1.",
+    "k = 2: 2² = 4.",
+    "k = 3: 3² = 9.",
+    "k = 4 and k = 5: 16 and 25. The end value 5 is reached.",
+    "Add all summands: 1 + 4 + 9 + 16 + 25 = 55."
+  ],
+  "signedArea": [
+    "sin x from 0 to 2π.",
+    "From 0 to π the graph lies above the axis: this area counts positively, ∫₀^π sin x dx = 2.",
+    "From π to 2π it lies below: this area counts negatively, −2.",
+    "Together: ∫₀^{2π} sin x dx = 2 − 2 = 0. The integral measures areas WITH sign. The actual area is ∫|sin x| dx = 4."
+  ],
+  "sineUnwrap": [
+    "On the left the unit circle, on the right a coordinate system. The point starts at angle 0, height sin 0 = 0.",
+    "At 90° (π/2) the point has height 1. This height is plotted as the function value above the angle π/2.",
+    "At 180° (π) the height is 0 again: the first zero crossing of the sine curve.",
+    "At 270° (3π/2) the point is at the bottom: sin = −1.",
+    "After one full turn (2π) everything starts again: the sine is 2π-periodic."
+  ],
+  "singularMatrix": [
+    "A = (1 2; 2 4). The columns (1, 2) and (2, 4) point in the same direction – the second is twice the first.",
+    "A squashes the whole plane onto a line: the grid collapses, the square becomes a segment.",
+    "Take two different vectors p = (2, 0) and q = (0, 1) …",
+    "… both land at A · p = A · q = (2, 4). From (2, 4) you can no longer tell where you came from: A is not invertible."
+  ],
+  "spanGrowth": [
+    "A single vector v₁ = (2, 1).",
+    "All multiples λ · v₁ (including negatives and fractions) form a line through 0: span(v₁).",
+    "A second vector v₂ = (1, 2) that does NOT lie on this line brings a new direction.",
+    "Now we may form λ · v₁ + μ · v₂. Even the integer combinations give a skewed grid …",
+    "… and with all real λ, μ we reach every point of the plane: span(v₁, v₂) = ℝ²."
+  ],
+  "splinePieces": [
+    "Four data points (0, 0), (1, 1), (2, 0), (3, 1). Instead of one degree-3 polynomial we lay three cubic pieces through each pair of neighbouring points.",
+    "Piece 1 on [0, 1]: s₀ = 1.667·x − 0.667·x³. At the left end the curvature is 0 (natural boundary condition).",
+    "Piece 2 on [1, 2] (orange): value, slope and curvature agree at the node x = 1 with piece 1 – the seam is invisible.",
+    "Piece 3 on [2, 3] (purple) joins just as smoothly; at the end the curvature is 0 again. The moments are M = (0, −4, 4, 0).",
+    "For comparison the degree-3 interpolation polynomial (dashed grey): at x = 0.5 it has the value 1.0, the spline only 0.75 – it oscillates less."
+  ],
+  "squeeze": [
+    "f(x) = x · sin(1/x) oscillates infinitely often as x → 0. Does f have a limit there?",
+    "Since −1 ≤ sin(1/x) ≤ 1, the graph lies between −|x| and |x| (dashed).",
+    "Both bounds tend to 0 as x → 0. f is squeezed in between – so lim x · sin(1/x) = 0 as well. That is the squeeze theorem."
+  ],
+  "stabilityRegions": [
+    "Stability region of the explicit Euler method in the complex z-plane (z = h·λ): the disc |1 + z| ≤ 1 around −1. Only there does the approximation decay.",
+    "For y′ = −50y we have z = −50h. At h = 0.01, z = −0.5: inside the disc – stable.",
+    "At h = 0.05, z = −2.5: outside (|1 + z| = 1.5 > 1) – the approximation explodes. Limit: z = −2, i.e. h = 0.04.",
+    "Implicit Euler: everything outside the disc |1 − z| ≤ 1 around +1 is stable – in particular the whole left half-plane. z = −2.5 is stable too (A-stable). The trapezoidal rule has exactly the left half-plane as its region."
+  ],
+  "stiffExplosion": [
+    "y′ = −50y, y(0) = 1. The exact solution e⁻⁵⁰ᵗ (blue) drops to almost 0 within a few hundredths.",
+    "Explicit Euler with h = 0.05: each step multiplies by 1 − 2.5 = −1.5: 1; −1.5; 2.25; −3.4; 5.1 … The approximation oscillates with growing amplitude – it explodes!",
+    "Implicit Euler with the same h = 0.05: factor 1/(1 + 2.5) = 0.2857. The values 1; 0.29; 0.08; 0.02 … decay smoothly – like the exact solution.",
+    "Explicit is stable only for h ≤ 2/50 = 0.04. Implicit is stable for every step size – that is why it is used for stiff problems."
+  ],
+  "subspaceClosure": [
+    "U is a line through the origin. The vectors u and v lie on U.",
+    "u + v: we attach v to the tip of u. The result lies on U again.",
+    "(−1) · u points in the opposite direction – but it also lies on U. U is closed.",
+    "G is a parallel line that does NOT pass through the origin. p and q lie on G.",
+    "p + q lands next to G (red dot). Addition alone already leads out of G – G is not a subspace."
+  ],
+  "subtractionZoom": [
+    "Top: x = 1.01 (blue) and the measured value x̃ = 1.0201 (orange) on the number line from 0 to 1.1. The dots almost coincide.",
+    "Their distance 0.0101 is tiny compared with the number itself: only 1 %.",
+    "Bottom, after subtracting 1: f(x) = 0.01 and f(x̃) = 0.0201, now on an axis from 0 to 0.025. The distance has stayed the same.",
+    "But the result itself has become tiny: the distance is now as large as the result – 101 % relative error."
+  ],
+  "swallowedSummand": [
+    "The toy calculator has room for 3 digits (blue box). We add 1.00 · 10³ and 4.00 · 10⁰.",
+    "Before adding, the exponents must match: 4.00 · 10⁰ = 0.004 · 10³. The digit 4 moves three places to the right.",
+    "Exact sum: 1.004 · 10³. But the 4 is outside the box.",
+    "After rounding to 3 digits, 1.00 · 10³ remains. The small summand was swallowed: fl(1000 + 4) = 1000."
+  ],
+  "taylorSine": [
+    "sin x (blue) and its tangent at 0: T₁(x) = x. Near 0 it fits well, further away it does not.",
+    "T₃(x) = x − x³/6 has the same slope AND the same curvature as sin at 0. It fits on a larger range.",
+    "T₅(x) = x − x³/6 + x⁵/120: even further.",
+    "T₉: with every further term the polynomial hugs sin x over a larger range. In the limit, sin x = x − x³/3! + x⁵/5! − …"
+  ],
+  "telescopeSum": [
+    "Σ (1/k − 1/(k+1)) for k = 1 … 4, written out: four brackets.",
+    "The −½ of the first bracket and the +½ of the second cancel.",
+    "Likewise −⅓ with +⅓ and −¼ with +¼. The telescope collapses.",
+    "Only the first and last terms remain: 1 − ⅕ = ⅘. In general: 1 − 1/(n+1)."
+  ],
+  "trapezoidVsSimpson": [
+    "Goal: the area under f(x) = eˣ on [0, 1]. Exact value e − 1 = 1.7183.",
+    "Trapezoidal rule: the curve is replaced by the chord. Area 1.8591 – the red sliver is the error (+0.141), the chord lies above the convex curve.",
+    "Simpson's rule: a parabola through three points (start, middle, end). It hugs the curve almost perfectly.",
+    "Area under the parabola: 1.7189 – error only +0.0006, more than 240 times smaller than for the trapezoid. You can hardly see the difference from the curve any more."
+  ],
+  "triangleSymmetries": [
+    "An equilateral triangle with corners 1, 2, 3. A symmetry maps the triangle onto itself – only the corners swap places.",
+    "r: rotation by 120° counterclockwise.",
+    "Then s: reflection in the vertical axis. Result of “first r, then s”, i.e. s ∘ r: top 3, left 2, right 1.",
+    "Now the other order, from the start: first s …",
+    "… then r. Result r ∘ s: top 2, left 1, right 3. Grey: the result of s ∘ r. Different – the group is not commutative!"
+  ],
+  "unitCircle": [
+    "Unit circle (radius 1). The angle 30° corresponds to the point (cos 30°, sin 30°) = (√3/2, 1/2).",
+    "45°: cos 45° = sin 45° = √2/2 ≈ 0.71. The point lies on the angle bisector.",
+    "60°: cos 60° = 1/2 and sin 60° = √3/2. Cosine and sine have swapped the values of 30°.",
+    "90°: the point is (0, 1): cos 90° = 0, sin 90° = 1. Cosine is the x-, sine the y-coordinate."
+  ],
+  "unitCircleImage": [
+    "Blue: the unit circle – all vectors of length 1.",
+    "Green: the image under A = (2 1; 1 2). Every vector of the circle is mapped, the circle becomes an ellipse.",
+    "Longest semi-axis 3 in direction (1, 1): ‖A‖₂ = 3. Shortest semi-axis 1 in direction (1, −1).",
+    "cond₂(A) = 3 / 1 = 3: the ellipse is only moderately distorted – well-conditioned.",
+    "For comparison A = (1 0.9; 0.9 1): semi-axes 1.9 and 0.1, so cond₂ = 19. The flatter the ellipse, the worse the conditioning."
+  ],
+  "vectorAddition": [
+    "v = (2, 1) and w = (1, 2) as arrows starting at the origin.",
+    "Adding: we attach w to the tip of v.",
+    "v + w = (3, 3) is the arrow from the origin to the new tip. Component by component: 2 + 1 = 3 and 1 + 2 = 3.",
+    "Scaling: 2 · v = (4, 2) points in the same direction but is twice as long."
+  ],
+  "vennOperations": [
+    "Universal set U = {1, …, 8}, inside it A = {1, 2, 3, 4} (left) and B = {3, 4, 5, 6} (right).",
+    "A ∩ B = {3, 4}: everything in A AND in B – the overlap.",
+    "A ∪ B = {1, 2, 3, 4, 5, 6}: everything in A OR in B. “Or” includes “both”.",
+    "A \\ B = {1, 2}: in A but not in B. Take A and cut away the overlap.",
+    "B \\ A = {5, 6} – something different from A \\ B! The difference depends on the order.",
+    "Complement Aᶜ = U \\ A = {5, 6, 7, 8}: everything in the universal set outside A."
   ]
 }

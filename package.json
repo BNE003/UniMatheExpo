@@ -52,9 +52,11 @@
     "web": "expo start --web",
     "lint": "eslint src tools tests",
     "import-content": "tsx tools/import-content.ts",
+    "import-captions": "tsx tools/import-visual-captions.ts",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tools",
     "build-math": "tsx tools/build-math-renderer.ts",
     "preview-math": "tsx tools/preview-math.ts",
+    "preview-visuals": "tsx tools/preview-visuals.ts",
     "test": "tsx --test tests/*.test.ts"
   },
   "private": true
