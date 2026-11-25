@@ -1,0 +1,24 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@/*": [
+        "../src/*"
+      ],
+      "@/assets/*": [
+        "../assets/*"
+      ]
+    },
+    "resolveJsonModule": true
+  },
+  "include": [
+    "./**/*.ts",
+    "../src/**/*.ts",
+    "../expo-env.d.ts",
+    "../tests/**/*.ts"
+  ],
+  "exclude": []
+}

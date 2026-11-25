@@ -1,0 +1,55 @@
+{
+  "basisChange": [
+    "Basis B mit b₁ = (1, 1) und b₂ = (1, −1). Der Vektor v = (3, 1) = 2 · b₁ + 1 · b₂ hat die B-Koordinaten (2, 1).",
+    "f(x, y) = (2x + y, x + 2y). Es ist f(b₁) = (3, 3) = 3 · b₁: b₁ wird nur gestreckt.",
+    "f(b₂) = (1, −1) = 1 · b₂: b₂ bleibt unverändert.",
+    "Also f(v) = 2 · 3 · b₁ + 1 · 1 · b₂ = (6, 6) + (1, −1) = (7, 5). In B-Koordinaten: (2, 1) ↦ (6, 1) – einfach komponentenweise mit 3 und 1 multipliziert."
+  ],
+  "detArea": [
+    "Das Einheitsquadrat hat die Fläche 1. Wir wenden f(x) = A x mit A = (3 1; 1 2) an. Dazu e₁ = (1, 0), e₂ = (0, 1) und x = (1, 1).",
+    "f(e₁) = A e₁ = (3, 1): die erste Spalte von A.",
+    "f(e₂) = A e₂ = (1, 2): die zweite Spalte von A.",
+    "Das Quadrat wird zum Parallelogramm mit der Fläche |3 · 2 − 1 · 1| = 5. Die Determinante sagt: Flächen werden mit 5 multipliziert.",
+    "Die Ecke x = (1, 1) landet bei f(x) = (3 + 1, 1 + 2) = (4, 3) – der gegenüberliegenden Ecke des Parallelogramms."
+  ],
+  "kernelImage": [
+    "f(x, y) = (x + y, x + y). Die Vektoren p = (2, −2) und q = (−1, 1) liegen auf der Geraden y = −x.",
+    "f(p) = (0, 0) und f(q) = (0, 0): Beide werden auf den Nullvektor gequetscht. Diese Gerade ist der Kern.",
+    "Nun r = (3, 0) und s = (0, 3). Sie liegen auf einer zum Kern parallelen Geraden (x + y = 3).",
+    "f(r) = f(s) = (3, 3): Die ganze Gerade landet in einem Punkt. Alle Bilder liegen auf y = x – das ist das Bild. Dim Kern + Dim Bild = 1 + 1 = 2 = dim ℝ²."
+  ],
+  "linearityCheck": [
+    "f(x, y) = (2x + y, y). Wir nehmen u = (1, 0) und v = (0, 2).",
+    "Weg A, Schritt 1: erst addieren. u + v = (1, 2).",
+    "Weg A, Schritt 2: dann abbilden. f(u + v) = (2 · 1 + 2, 2) = (4, 2).",
+    "Weg B: erst abbilden, f(u) = (2, 0) und f(v) = (2, 2), dann addieren: (4, 2). Dasselbe Ziel – f ist additiv."
+  ],
+  "matrixOrder": [
+    "Start: das Einheitsquadrat. D verdoppelt die x-Richtung, R dreht um 90°.",
+    "Erst D: Aus dem Quadrat wird ein Rechteck der Breite 2.",
+    "Dann R: Das Rechteck wird gedreht – Ergebnis von R · D ist ein hohes Rechteck.",
+    "Jetzt umgekehrt, von vorn: Erst R dreht das Quadrat – es bleibt ein Quadrat.",
+    "Dann D: Ergebnis von D · R ist ein breites Rechteck. Gestrichelt: R · D zum Vergleich. Also R · D ≠ D · R."
+  ],
+  "matrixTransform": [
+    "Vorher: e₁ = (1, 0), e₂ = (0, 1), das Einheitsquadrat und der Vektor x = (1, 2).",
+    "A = (2 1; 0 1) schickt e₁ auf A · e₁ = (2, 0) – genau die 1. Spalte von A.",
+    "e₂ landet auf A · e₂ = (1, 1) – genau die 2. Spalte von A.",
+    "Das ganze Gitter folgt: Gitterlinien bleiben gerade, parallel und gleichmäßig verteilt. Das Quadrat wird zum Parallelogramm.",
+    "x = (1, 2) landet bei A · x = 1 · (2, 0) + 2 · (1, 1) = (4, 2) – dieselben Koordinaten im neuen Gitter."
+  ],
+  "reflectionMap": [
+    "Vorher: das Einheitsquadrat, e₁, e₂ und x = (1, 2). Die Abbildung ist f(x, y) = (y, x): Sie vertauscht die Koordinaten.",
+    "f(e₁) = (0, 1): e₁ springt nach oben.",
+    "f(e₂) = (1, 0): e₂ springt nach rechts. Die beiden Basisvektoren tauschen die Plätze.",
+    "Das Gitter wird an der Geraden y = x gespiegelt. Das Quadrat landet auf sich selbst, aber sein Umlaufsinn kehrt sich um.",
+    "f(x) = 1 · f(e₁) + 2 · f(e₂) = (0, 1) + (2, 0) = (2, 1): das Spiegelbild von x an der Geraden y = x."
+  ],
+  "shearMap": [
+    "Vorher: das Einheitsquadrat, e₁ = (1, 0), e₂ = (0, 1) und der Vektor x = (1, 2). Die Abbildung ist f(x, y) = (x + y, y).",
+    "f(e₁) = (1 + 0, 0) = (1, 0): e₁ bleibt, wo es ist.",
+    "f(e₂) = (0 + 1, 1) = (1, 1): e₂ kippt nach rechts.",
+    "Das Gitter folgt: Das Quadrat wird zu einem schiefen Parallelogramm. Grundseite und Höhe bleiben gleich – die Fläche auch.",
+    "f(x) = 1 · f(e₁) + 2 · f(e₂) = (1, 0) + (2, 2) = (3, 2). Das ist eine Scherung."
+  ]
+}

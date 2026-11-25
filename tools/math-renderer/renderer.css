@@ -1,0 +1,242 @@
+/*
+ * Stile des Formel-Renderers. Übernommen aus LaTeXView.swift (Zusammenfassungen, Übungen)
+ * und LessonMathViews.swift / ContentView.swift (Lektionsschritte).
+ * Farben kommen als CSS-Variablen aus src/theme/tokens.ts (webColors).
+ */
+:root {
+  --primary-color: #007aff;
+  --text-color: #1c1c1e;
+  --muted-text-color: #666666;
+  --card-background: rgba(255, 255, 255, 0.9);
+  --math-block-background: rgba(0, 122, 255, 0.05);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --surface-strong: #ffffff;
+  --subtle: rgba(0, 0, 0, 0.04);
+  --hairline: rgba(0, 0, 0, 0.08);
+  --success-color: #34c759;
+  --border-radius: 12px;
+  --spacing-unit: 8px;
+  --font-scale: 1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: transparent;
+  -webkit-text-size-adjust: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: calc(16px * var(--font-scale));
+  line-height: 1.5;
+  color: var(--text-color);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root { display: flow-root; }
+#root > * + * { margin-top: 20px; }
+
+.nowrap { white-space: nowrap; }
+mjx-container { color: var(--text-color) !important; }
+
+/* ---------- Lektionsschritt (ExplanationContent) ---------- */
+
+.lesson-text {
+  font-size: calc(17px * var(--font-scale));
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  text-align: left;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+.lesson-text.small { font-size: calc(15px * var(--font-scale)); }
+.lesson-text.bold { font-weight: 600; }
+.lesson-text mjx-container { font-size: 105% !important; }
+
+.bullets > * + * { margin-top: 10px; }
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--subtle);
+}
+.bullet-num {
+  flex: 0 0 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  font-size: calc(13px * var(--font-scale));
+  font-weight: 700;
+}
+.bullet-text {
+  flex: 1;
+  padding-top: 3px;
+  font-size: calc(16px * var(--font-scale));
+  line-height: 1.45;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.bullet-text strong { font-weight: 600; }
+
+.formula-card {
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--surface-strong);
+  border: 1px solid var(--hairline);
+}
+.fx-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.fx-scroll::-webkit-scrollbar { display: none; }
+.fx-inner { width: max-content; min-width: 100%; text-align: center; }
+.fx-inner mjx-container[display='true'] { margin: 0.3em 0 !important; font-size: 94% !important; }
+.fx-track {
+  display: none;
+  position: relative;
+  height: 6px;
+  margin: 10px 2px 0;
+  border-radius: 3px;
+  background: rgba(128, 128, 128, 0.25);
+}
+.fx-thumb {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--primary-color);
+}
+.fx-hint {
+  display: none;
+  margin-top: 6px;
+  font-size: 12px;
+  text-align: center;
+  color: var(--muted-text-color);
+}
+.formula-card.overflowing .fx-track,
+.formula-card.overflowing .fx-hint { display: block; }
+
+.explanation {
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--subtle);
+}
+
+.insight {
+  padding: 16px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--primary-color) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 25%, transparent);
+}
+.insight-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ---------- Zusammenfassungen und Übungen (LaTeXView.swift) ---------- */
+
+.content-container, .exercise {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.summary { padding: var(--spacing-unit); }
+.summary .section {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.summary h1 { font-size: 1.5em; margin-bottom: var(--spacing-unit); font-weight: 700; }
+.summary h2 { font-size: 1.3em; margin: calc(var(--spacing-unit) * 1.5) 0 var(--spacing-unit); font-weight: 600; }
+.summary h3 { font-size: 1.1em; margin: var(--spacing-unit) 0; font-weight: 500; }
+.summary p { margin: var(--spacing-unit) 0; font-size: 0.95em; }
+.summary .math-block {
+  display: block;
+  text-align: center;
+  margin: var(--spacing-unit) 0;
+  background: var(--math-block-background);
+  padding: var(--spacing-unit);
+  border-radius: var(--border-radius);
+}
+.summary .operation, .summary .relation, .summary .important-set {
+  background: var(--card-background);
+  padding: var(--spacing-unit);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-unit);
+  border: 1px solid var(--border-color);
+}
+.summary .operation h3, .summary .relation h3, .summary .important-set h3 {
+  color: var(--primary-color);
+  margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+.summary ul { list-style-type: none; }
+.summary li { margin-bottom: var(--spacing-unit); font-size: 0.95em; }
+.summary ul > li { padding-left: calc(var(--spacing-unit) * 2); position: relative; }
+/* iOS setzt den Punkt auch vor nummerierte Listen („1. •“); Android nur bei ungeordneten Listen. */
+.summary ul > li::before { content: '•'; color: var(--primary-color); position: absolute; left: 0; }
+.summary ol { padding-left: 1.4em; }
+.summary blockquote {
+  border-left: 3px solid var(--primary-color);
+  margin: var(--spacing-unit) 0;
+  padding: var(--spacing-unit);
+  background-color: var(--math-block-background);
+  border-radius: var(--border-radius);
+  font-size: 0.95em;
+}
+
+/* Abgesetzte Formeln außerhalb des Formelkastens: verkleinern, sonst scrollbar */
+.summary mjx-container[display='true'], .summary .math-block, .exercise mjx-container[display='true'] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+mjx-container::-webkit-scrollbar, .math-block::-webkit-scrollbar { height: 5px; }
+mjx-container::-webkit-scrollbar-thumb, .math-block::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.5);
+  border-radius: 3px;
+}
+
+/* ---------- Klausuraufgaben (ExamDetailView.swift) ---------- */
+
+.exercise { font-size: calc(16px * var(--font-scale)); line-height: 1.5; }
+.ex-title { font-size: 1.05em; font-weight: 600; margin-bottom: 8px; }
+.exam-step {
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--card-background);
+  border: 1px solid color-mix(in srgb, var(--success-color) 30%, transparent);
+  font-size: calc(15px * var(--font-scale));
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.exam-step + .exam-step { margin-top: 12px; }
+.exam-step-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  color: var(--success-color);
+  font-weight: 700;
+  font-size: calc(15px * var(--font-scale));
+}
+.exam-step-dot { width: 6px; height: 6px; border-radius: 3px; background: var(--success-color); }
+.exam-step mjx-container[display='true'] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }

@@ -1,0 +1,55 @@
+{
+  "basisChange": [
+    "Basis B with b₁ = (1, 1) and b₂ = (1, −1). The vector v = (3, 1) = 2 · b₁ + 1 · b₂ has the B-coordinates (2, 1).",
+    "f(x, y) = (2x + y, x + 2y). We have f(b₁) = (3, 3) = 3 · b₁: b₁ is only stretched.",
+    "f(b₂) = (1, −1) = 1 · b₂: b₂ stays unchanged.",
+    "So f(v) = 2 · 3 · b₁ + 1 · 1 · b₂ = (6, 6) + (1, −1) = (7, 5). In B-coordinates: (2, 1) ↦ (6, 1) – simply multiplied componentwise by 3 and 1."
+  ],
+  "detArea": [
+    "The unit square has area 1. We apply f(x) = A x with A = (3 1; 1 2), together with e₁ = (1, 0), e₂ = (0, 1) and x = (1, 1).",
+    "f(e₁) = A e₁ = (3, 1): the first column of A.",
+    "f(e₂) = A e₂ = (1, 2): the second column of A.",
+    "The square becomes a parallelogram with area |3 · 2 − 1 · 1| = 5. The determinant says: areas are multiplied by 5.",
+    "The corner x = (1, 1) lands at f(x) = (3 + 1, 1 + 2) = (4, 3) – the opposite corner of the parallelogram."
+  ],
+  "kernelImage": [
+    "f(x, y) = (x + y, x + y). The vectors p = (2, −2) and q = (−1, 1) lie on the line y = −x.",
+    "f(p) = (0, 0) and f(q) = (0, 0): both are squashed onto the zero vector. This line is the kernel.",
+    "Now r = (3, 0) and s = (0, 3). They lie on a line parallel to the kernel (x + y = 3).",
+    "f(r) = f(s) = (3, 3): the whole line lands in a single point. All images lie on y = x – that is the image. dim ker + dim im = 1 + 1 = 2 = dim ℝ²."
+  ],
+  "linearityCheck": [
+    "f(x, y) = (2x + y, y). We take u = (1, 0) and v = (0, 2).",
+    "Path A, step 1: add first. u + v = (1, 2).",
+    "Path A, step 2: then map. f(u + v) = (2 · 1 + 2, 2) = (4, 2).",
+    "Path B: map first, f(u) = (2, 0) and f(v) = (2, 2), then add: (4, 2). Same destination – f is additive."
+  ],
+  "matrixOrder": [
+    "Start: the unit square. D doubles the x-direction, R rotates by 90°.",
+    "First D: the square becomes a rectangle of width 2.",
+    "Then R: the rectangle is rotated – the result of R · D is a tall rectangle.",
+    "Now the other way round, from the start: first R rotates the square – it stays a square.",
+    "Then D: the result of D · R is a wide rectangle. Dashed: R · D for comparison. So R · D ≠ D · R."
+  ],
+  "matrixTransform": [
+    "Before: e₁ = (1, 0), e₂ = (0, 1), the unit square and the vector x = (1, 2).",
+    "A = (2 1; 0 1) sends e₁ to A · e₁ = (2, 0) – exactly the 1st column of A.",
+    "e₂ lands on A · e₂ = (1, 1) – exactly the 2nd column of A.",
+    "The whole grid follows: grid lines stay straight, parallel and evenly spaced. The square becomes a parallelogram.",
+    "x = (1, 2) lands at A · x = 1 · (2, 0) + 2 · (1, 1) = (4, 2) – the same coordinates in the new grid."
+  ],
+  "reflectionMap": [
+    "Before: the unit square, e₁, e₂ and x = (1, 2). The map is f(x, y) = (y, x): it swaps the coordinates.",
+    "f(e₁) = (0, 1): e₁ jumps up.",
+    "f(e₂) = (1, 0): e₂ jumps to the right. The two basis vectors swap places.",
+    "The grid is reflected in the line y = x. The square lands on itself, but its orientation is reversed.",
+    "f(x) = 1 · f(e₁) + 2 · f(e₂) = (0, 1) + (2, 0) = (2, 1): the mirror image of x in the line y = x."
+  ],
+  "shearMap": [
+    "Before: the unit square, e₁ = (1, 0), e₂ = (0, 1) and the vector x = (1, 2). The map is f(x, y) = (x + y, y).",
+    "f(e₁) = (1 + 0, 0) = (1, 0): e₁ stays where it is.",
+    "f(e₂) = (0 + 1, 1) = (1, 1): e₂ tilts to the right.",
+    "The grid follows: the square becomes a slanted parallelogram. Base and height stay the same – and so does the area.",
+    "f(x) = 1 · f(e₁) + 2 · f(e₂) = (1, 0) + (2, 2) = (3, 2). This is a shear."
+  ]
+}
