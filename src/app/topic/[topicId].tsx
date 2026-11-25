@@ -1,5 +1,6 @@
 /** Themenseite mit drei Kacheln (ContentSelectionView, SubTopicsView.swift:476). */
-import { router, useLocalSearchParams } from 'expo-router';
+import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
+import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { LearnHeroCard, TopicActionTile } from '@/components/TopicCards';
@@ -7,6 +8,7 @@ import { PressableScale } from '@/components/ui';
 import { icons } from '@/content/icons';
 import { findTopic } from '@/content/load';
 import { useLang, useT } from '@/i18n';
+import { loadLessonStep } from '@/storage/lessonProgress';
 import { useTheme } from '@/theme/ThemeProvider';
 import { monoFont } from '@/theme/mono';
 import { displayFont } from '@/theme/tokens';
@@ -17,6 +19,14 @@ export default function TopicScreen() {
   const { colors } = useTheme();
   const lang = useLang();
   const t = useT();
+  // Gespeicherten Lektionsschritt bei jedem Erscheinen neu lesen (auch nach Rückkehr aus der Lektion).
+  const [savedStep, setSavedStep] = useState(0);
+  useFocusEffect(
+    useCallback(() => {
+      const steps = findTopic(topicId)?.topic.stats.lessonSteps[lang] ?? 0;
+      setSavedStep(loadLessonStep(lang, topicId, steps));
+    }, [lang, topicId]),
+  );
 
   if (!found) return <Text style={{ color: colors.text, padding: 24 }}>{t('common.loadError')}</Text>;
   const { course, topic } = found;
@@ -35,7 +45,7 @@ export default function TopicScreen() {
         <PressableScale
           accessibilityRole="button"
           onPress={() => router.push({ pathname: '/lesson/[topicId]', params: { topicId: topic.id } })}>
-          <LearnHeroCard />
+          <LearnHeroCard resumeStep={savedStep > 0 ? savedStep + 1 : undefined} totalSteps={topic.stats.lessonSteps[lang]} />
         </PressableScale>
         <View style={styles.row}>
           <PressableScale

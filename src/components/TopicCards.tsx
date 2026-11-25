@@ -5,7 +5,6 @@
  * - LearnHeroCard, TopicActionTile (Views/SubTopicsView.swift:793/847)
  */
 import { Image, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
-import Svg, { Circle, Path } from 'react-native-svg';
 
 import { icons, topicIcon, type IconName } from '@/content/icons';
 import { useT } from '@/i18n';
@@ -76,37 +75,24 @@ export function SubTopicCard({ id, icon, title }: { id: string; icon: string; ti
   );
 }
 
-/** Dezentes Koordinatengitter mit Vektor (VectorGridDecoration). */
-function VectorGridDecoration({ color, accent }: { color: string; accent: string }) {
-  let grid = '';
-  for (let i = 0; i <= 4; i++) grid += `M0 ${20 + i * 30}H200`;
-  for (let i = 0; i <= 5; i++) grid += `M${30 + i * 30} 0V140`;
-  return (
-    <Svg width={200} height={140} style={styles.decoration}>
-      <Path d={grid} stroke={withAlpha(color, 0.06)} strokeWidth={1} />
-      <Path d="M30 110L120 50" stroke={accent} strokeWidth={3} strokeLinecap="round" />
-      <Circle cx={120} cy={50} r={5} fill={accent} />
-      <Circle cx={30} cy={110} r={4} fill={withAlpha(color, 0.2)} />
-    </Svg>
-  );
-}
-
-export function LearnHeroCard() {
+/** `resumeStep` (1-basiert): Lektion wurde schon begonnen → „Fortsetzen“ statt „Starten“. */
+export function LearnHeroCard({ resumeStep, totalSteps }: { resumeStep?: number; totalSteps?: number } = {}) {
   const { colors } = useTheme();
   const t = useT();
+  const resuming = resumeStep !== undefined;
   return (
     <View style={[styles.hero, { backgroundColor: colors.surfaceStrong, borderColor: withAlpha(colors.text, 0.08), shadowColor: '#000' }]}>
-      <VectorGridDecoration color={colors.text} accent={colors.accent} />
       <View style={[styles.eyebrow, { backgroundColor: withAlpha(colors.text, 0.06) }]}>
         <Text style={[styles.mono, { color: colors.textSecondary }]}>{t('topic.learn.eyebrow')}</Text>
       </View>
-      <View style={styles.heroSpacer} />
       <View style={styles.heroText}>
         <Text style={[displayFont(30), { color: colors.text, letterSpacing: -0.5 }]}>{t('topic.learn.title')}</Text>
-        <Text style={[appFont(15), { color: colors.textSecondary }]}>{t('topic.learn.subtitle')}</Text>
+        <Text style={[appFont(15), { color: colors.textSecondary }]}>
+          {resuming ? t('topic.learn.resumeSubtitle', { step: resumeStep, total: totalSteps ?? resumeStep }) : t('topic.learn.subtitle')}
+        </Text>
       </View>
       <View style={[styles.heroButton, { backgroundColor: colors.text }]}>
-        <Text style={[appFont(16, 'semibold'), { color: colors.background }]}>{t('topic.learn.cta')}</Text>
+        <Text style={[appFont(16, 'semibold'), { color: colors.background }]}>{t(resuming ? 'topic.learn.resume' : 'topic.learn.cta')}</Text>
         <Icon name={icons.forward} size={18} color={colors.background} />
       </View>
     </View>
@@ -172,7 +158,6 @@ const styles = StyleSheet.create({
   subBadge: { padding: 16 },
   subTitle: { textAlign: 'center', paddingHorizontal: 8, paddingBottom: 8 },
   hero: {
-    minHeight: 250,
     padding: 22,
     gap: 16,
     borderRadius: 26,
@@ -186,7 +171,6 @@ const styles = StyleSheet.create({
   decoration: { position: 'absolute', top: -6, right: -10 },
   eyebrow: { alignSelf: 'flex-start', paddingHorizontal: 10, paddingVertical: 6, borderRadius: 999 },
   mono: { fontFamily: monoFont, fontSize: 11 },
-  heroSpacer: { flex: 1, minHeight: 24 },
   heroText: { gap: 6 },
   heroButton: { height: 52, borderRadius: 26, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   tile: { minHeight: 164, padding: 16, borderRadius: 22, borderWidth: 1, justifyContent: 'space-between', gap: 20 },
