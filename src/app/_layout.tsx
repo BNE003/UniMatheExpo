@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { maybeAskForReviewOnLaunch } from '@/features/settings/actions';
 import { LanguageProvider } from '@/i18n';
 import { useAppFonts } from '@/theme/fonts';
 import { ThemeProvider, useTheme } from '@/theme/ThemeProvider';
@@ -18,6 +19,10 @@ function RootStack() {
   useEffect(() => {
     if (fontsReady) SplashScreen.hideAsync();
   }, [fontsReady]);
+  // Bewertungsabfrage ab dem 2. Start (SettingsModel.trackAppLaunch)
+  useEffect(() => {
+    maybeAskForReviewOnLaunch();
+  }, []);
   if (!fontsReady) return null;
   return (
     <>
@@ -38,6 +43,8 @@ function RootStack() {
         <Stack.Screen name="topic/[topicId]" options={{ title: '' }} />
         <Stack.Screen name="summary/[topicId]" />
         <Stack.Screen name="exam/[examKey]" />
+        <Stack.Screen name="exercises/[topicId]" />
+        <Stack.Screen name="exercise/[topicId]/[exerciseId]" />
         {/* Lektion als Vollbild ohne Kopf- und Tab-Leiste (InteractiveLearningView) */}
         <Stack.Screen name="lesson/[topicId]" options={{ headerShown: false, animation: 'fade_from_bottom' }} />
       </Stack>

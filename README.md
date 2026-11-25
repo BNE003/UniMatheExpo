@@ -14,7 +14,8 @@ Meilensteine M0/M1 (Start) und Teile von M2/M3 sind umgesetzt:
 - Screens: Kursliste → Themenraster → Themenseite → Lektion (Schritt für Schritt, Kapitelübersicht) und Zusammenfassung
 - Probeklausuren (18, DE/EN): Einführung mit Notenschlüssel, Timer, schrittweise Lösungen, ohne Kauf (`src/app/exam`, `src/domain/exam.ts`)
 - Matrixrechner: Gauß/Gauß-Jordan mit Schritten und LGS-Lösung, Multiplikation, Determinante, unbegrenzt nutzbar (`src/app/(tabs)/tools.tsx`, `src/domain/matrix.ts`)
-- Noch offen: Übungen mit Antwortprüfung (M4), Lernfortschritt (M5). Die Einstellungen enthalten vorerst nur Sprache und Darstellung.
+- Übungen: alle 1.360 Aufgaben pro Sprache nach Schwierigkeit, mit schrittweisen Lösungen (`src/app/exercises`, `src/app/exercise`)
+- Noch offen: automatische Antwortprüfung (M4), Lernfortschritt (M5). Die Einstellungen enthalten vorerst nur Sprache und Darstellung.
 
 ## Einrichtung
 

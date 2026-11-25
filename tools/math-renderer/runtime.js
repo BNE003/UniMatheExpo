@@ -91,9 +91,13 @@
       if (available <= 0 || natural <= available + 2) return;
       el.style.fontSize = (Math.max(0.7, (available - 4) / natural) * 100).toFixed(1) + '%';
     });
-    let maxWidth = root.clientWidth;
     root.querySelectorAll('mjx-container:not([display="true"])').forEach(function (el) {
-      if (el.closest('.formula-card') || maxWidth <= 0) return;
+      if (el.closest('.formula-card')) return;
+      // Verfügbare Breite = Inhaltsbreite des umgebenden Blocks (Karte, Lösungsschritt …), nicht des ganzen Dokuments
+      const box = el.parentElement ? el.parentElement.closest('div') || root : root;
+      const cs = getComputedStyle(box);
+      const maxWidth = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      if (maxWidth <= 0) return;
       ['fontSize', 'display', 'maxWidth', 'overflowX', 'overflowY', 'verticalAlign'].forEach(function (p) {
         el.style[p] = '';
       });
@@ -141,6 +145,12 @@
   }
 
   window.UM = { render: render, layout: layout };
+
+  /* Tippbare Elemente: <… data-action="…"> meldet { type: 'action', value } an React Native. */
+  root.addEventListener('click', function (event) {
+    const target = event.target.closest('[data-action]');
+    if (target && root.contains(target)) post({ type: 'action', value: target.getAttribute('data-action') });
+  });
 
   if (typeof ResizeObserver !== 'undefined') new ResizeObserver(postHeight).observe(root);
   window.addEventListener('resize', layout);

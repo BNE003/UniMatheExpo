@@ -96,6 +96,17 @@ export const icons = {
   hide: { ios: 'eye.slash.fill', android: 'visibility_off' },
   finish: { ios: 'checkmark.circle.fill', android: 'check_circle' },
   swap: { ios: 'arrow.left.and.right', android: 'swap_horiz' },
+  // Einstellungen (SettingsView.swift)
+  flag: { ios: 'flag', android: 'flag' },
+  globe: { ios: 'globe', android: 'language' },
+  sun: { ios: 'sun.max.fill', android: 'light_mode' },
+  moon: { ios: 'moon.fill', android: 'dark_mode' },
+  system: { ios: 'circle.lefthalf.filled', android: 'brightness_auto' },
+  selected: { ios: 'checkmark.circle.fill', android: 'check_circle' },
+  mail: { ios: 'envelope.fill', android: 'mail' },
+  feedback: { ios: 'bubble.left.and.bubble.right.fill', android: 'forum' },
+  legal: { ios: 'doc.text.fill', android: 'description' },
+  closeCircle: { ios: 'xmark.circle.fill', android: 'cancel' },
 } as const satisfies Record<string, IconName>;
 
 export const knownSfSymbols = (): string[] => Object.keys(SF_TO_MATERIAL);

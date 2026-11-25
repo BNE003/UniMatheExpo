@@ -14,6 +14,10 @@
   --subtle: rgba(0, 0, 0, 0.04);
   --hairline: rgba(0, 0, 0, 0.08);
   --success-color: #34c759;
+  --easy-color: #34c759;
+  --medium-color: #ff9500;
+  --hard-color: #ff3b30;
+  --app-border: rgba(48, 117, 242, 0.15);
   --border-radius: 12px;
   --spacing-unit: 8px;
   --font-scale: 1;
@@ -240,3 +244,51 @@ mjx-container::-webkit-scrollbar-thumb, .math-block::-webkit-scrollbar-thumb {
 }
 .exam-step-dot { width: 6px; height: 6px; border-radius: 3px; background: var(--success-color); }
 .exam-step mjx-container[display='true'] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+
+/* ---------- Übungen (ContentView.swift: ExerciseCard, ExerciseDetailView.swift) ---------- */
+
+.ex-list > * + * { margin-top: 20px; }
+.ex-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--card-background);
+  border: 1px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  font-size: calc(16px * var(--font-scale));
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s ease-out;
+}
+.ex-card:active { transform: scale(0.98); }
+.ex-card > * + * { margin-top: 12px; }
+.ex-card-head { display: flex; align-items: flex-start; gap: 12px; }
+.ex-card-title { flex: 1; font-size: 1.2em; font-weight: 700; line-height: 1.3; }
+.ex-points { color: var(--primary-color); font-size: 0.94em; white-space: nowrap; }
+.ex-card-foot { display: flex; justify-content: space-between; align-items: center; }
+.ex-badge { color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 4px; }
+.ex-badge.easy { background: var(--easy-color); }
+.ex-badge.medium { background: var(--medium-color); }
+.ex-badge.hard { background: var(--hard-color); }
+.ex-start {
+  color: #fff;
+  background: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.94em;
+  font-weight: 600;
+}
+
+.ex-step {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--card-background);
+  border: 1px solid var(--app-border);
+  font-size: calc(16px * var(--font-scale));
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.ex-step + .ex-step { margin-top: 16px; }
+.ex-step-head { font-size: calc(17px * var(--font-scale)); font-weight: 600; margin-bottom: 12px; }
+.ex-step mjx-container[display='true'] { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.ex-card.static:active { transform: none; }

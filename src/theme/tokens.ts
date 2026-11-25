@@ -3,7 +3,7 @@
  * Quelle: UniMathe/SettingsModel.swift (extension Color, appBackground … appAccentBlue)
  * und Views/AppTypography.swift (Inter / InterDisplay).
  */
-import { Platform, type TextStyle } from 'react-native';
+import type { TextStyle } from 'react-native';
 
 /** Swift-Farbe UIColor(red:green:blue:alpha:) mit Komponenten 0…1 → CSS-Farbe. */
 function rgb(r: number, g: number, b: number, a = 1): string {
@@ -135,8 +135,5 @@ export function appFont(size: number, weight: FontWeight = 'regular'): TextStyle
 export function displayFont(size: number): TextStyle {
   return { fontFamily: fontFamilies.display, fontSize: size };
 }
-
-/** Monospace für Kopfzeilen wie „LINEARE ALGEBRA / 03“ (iOS: design: .monospaced). */
-export const monoFont = Platform.select({ ios: 'Menlo', default: 'monospace' });
 
 export const radius = { sm: 8, md: 12, lg: 14, xl: 16, xxl: 20 } as const;

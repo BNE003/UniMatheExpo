@@ -10,7 +10,8 @@ import Svg, { Circle, Path } from 'react-native-svg';
 import { icons, topicIcon, type IconName } from '@/content/icons';
 import { useT } from '@/i18n';
 import { useTheme } from '@/theme/ThemeProvider';
-import { appFont, displayFont, monoFont, withAlpha } from '@/theme/tokens';
+import { monoFont } from '@/theme/mono';
+import { appFont, displayFont, withAlpha } from '@/theme/tokens';
 
 import { GradientCircle, Icon } from './ui';
 

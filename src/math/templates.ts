@@ -118,3 +118,52 @@ export function examStepsHtml(steps: readonly string[], lang: Lang): string {
 export function exerciseTextHtml(text: string): string {
   return `<div class="content-container exercise">${text.replaceAll('\n', '<br>')}</div>`;
 }
+
+// ---------------------------------------------------------------------------
+// Übungen (ContentView.swift: ExercisesView/ExerciseCard, Views/ExerciseDetailView.swift)
+
+const exerciseLabels = {
+  de: { points: 'Punkte', start: 'Start', step: 'Schritt', easy: 'Einfach', medium: 'Mittel', hard: 'Schwer' },
+  en: { points: 'points', start: 'Start', step: 'Step', easy: 'Easy', medium: 'Medium', hard: 'Hard' },
+} as const;
+
+interface ExerciseLike {
+  id: number;
+  title: string;
+  description: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  points: number;
+}
+
+/**
+ * Alle Aufgaben eines Schwierigkeitsgrads in einem Dokument. Ein Tippen auf eine Karte meldet
+ * `open:<id>` (MathView.onAction).
+ */
+export function exerciseListHtml(exercises: readonly ExerciseLike[], lang: Lang): string {
+  const l = exerciseLabels[lang];
+  const cards = exercises.map(
+    (e) =>
+      `<div class="ex-card" data-action="open:${e.id}" role="button">` +
+      `<div class="ex-card-head"><div class="ex-card-title">${lineBreaks(e.title)}</div><div class="ex-points">${e.points} ${l.points}</div></div>` +
+      `<div class="ex-card-desc">${lineBreaks(e.description)}</div>` +
+      `<div class="ex-card-foot"><span class="ex-badge ${e.difficulty}">${l[e.difficulty]}</span><span class="ex-start">${l.start}</span></div>` +
+      `</div>`,
+  );
+  return `<div class="ex-list">${cards.join('')}</div>`;
+}
+
+/** Aufgabenkarte der Detailseite. */
+export function exerciseDetailHtml(title: string, description: string): string {
+  return (
+    `<div class="ex-card static"><div class="ex-card-title">${lineBreaks(title)}</div>` +
+    `<div class="ex-card-desc">${lineBreaks(description)}</div></div>`
+  );
+}
+
+/** Aufgedeckte Lösungsschritte (SolutionStepView). */
+export function exerciseStepsHtml(steps: readonly string[], lang: Lang): string {
+  const label = exerciseLabels[lang].step;
+  return steps
+    .map((s, i) => `<div class="ex-step"><div class="ex-step-head">${label} ${i + 1}</div><div>${lineBreaks(s)}</div></div>`)
+    .join('');
+}

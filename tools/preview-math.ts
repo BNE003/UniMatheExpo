@@ -10,7 +10,15 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 import type { ExerciseFile, Lang, Lesson, Summary } from '../src/content/types';
-import { exerciseTextHtml, lessonStepSegments, summaryHtml } from '../src/math/templates';
+import {
+  examExerciseHtml,
+  examStepsHtml,
+  exerciseDetailHtml,
+  exerciseListHtml,
+  exerciseStepsHtml,
+  lessonStepSegments,
+  summaryHtml,
+} from '../src/math/templates';
 import { webColors } from '../src/theme/tokens';
 
 const ROOT = resolve(__dirname, '..');
@@ -30,6 +38,10 @@ const vars = (scheme: 'light' | 'dark') => {
     'card-background': c.card,
     'math-block-background': c.mathBlock,
     'border-color': c.border,
+    'success-color': scheme === 'dark' ? '#30D158' : '#34C759',
+    'easy-color': scheme === 'dark' ? '#30D158' : '#34C759',
+    'medium-color': scheme === 'dark' ? '#FF9F0A' : '#FF9500',
+    'hard-color': scheme === 'dark' ? '#FF453A' : '#FF3B30',
     'surface-strong': c.surfaceStrong,
     subtle: c.subtle,
     hairline: c.hairline,
@@ -47,12 +59,19 @@ lesson.steps.forEach((step, i) => {
   if (seg.after) items.push({ label: `Schritt ${i + 1} (nach Grafik)`, html: seg.after });
 });
 if (summary.html) items.push({ label: 'Zusammenfassung', html: summaryHtml(summary.html) });
-for (const ex of exercises.exercises.slice(0, 3)) {
-  items.push({
-    label: `Übung ${ex.id}: Aufgabe + Lösung`,
-    html: [ex.description, ...ex.solutionSteps].map(exerciseTextHtml).join(''),
-  });
+items.push({ label: 'Übungsliste (leicht)', html: exerciseListHtml(exercises.exercises.filter((e) => e.difficulty === 'easy'), lang) });
+for (const ex of exercises.exercises.slice(0, 2)) {
+  items.push({ label: `Übung ${ex.id}: Aufgabe`, html: exerciseDetailHtml(ex.title, ex.description) });
+  items.push({ label: `Übung ${ex.id}: alle Lösungsschritte`, html: exerciseStepsHtml(ex.solutionSteps, lang) });
 }
+items.push({
+  label: 'Klausuraufgabe (lineare_algebra_1_anfaenger #2)',
+  html: (() => {
+    const exam = JSON.parse(readFileSync(join(ROOT, 'assets/content', lang, 'exams/lineare_algebra_1_anfaenger.json'), 'utf8'));
+    const ex = exam.exercises[1];
+    return examExerciseHtml(ex.title, ex.description) + examStepsHtml(ex.solutionSteps, lang);
+  })(),
+});
 
 const page = `<!DOCTYPE html><html lang="${lang}"><head><meta charset="utf-8"><title>Formel-Vorschau ${topicId}</title>
 <style>
@@ -93,6 +112,8 @@ window.addEventListener('message', (e) => {
   } else if (msg.type === 'rendered') {
     stats.rendered++; stats.mathErrors += msg.mathErrors; stats.maxMs = Math.max(stats.maxMs, msg.ms);
     if (msg.mathErrors) stats.failed.push(frame.dataset.i);
+  } else if (msg.type === 'action') {
+    stats.lastAction = msg.value;
   } else if (msg.type === 'error') {
     stats.errors++; stats.failed.push(frame.dataset.i + ': ' + msg.message);
   }

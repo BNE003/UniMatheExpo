@@ -6,6 +6,7 @@ import { getLocales } from 'expo-localization';
 import { createContext, useContext, useMemo, useState, type ReactNode } from 'react';
 
 import type { Lang } from '@/content/types';
+import { loadLanguage, saveLanguage } from '@/storage/settings';
 
 import { ui, type UiKey } from './ui';
 
@@ -22,9 +23,18 @@ interface LangValue {
 const LangContext = createContext<LangValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Dauerhafte Speicherung folgt mit der Speicherschicht (Meilenstein M5).
-  const [lang, setLang] = useState<Lang>(deviceLanguage);
-  const value = useMemo(() => ({ lang, setLang }), [lang]);
+  // Gespeicherte Wahl, sonst Gerätesprache (SettingsModel.detectDeviceLanguage)
+  const [lang, setLangState] = useState<Lang>(() => loadLanguage() ?? deviceLanguage());
+  const value = useMemo(
+    () => ({
+      lang,
+      setLang: (next: Lang) => {
+        saveLanguage(next);
+        setLangState(next);
+      },
+    }),
+    [lang],
+  );
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
 }
 

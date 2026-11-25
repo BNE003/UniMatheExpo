@@ -46,9 +46,11 @@ interface Props {
   estimatedHeight?: number;
   style?: StyleProp<ViewStyle>;
   onRendered?: (info: RenderInfo) => void;
+  /** Antippen eines Elements mit `data-action` im HTML. */
+  onAction?: (value: string) => void;
 }
 
-export function MathView({ html, estimatedHeight = 40, style, onRendered }: Props) {
+export function MathView({ html, estimatedHeight = 40, style, onRendered, onAction }: Props) {
   const uri = useRendererUri();
   const { web, colors } = useTheme();
   const lang = useLang();
@@ -71,11 +73,15 @@ export function MathView({ html, estimatedHeight = 40, style, onRendered }: Prop
         subtle: web.subtle,
         hairline: web.hairline,
         'success-color': colors.difficulty.easy,
+        'easy-color': colors.difficulty.easy,
+        'medium-color': colors.difficulty.medium,
+        'hard-color': colors.difficulty.hard,
+        'app-border': colors.border,
         // Systemschriftgröße wie bei nativen Texten berücksichtigen (WebView-textZoom ist fest 100 %).
         'font-scale': PixelRatio.getFontScale(),
       },
     }),
-    [html, lang, web, colors.difficulty.easy],
+    [html, lang, web, colors.difficulty, colors.border],
   );
 
   const send = useCallback(() => {
@@ -86,7 +92,7 @@ export function MathView({ html, estimatedHeight = 40, style, onRendered }: Prop
   useEffect(send, [send]);
 
   const onMessage = (event: WebViewMessageEvent) => {
-    let message: { type: string; value?: number; mathErrors?: number; ms?: number; message?: string };
+    let message: { type: string; value?: number | string; mathErrors?: number; ms?: number; message?: string };
     try {
       message = JSON.parse(event.nativeEvent.data);
     } catch {
@@ -103,6 +109,9 @@ export function MathView({ html, estimatedHeight = 40, style, onRendered }: Prop
       case 'rendered':
         if (__DEV__ && message.mathErrors) console.warn(`MathJax: ${message.mathErrors} Formelfehler`);
         onRendered?.({ mathErrors: message.mathErrors ?? 0, ms: message.ms ?? 0 });
+        break;
+      case 'action':
+        if (typeof message.value === 'string') onAction?.(message.value);
         break;
       case 'error':
         if (__DEV__) console.warn('Formel-Renderer:', message.message);

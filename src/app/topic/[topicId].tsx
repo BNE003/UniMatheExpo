@@ -8,7 +8,8 @@ import { icons } from '@/content/icons';
 import { findTopic } from '@/content/load';
 import { useLang, useT } from '@/i18n';
 import { useTheme } from '@/theme/ThemeProvider';
-import { displayFont, monoFont } from '@/theme/tokens';
+import { monoFont } from '@/theme/mono';
+import { displayFont } from '@/theme/tokens';
 
 export default function TopicScreen() {
   const { topicId } = useLocalSearchParams<{ topicId: string }>();
@@ -49,14 +50,16 @@ export default function TopicScreen() {
               subtitle={t('topic.summary.subtitle')}
             />
           </PressableScale>
-          <PressableScale style={styles.cell} accessibilityRole="button" disabled>
-            {/* Übungen mit Antwortprüfung: Meilenstein M4 */}
+          <PressableScale
+            style={styles.cell}
+            accessibilityRole="button"
+            onPress={() => router.push({ pathname: '/exercises/[topicId]', params: { topicId: topic.id } })}>
             <TopicActionTile
               icon={icons.exercises}
               tint={colors.accent}
               number="03"
               title={t('topic.exercises.title')}
-              subtitle={t('notPorted.title')}
+              subtitle={t('topic.exercises.subtitle')}
             />
           </PressableScale>
         </View>
