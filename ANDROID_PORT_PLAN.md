@@ -571,7 +571,7 @@ Legende: **R1** = für den ersten öffentlichen Release nötig · **S** = kann s
 | O-11 | Release erst, wenn alle 120 Grafiken portiert sind? | Ja (Ziel „möglichst genau“); sonst Fallback ohne Grafik |
 | O-12 | Datenschutz/AGB: Die bestehenden Seiten beziehen sich auf iOS und Käufe. Braucht Android eigene Fassungen? | Eigene Android-Fassung ohne Kaufbezug |
 | O-13 | Welche echten Android-Geräte stehen zum Testen zur Verfügung? | siehe Geräte-Matrix M11 |
-| O-14 | Paketname und App-Name in Google Play („Höhere Mathematik“ wie im README oder „UniMathe“)? | `b.held.unimathe`, Name wie iOS-Store-Eintrag |
+| O-14 | Paketname und App-Name in Google Play („Höhere Mathematik“ wie im README oder „UniMathe“)? | **Entschieden:** App-Name „UniMathe“, Paket `app.unimathe.android` |
 | O-15 | Zielgruppe in Google Play (Altersangabe) | 18+ bzw. Studierende, nicht für Kinder |
 | O-16 | Crash-Reporting und Analyse ja/nein? | Crash-Reporting ja (ohne personenbezogene Daten), keine Analyse |
 | O-17 | Welche Datei gilt bei `sets_and_mappings_beispiel.json` vs. `_fixed.json` und bei `complete_induction_beispiel.json` vs. `mathematical_induction_beispiel.json`? | Lader-Reihenfolge iOS übernehmen: die Datei ohne `_fixed` bzw. diejenige, die die Suchreihenfolge in `ContentView.swift:1803–1820` findet (`_fixed` nur, wenn die Hauptdatei fehlt) |

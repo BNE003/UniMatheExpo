@@ -1,6 +1,6 @@
 # UniMathe für Android (Expo)
 
-Android-Version der iOS-App „Höhere Mathematik“ (UniMathe). Sie ist kostenlos und bietet weder In-App-Käufe noch Abos.
+Android-Version der iOS-App UniMathe (Paket `app.unimathe.android`). Sie ist kostenlos und bietet weder In-App-Käufe noch Abos.
 Planung, Befunde und Meilensteine stehen in [ANDROID_PORT_PLAN.md](ANDROID_PORT_PLAN.md).
 
 ## Stand

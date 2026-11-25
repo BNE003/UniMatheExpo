@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Höhere Mathematik",
+    "name": "UniMathe",
     "slug": "unimathe",
     "version": "0.1.0",
     "orientation": "portrait",
@@ -11,7 +11,7 @@
       "android"
     ],
     "android": {
-      "package": "b.held.unimathe",
+      "package": "app.unimathe.android",
       "adaptiveIcon": {
         "backgroundColor": "#F5F7FC",
         "foregroundImage": "./assets/images/android-icon-foreground.png",

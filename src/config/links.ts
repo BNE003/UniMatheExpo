@@ -8,7 +8,7 @@ export const links = {
   privacy: 'https://sites.google.com/view/hoehere-mathematik/startseite',
   terms: 'https://sites.google.com/view/hoehere-mathematik-agb/startseite',
   /** Google-Play-Eintrag (Paketname aus app.json), Ziel für „Bewerten“, falls der In-App-Dialog nicht verfügbar ist. */
-  playStore: 'https://play.google.com/store/apps/details?id=b.held.unimathe',
+  playStore: 'https://play.google.com/store/apps/details?id=app.unimathe.android',
 } as const;
 
 /** Impressum (ImpressumView in SettingsView.swift). */
