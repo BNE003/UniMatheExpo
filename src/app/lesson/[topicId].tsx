@@ -2,6 +2,7 @@
  * Schritt-für-Schritt-Lektion (InteractiveLearningView, ContentView.swift:1560).
  * Alle Schritte sind frei zugänglich (iOS: Paywall ab Schritt 9 – entfällt auf Android).
  * Die System-Zurück-Taste schließt die Lektion; einen Schritt zurück geht es über den Zurück-Knopf.
+ * Der aktuelle Schritt wird gespeichert: Beim nächsten Öffnen geht es dort weiter, nach „Fertig“ von vorn.
  */
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useRef, useState, type ComponentRef } from 'react';
@@ -13,6 +14,7 @@ import { lessonChapters } from '@/domain/lesson';
 import { ChapterSheet, LessonFooter, ProgressHeader } from '@/features/lesson/LessonChrome';
 import { StepContent } from '@/features/lesson/StepContent';
 import { useLang, useT } from '@/i18n';
+import { loadLessonStep, saveLessonStep } from '@/storage/lessonProgress';
 import { useTheme } from '@/theme/ThemeProvider';
 import { appFont } from '@/theme/tokens';
 
@@ -25,7 +27,7 @@ export default function LessonScreen() {
   const title = findTopic(topicId)?.topic.title[lang] ?? lesson?.topic ?? '';
   const chapters = useMemo(() => (lesson ? lessonChapters(lesson.steps) : []), [lesson]);
 
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(() => (lesson ? loadLessonStep(lang, topicId, lesson.steps.length) : 0));
   const [showProgress, setShowProgress] = useState(false);
   const [chaptersOpen, setChaptersOpen] = useState(false);
   const scrollRef = useRef<ComponentRef<typeof ScrollView>>(null);
@@ -48,7 +50,12 @@ export default function LessonScreen() {
   const goTo = (target: number) => {
     if (target < 0 || target >= total || target === step) return;
     setStep(target);
+    saveLessonStep(lang, topicId, target);
     scrollRef.current?.scrollTo({ y: 0, animated: false });
+  };
+  const finish = () => {
+    saveLessonStep(lang, topicId, 0);
+    router.back();
   };
 
   return (
@@ -72,7 +79,7 @@ export default function LessonScreen() {
         totalSteps={total}
         onBack={() => goTo(step - 1)}
         onNext={() => goTo(step + 1)}
-        onFinish={() => router.back()}
+        onFinish={finish}
       />
       <ChapterSheet
         visible={chaptersOpen}
