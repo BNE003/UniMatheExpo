@@ -33,6 +33,7 @@ npm install
 |---|---|
 | `npm run import-content` | Inhalte aus dem Swift-Repo übernehmen (Pfad in `tools/content.config.json` oder `--swift-repo`) |
 | `npm run import-captions` | Bildunterschriften der Grafiken aus `LessonVectorVisuals.swift` übernehmen; englische Texte für rein deutsche Swift-Grafiken stehen in `tools/visual-captions-en.json` |
+| `npm run build-icons` | App-Icon, adaptives Android-Icon (Vorder-/Hintergrund, Monochrom) und Splash aus dem iOS-App-Icon erzeugen |
 | `npm run build-math` | `assets/math/renderer.html` neu bauen (nach Änderungen in `tools/math-renderer/`) |
 | `npm run preview-math -- 3.3 de` | Formel-Vorschau im Browser erzeugen (`.preview/math-preview.html`, über einen lokalen HTTP-Server öffnen) |
 | `npm run preview-visuals -- de` | Alle Grafiken in jeder Phase als SVG-Galerie (`.preview/visuals.html`, über einen lokalen HTTP-Server öffnen) |

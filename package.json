@@ -55,6 +55,7 @@
     "import-captions": "tsx tools/import-visual-captions.ts",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tools",
     "build-math": "tsx tools/build-math-renderer.ts",
+    "build-icons": "tsx tools/build-icons.ts",
     "preview-math": "tsx tools/preview-math.ts",
     "preview-visuals": "tsx tools/preview-visuals.ts",
     "test": "tsx --test tests/*.test.ts"
